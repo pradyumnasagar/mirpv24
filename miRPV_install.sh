@@ -91,6 +91,15 @@ else
     perl -MCPAN -e 'install Algorithm::SVM'
   fi
 fi
+
+if command -v cpan >/dev/null; then
+  echo `date` | tee -a miRPV_install.log
+  echo "UNAFold is installed" | tee -a miRPV_install.log
+else
+  echo `date` | tee -a miRPV_install.log
+  echo "UNAFold inatallation failed. Please install manually" | tee -a miRPV_install.log
+fi
+
 echo `date` | tee -a miRPV_install.log
 echo "downloadin miRPara" | tee -a miRPV_install.log
 
@@ -114,7 +123,7 @@ mv "$miRPara_PATH"/miRPara/required_packages/ct2out/* "$miRPara_PATH"/required_p
 
 #install dependencies
 ##Install UNAFOLD id not installed
-if command -v cpan >/dev/null; then
+if command -v UNAFOLD.pl >/dev/null; then
   echo `date` | tee -a miRPV_install.log
   echo "UNAFold is installed" | tee -a miRPV_install.log
 else
@@ -126,12 +135,13 @@ else
   make
   sudo make install
   sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /use/bin/
-  if command -v cpan >/dev/null; then
+  if command -v UNAFOLD.pl >/dev/null; then
     echo `date` | tee -a miRPV_install.log
     echo "UNAFold is installed" | tee -a miRPV_install.log
   else
     echo `date` | tee -a miRPV_install.log
-    echo "UNAFold is not installed Please install manually" | tee -a miRPV_install.log
+    echo "UNAFold inatallation failed. Please install manually" | tee -a miRPV_install.log
+  fi
 fi
 
 ##install ct2out
