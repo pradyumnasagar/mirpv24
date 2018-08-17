@@ -92,12 +92,12 @@ else
   fi
 fi
 
-if command -v cpan >/dev/null; then
+if command -v conda >/dev/null; then
   echo `date` | tee -a miRPV_install.log
-  echo "UNAFold is installed" | tee -a miRPV_install.log
+  echo "anaconda is installed" | tee -a miRPV_install.log
 else
   echo `date` | tee -a miRPV_install.log
-  echo "UNAFold inatallation failed. Please install manually" | tee -a miRPV_install.log
+  echo "anaconda inatallation failed. Please install manually" | tee -a miRPV_install.log
 fi
 
 echo `date` | tee -a miRPV_install.log
@@ -147,13 +147,37 @@ fi
 ##install ct2out
 cd "$miRPara_PATH"/required_packages/ct2out/
 if command -v ct2out >/dev/null; then
-  echo "ct2out exist"
+  echo "ct2out is installed" | tee -a miRPV_install.log
 else
   if command -v gfortran >/dev/null;then
     gfortran ct2out.f -o ct2out
     sudo cp ct2out /usr/bin/
-    if command -v ct2out >/dev/null;then
-      echo "ct2out is installed"
-    else
-      echo "ct2out installation failed please install manually"
-      echo `date` | tee -a miRPV_install.log
+  else
+    sudo apt-get install gfortran
+    gfortran ct2out.f -o ct2out
+    sudo cp ct2out /usr/bin/
+  fi
+fi
+if command -v ct2out >/dev/null;then
+  echo "ct2out is installed" | tee -a miRPV_install.log
+else
+  echo `date` | tee -a miRPV_install.log
+      echo "ct2out installation failed. Please install manually" | tee -a miRPV_install.log
+    fi
+  fi
+
+##install libSVM
+cd "$miRPara_PATH"/required_packages/libsvm-3.14/
+if command -v svm-predict >/dev/null; then
+  echo `date` | tee -a miRPV_install.log
+  echo "libSVM is installed" | tee -a miRPV_install.log
+else
+  make
+  sudo cp svm-predict /usr/bin/
+  if command -v svm-predict >/dev/null; then
+    echo ""
+  else
+    echo `date` | tee -a miRPV_install.log
+    echo "libSVM failed to install. Please install manually"| tee -a miRPV_install.log
+  fi
+fi
