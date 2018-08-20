@@ -190,3 +190,12 @@ if [ ! -f "$miRPara_PATH"/test.pmt ]; then
   else
     echo "miRPara test Successful" | tee -a miRPV_install.log
 fi
+if command -v fasta_formatter >/dev/null; then
+  echo `date` | tee -a miRPV_install.log
+else
+  sudo apt-get install gcc g++ pkg-config wget
+  sudo apt-get install fastx-toolkit
+fi
+##installing miRBAG
+cd
+wget "http://scbb.ihbt.res.in/presents/mirbag/miR-BAG-stand-alone/miR_BAG.zip"
