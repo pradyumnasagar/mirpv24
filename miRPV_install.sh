@@ -20,10 +20,12 @@ fi
 #Set Path
 miRPV_PATH=$1
 miRPara_PATH=""$miRPV_PATH"/tools/miRPara/"
-miRPara="$miRPV_PATH"/tools/miRPara/miRPara/miRPara/miRPara.pl
+miRPara="$miRPara_PATH"/miRPara/miRPara/miRPara.pl
+miRBAG_PATH="$miRPV_PATH"/tools/miRBAG/
 echo `date` | tee -a miRPV_install.log
 echo "creating missing folders" | tee -a miRPV_install.log
 mkdir -p "$miRPV_PATH"/tools/miRPara/
+mkdir -p "$miRPV_PATH"/tools/miRBAG/
 #mkdir -p "$miRPV_PATH"/tools/miniconda/
 echo `date` | tee -a miRPV_install.log
 echo "Running script as root to install missing packages" | tee -a miRPV_install.log
@@ -178,6 +180,24 @@ else
     echo ""
   else
     echo `date` | tee -a miRPV_install.log
-    echo "libSVM failed to install. Please install manually"| tee -a miRPV_install.log
+    echo "libSVM failed to install. Please install manually" | tee -a miRPV_install.log
   fi
 fi
+cd "$miRPara_PATH"/
+rm test/result/test.pmt
+rm test/result/test_level_1.out
+perl "$miRPara" test/test.fasta
+if [ ! -f "$miRPara_PATH"/test.pmt ]; then
+    echo "Test result file not found! miRPara test failed. Resuming installation" | tee -a miRPV_install.log
+  else
+    echo "miRPara test Successful" | tee -a miRPV_install.log
+fi
+if command -v fasta_formatter >/dev/null; then
+  echo `date` | tee -a miRPV_install.log
+else
+  sudo apt-get install gcc g++ pkg-config wget
+  sudo apt-get install fastx-toolkit
+fi
+##installing miRBAG
+cd "$miRPV_PATH"/tools/miRBAG/
+wget "http://scbb.ihbt.res.in/presents/mirbag/miR-BAG-stand-alone/miR_BAG.zip"
