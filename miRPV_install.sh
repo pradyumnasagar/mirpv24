@@ -21,9 +21,11 @@ fi
 miRPV_PATH=$1
 miRPara_PATH=""$miRPV_PATH"/tools/miRPara/"
 miRPara="$miRPara_PATH"/miRPara/miRPara/miRPara.pl
+miRBAG_PATH="$miRPV_PATH"/tools/miRBAG/
 echo `date` | tee -a miRPV_install.log
 echo "creating missing folders" | tee -a miRPV_install.log
 mkdir -p "$miRPV_PATH"/tools/miRPara/
+mkdir -p "$miRPV_PATH"/tools/miRBAG/
 #mkdir -p "$miRPV_PATH"/tools/miniconda/
 echo `date` | tee -a miRPV_install.log
 echo "Running script as root to install missing packages" | tee -a miRPV_install.log
@@ -197,5 +199,5 @@ else
   sudo apt-get install fastx-toolkit
 fi
 ##installing miRBAG
-cd
+cd "$miRPV_PATH"/tools/miRBAG/
 wget "http://scbb.ihbt.res.in/presents/mirbag/miR-BAG-stand-alone/miR_BAG.zip"
