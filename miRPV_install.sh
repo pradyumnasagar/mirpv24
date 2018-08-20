@@ -1,5 +1,6 @@
 #!/bin/bash
 #set -x
+set -u
 #exec 1> miRPV.log
 #exec 2>&1
 #AUTHOR: Pradyumna Jayaram
