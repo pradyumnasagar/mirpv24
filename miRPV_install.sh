@@ -128,19 +128,19 @@ mv "$miRPara_PATH"/miRPara/required_packages/ct2out/* "$miRPara_PATH"/required_p
 
 #install dependencies
 ##Install UNAFOLD id not installed
-if command -v UNAFOLD.pl >/dev/null; then
+if command -v UNAFold.pl >/dev/null; then
   echo `date` | tee -a miRPV_install.log
   echo "UNAFold is installed" | tee -a miRPV_install.log
 else
   echo `date` | tee -a miRPV_install.log
-  echo "installing UNAFOLD" | tee -a miRPV_install.log
+  echo "installing UNAFold" | tee -a miRPV_install.log
   cd "$miRPara_PATH"/required_packages/unafold-3.8/
   autoconf
   ./configure
   make
   sudo make install
   sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /usr/bin/
-  if command -v UNAFOLD.pl >/dev/null; then
+  if command -v UNAFold.pl >/dev/null; then
     echo `date` | tee -a miRPV_install.log
     echo "UNAFold is installed" | tee -a miRPV_install.log
   else
