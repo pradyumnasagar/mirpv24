@@ -29,7 +29,6 @@ mkdir -p "$miRPV_PATH"/tools/miRBAG/
 #mkdir -p "$miRPV_PATH"/tools/miniconda/
 echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "Running script as root to install missing packages" | tee -a "$miRPV_PATH"/miRPV_install.log
-
 sudo echo "Testing dependencies installed" #Gain sudo permission
 echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "checking for anaconda package" | tee -a "$miRPV_PATH"/miRPV_install.log
@@ -187,7 +186,7 @@ fi
 cd "$miRPara_PATH"/
 rm test/result/test.pmt
 rm test/result/test_level_1.out
-perl "$miRPara" test/test.fasta
+perl "$miRPara" test/test.fa
 if [ ! -f "$miRPara_PATH"/test.pmt ]; then
     echo "Test result file not found! miRPara test failed. Resuming installation" | tee -a "$miRPV_PATH"/miRPV_install.log
   else
@@ -199,6 +198,7 @@ else
   sudo apt-get install gcc g++ pkg-config wget
   sudo apt-get install fastx-toolkit
 fi
+
 ##installing miRBAG
 cd "$miRPV_PATH"/tools/miRBAG/
 wget "http://scbb.ihbt.res.in/presents/mirbag/miR-BAG-stand-alone/miR_BAG.zip"
