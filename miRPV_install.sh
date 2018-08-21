@@ -108,7 +108,7 @@ echo "downloadin miRPara" | tee -a miRPV_install.log
 
 #wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -o "$miRPV_PATH"/tools/miRPara/miRPara.zip || echo "failed to download miRPara" && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
 
-wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -o "$miRPara_PATH"/miRPara.zip || read -r -p "miRPara download failed. Closing installation in  500 seconds or press any key to close immediately" -t 500 -n 1 -s && echo "miRPara download failed." | tee -a miRPV_install.log && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
+wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -O "$miRPara_PATH"/miRPara.zip || read -r -p "miRPara download failed. Closing installation in  500 seconds or press any key to close immediately" -t 500 -n 1 -s && echo "miRPara download failed." | tee -a miRPV_install.log && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
 
 
 cd "$miRPV_PATH"/tools/miRPara/
