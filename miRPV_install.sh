@@ -20,7 +20,7 @@ fi
 #Set Path
 miRPV_PATH=$1
 miRPara_PATH=""$miRPV_PATH"/tools/miRPara/"
-miRPara="$miRPara_PATH"/miRPara/miRPara/miRPara.pl
+miRPara="$miRPara_PATH"/miRPara/miRPara.pl
 miRBAG_PATH="$miRPV_PATH"/tools/miRBAG/
 echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "creating missing folders" | tee -a "$miRPV_PATH"/miRPV_install.log
