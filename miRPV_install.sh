@@ -107,18 +107,21 @@ echo "downloadin miRPara" | tee -a miRPV_install.log
 
 #wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -o "$miRPV_PATH"/tools/miRPara/miRPara.zip || echo "failed to download miRPara" && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
 
-wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -O "$miRPara_PATH"/miRPara.zip || read -r -p "miRPara download failed. Closing installation in  500 seconds or press any key to close immediately" -t 500 -n 1 -s && echo "miRPara download failed." | tee -a miRPV_install.log && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
+wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -O "$miRPara_PATH"/miRPara.zip || read -r -p "miRPara download failed. Closing installation in  500 seconds or press any key to close immediately" -t 500 -n 1 -s | echo "miRPara download failed." | tee -a miRPV_install.log | exit #download miRPara and store in miRPara dir in miRPV exit script if fails
 
 
 cd "$miRPV_PATH"/tools/miRPara/
 unzip "$miRPV_PATH"/tools/miRPara/miRPara.zip
-cp "$miRPara_PATH"/miRPara/mirpara6.3.tar.gz "$miRPV_PATH"/tools/miRPara/
-rm -rf "$miRPara_PATH"/miRPara/
+mv "$miRPV_PATH"/tools/miRPara/miRPara-master "$miRPV_PATH"/tools/miRPara/miRPara
+cp "$miRPara_PATH"/miRPara/miRPara/mirpara6.3.tar.gz "$miRPV_PATH"/tools/miRPara/
+rm -rf "$miRPara_PATH"/miRPara/miRPara
 tar -xzf mirpara6.3.tar.gz
 mkdir -p "$miRPara_PATH"/required_packages/
 mv "$miRPara_PATH"/miRPara/required_packages/unafold-3.8.tar.gz "$miRPara_PATH"/required_packages/unafold-3.8.tar.gz
+cd "$miRPara_PATH"/required_packages/
 tar -xzf "$miRPara_PATH"/required_packages/unafold-3.8.tar.gz
 mv "$miRPara_PATH"/miRPara/required_packages/libsvm-3.14.tar.gz "$miRPara_PATH"/required_packages/libsvm-3.14.tar.gz
+cd "$miRPara_PATH"/required_packages/
 tar -xzf "$miRPara_PATH"/required_packages/libsvm-3.14.tar.gz
 mkdir -p "$miRPara_PATH"/required_packages/ct2out/
 mv "$miRPara_PATH"/miRPara/required_packages/ct2out/* "$miRPara_PATH"/required_packages/ct2out/
@@ -136,7 +139,7 @@ else
   ./configure
   make
   sudo make install
-  sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /use/bin/
+  sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /usr/bin/
   if command -v UNAFOLD.pl >/dev/null; then
     echo `date` | tee -a miRPV_install.log
     echo "UNAFold is installed" | tee -a miRPV_install.log
@@ -164,10 +167,8 @@ if command -v ct2out >/dev/null;then
   echo "ct2out is installed" | tee -a miRPV_install.log
 else
   echo `date` | tee -a miRPV_install.log
-      echo "ct2out installation failed. Please install manually" | tee -a miRPV_install.log
-    fi
-  fi
-
+  echo "ct2out installation failed. Please install manually" | tee -a miRPV_install.log
+fi
 ##install libSVM
 cd "$miRPara_PATH"/required_packages/libsvm-3.14/
 if command -v svm-predict >/dev/null; then
