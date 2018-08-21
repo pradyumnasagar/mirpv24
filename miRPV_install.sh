@@ -113,6 +113,8 @@ cd "$miRPV_PATH"/tools/miRPara/
 unzip "$miRPV_PATH"/tools/miRPara/miRPara.zip
 mv "$miRPV_PATH"/tools/miRPara/miRPara-master "$miRPV_PATH"/tools/miRPara/miRPara
 cp "$miRPara_PATH"/miRPara/miRPara/mirpara6.3.tar.gz "$miRPV_PATH"/tools/miRPara/
+cp "$miRPara_PATH"/miRPara/miRPara/organisms.txt.gz "$miRPara_PATH"/miRPara/models/miRBase/current/organisms.txt.gz
+cp "$miRPara_PATH"/miRPara/miRPara/mature.fa.gz "$miRPara_PATH"/miRPara/models/miRBase/current/mature.fa.gz
 rm -rf "$miRPara_PATH"/miRPara/miRPara
 tar -xzf mirpara6.3.tar.gz
 mkdir -p "$miRPara_PATH"/required_packages/
