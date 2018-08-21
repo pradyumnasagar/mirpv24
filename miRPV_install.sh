@@ -118,8 +118,10 @@ rm -rf "$miRPara_PATH"/miRPara/miRPara
 tar -xzf mirpara6.3.tar.gz
 mkdir -p "$miRPara_PATH"/required_packages/
 mv "$miRPara_PATH"/miRPara/required_packages/unafold-3.8.tar.gz "$miRPara_PATH"/required_packages/unafold-3.8.tar.gz
+cd "$miRPara_PATH"/required_packages/
 tar -xzf "$miRPara_PATH"/required_packages/unafold-3.8.tar.gz
 mv "$miRPara_PATH"/miRPara/required_packages/libsvm-3.14.tar.gz "$miRPara_PATH"/required_packages/libsvm-3.14.tar.gz
+cd "$miRPara_PATH"/required_packages/
 tar -xzf "$miRPara_PATH"/required_packages/libsvm-3.14.tar.gz
 mkdir -p "$miRPara_PATH"/required_packages/ct2out/
 mv "$miRPara_PATH"/miRPara/required_packages/ct2out/* "$miRPara_PATH"/required_packages/ct2out/
@@ -137,7 +139,7 @@ else
   ./configure
   make
   sudo make install
-  sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /use/bin/
+  sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /usr/bin/
   if command -v UNAFOLD.pl >/dev/null; then
     echo `date` | tee -a miRPV_install.log
     echo "UNAFold is installed" | tee -a miRPV_install.log
