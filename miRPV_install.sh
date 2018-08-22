@@ -204,3 +204,6 @@ fi
 ##installing miRBAG
 cd "$miRPV_PATH"/tools/miRBAG/
 wget "http://scbb.ihbt.res.in/presents/mirbag/miR-BAG-stand-alone/miR_BAG.zip"
+sudo apt-get install libqt4-dev build-essential
+sudo apt-get install qt5-default qttools5-dev-tools
+sudo apt-get install libqt5svg5*
