@@ -22,24 +22,24 @@ miRPV_PATH=$1
 miRPara_PATH=""$miRPV_PATH"/tools/miRPara/"
 miRPara="$miRPara_PATH"/miRPara/miRPara.pl
 miRBAG_PATH="$miRPV_PATH"/tools/miRBAG/
-echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "creating missing folders" | tee -a "$miRPV_PATH"/miRPV_install.log
 mkdir -p "$miRPV_PATH"/tools/miRPara/
 mkdir -p "$miRPV_PATH"/tools/miRBAG/
 #mkdir -p "$miRPV_PATH"/tools/miniconda/
-echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "Running script as root to install missing packages" | tee -a "$miRPV_PATH"/miRPV_install.log
 sudo echo "Testing dependencies installed" #Gain sudo permission
-echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "checking for anaconda package" | tee -a "$miRPV_PATH"/miRPV_install.log
 ##checks if conda is installed
 if command -v conda >/dev/null; then
   #installs miRPara dependencies through conda
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "conda is installed, Installing other dependencies" | tee -a "$miRPV_PATH"/miRPV_install.log
   conda install -c bioconda perl-getopt-long
   if command -v cpan >/dev/null; then
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/miRPV_install.log
     perl -MCPAN -e 'install Getopt::Long'
     perl -MCPAN -e 'install threads'
@@ -48,10 +48,10 @@ if command -v conda >/dev/null; then
     perl -MCPAN -e 'install File::chdir'
     perl -MCPAN -e 'install Algorithm::SVM'
   else
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "cpan is not installed, installing cpan" | tee -a "$miRPV_PATH"/miRPV_install.log
     conda install -c bioconda perl-cpan-shell
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/miRPV_install.log
     perl -MCPAN -e 'install Getopt::Long'
     perl -MCPAN -e 'install threads'
@@ -62,7 +62,7 @@ if command -v conda >/dev/null; then
   fi
 else
   #installs miniconda if not installed
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "Downloading and installing anaconda" | tee -a "$miRPV_PATH"/miRPV_install.log
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   bash Miniconda3-latest-Linux-x86_64.sh -b --license y -p "$miRPV_PATH"/tools/miniconda/
@@ -70,7 +70,7 @@ else
   source ~/.bashrc
   conda install -c bioconda perl-getopt-long
   if command -v cpan >/dev/null; then
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/miRPV_install.log
     perl -MCPAN -e 'install Getopt::Long'
     perl -MCPAN -e 'install threads'
@@ -79,10 +79,10 @@ else
     perl -MCPAN -e 'install File::chdir'
     perl -MCPAN -e 'install Algorithm::SVM'
   else
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "cpan is not installed, installing cpan" | tee -a "$miRPV_PATH"/miRPV_install.log
     conda install -c bioconda perl-cpan-shell
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/miRPV_install.log
     perl -MCPAN -e 'install Getopt::Long'
     perl -MCPAN -e 'install threads'
@@ -94,14 +94,14 @@ else
 fi
 
 if command -v conda >/dev/null; then
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "anaconda is installed" | tee -a "$miRPV_PATH"/miRPV_install.log
 else
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "anaconda inatallation failed. Please install manually" | tee -a "$miRPV_PATH"/miRPV_install.log
 fi
 
-echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
 echo "downloadin miRPara" | tee -a "$miRPV_PATH"/miRPV_install.log
 
 #wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -o "$miRPV_PATH"/tools/miRPara/miRPara.zip || echo "failed to download miRPara" && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
@@ -130,10 +130,10 @@ mv "$miRPara_PATH"/miRPara/required_packages/ct2out/* "$miRPara_PATH"/required_p
 #install dependencies
 ##Install UNAFOLD id not installed
 if command -v UNAFold.pl >/dev/null; then
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "UNAFold is installed" | tee -a "$miRPV_PATH"/miRPV_install.log
 else
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "installing UNAFold" | tee -a "$miRPV_PATH"/miRPV_install.log
   cd "$miRPara_PATH"/required_packages/unafold-3.8/
   autoconf
@@ -142,10 +142,10 @@ else
   sudo make install
   sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /usr/bin/
   if command -v UNAFold.pl >/dev/null; then
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "UNAFold is installed" | tee -a "$miRPV_PATH"/miRPV_install.log
   else
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "UNAFold inatallation failed. Please install manually" | tee -a "$miRPV_PATH"/miRPV_install.log
   fi
 fi
@@ -167,13 +167,13 @@ fi
 if command -v ct2out >/dev/null;then
   echo "ct2out is installed" | tee -a "$miRPV_PATH"/miRPV_install.log
 else
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "ct2out installation failed. Please install manually" | tee -a "$miRPV_PATH"/miRPV_install.log
 fi
 ##install libSVM
 cd "$miRPara_PATH"/required_packages/libsvm-3.14/
 if command -v svm-predict >/dev/null; then
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
   echo "libSVM is installed" | tee -a "$miRPV_PATH"/miRPV_install.log
 else
   make
@@ -181,7 +181,7 @@ else
   if command -v svm-predict >/dev/null; then
     echo ""
   else
-    echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+    echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
     echo "libSVM failed to install. Please install manually" | tee -a "$miRPV_PATH"/miRPV_install.log
   fi
 fi
@@ -195,7 +195,7 @@ if [ ! -f "$miRPara_PATH"/test.pmt ]; then
     echo "miRPara test Successful" | tee -a "$miRPV_PATH"/miRPV_install.log
 fi
 if command -v fasta_formatter >/dev/null; then
-  echo `date` | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
 else
   sudo apt-get install gcc g++ pkg-config wget
   sudo apt-get install fastx-toolkit
