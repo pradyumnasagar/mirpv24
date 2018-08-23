@@ -1,4 +1,5 @@
 #!/bin/bash
+set -u
 #set -x
 #exec 1> miRPV.log
 #exec 2>&1
