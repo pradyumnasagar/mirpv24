@@ -202,9 +202,7 @@ else
   sudo apt-get install fastx-toolkit
 fi
 
-##installing miRBAG
-cd "$miRPV_PATH"/tools/miRBAG/
-wget "http://scbb.ihbt.res.in/presents/mirbag/miR-BAG-stand-alone/miR_BAG.zip"
-sudo apt-get install libqt4-dev build-essential
-sudo apt-get install qt5-default qttools5-dev-tools
-sudo apt-get install libqt5svg5*
+##installing RNAFold for TripletSVM
+
+
+https://www.tbi.univie.ac.at/RNA/download/ubuntu/ubuntu_18_10/python-rna_2.4.11-1_amd64.deb
