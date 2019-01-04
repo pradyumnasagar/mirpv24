@@ -22,8 +22,8 @@ cat "This version of miRPV works only on ubuntu System"
 systemID='cat /etc/os-release | grep "^ID="|  awk -F "=" '{print $2}''
 
 if [ "$systemID" == "ubuntu" ]; then
-  echo -e "Usage:\nbash `basename $0` /path/to/miRPV"
-  exit 0
+  echo ""
+suelse "echo The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
 fi
 
 
@@ -200,9 +200,9 @@ rm test/result/test.pmt
 rm test/result/test_level_1.out
 perl "$miRPara" test/test.fa
 if [ ! -f "$miRPara_PATH"/test.pmt ]; then
-    echo "Test result file not found! miRPara test failed. Resuming installation" | tee -a "$miRPV_PATH"/miRPV_install.log
-  else
-    echo "miRPara test Successful" | tee -a "$miRPV_PATH"/miRPV_install.log
+  echo "Test result file not found! miRPara test failed. Resuming installation" | tee -a "$miRPV_PATH"/miRPV_install.log
+else
+  echo "miRPara test Successful" | tee -a "$miRPV_PATH"/miRPV_install.log
 fi
 if command -v fasta_formatter >/dev/null; then
   echo `date\n` | tee -a "$miRPV_PATH"/miRPV_install.log
