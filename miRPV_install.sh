@@ -18,6 +18,15 @@ if [ "$1" == "" ]; then
   exit 0
 fi
 
+cat "This version of miRPV works only on ubuntu System"
+systemID='cat /etc/os-release | grep "^ID="|  awk -F "=" '{print $2}''
+
+if [ "$systemID" == "ubuntu" ]; then
+  echo -e "Usage:\nbash `basename $0` /path/to/miRPV"
+  exit 0
+fi
+
+
 #Set Path
 miRPV_PATH=$1
 miRPara_PATH=""$miRPV_PATH"/tools/miRPara/"
@@ -203,6 +212,6 @@ else
 fi
 
 ##installing RNAFold for TripletSVM
-
+cat /etc/os-release | grep "^ID="|  awk -F "=" '{print $2}'
 
 https://www.tbi.univie.ac.at/RNA/download/ubuntu/ubuntu_18_10/python-rna_2.4.11-1_amd64.deb
