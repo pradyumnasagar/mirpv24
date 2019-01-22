@@ -23,7 +23,7 @@ systemID='cat /etc/os-release | grep "^ID="|  awk -F "=" '{print $2}''
 
 if [ "$systemID" == "ubuntu" ]; then
   echo ""
-suelse "echo The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
+else "echo The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
 fi
 
 
