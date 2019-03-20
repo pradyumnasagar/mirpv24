@@ -1,0 +1,3 @@
+perl-getopt-long
+perl-cpan-shell
+
