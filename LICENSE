@@ -2,58 +2,56 @@
 0. Definitions.
    "Copyright"      also  means copyright-like laws that apply to other kinds of works,
    such as semiconductor masks.
-   
+
    "The Program" refers to any copyrightable work licensed under this License.
-   
+
    Each licensee is  addressed  as  "you". "Licensees" and "recipients" may be individuals
    or organizations.
-   
-   To   "modify" a work means to  copy from or adapt all or part of the work in a fashion  
+
+   To   "modify" a work means to  copy from or adapt all or part of the work in a fashion
    requiring copyright  permission, other than the making of an exact copy. The resulting
-   work is called a "modified version" of the earlier work or a work "based on" the earlier 
+   work is called a "modified version" of the earlier work or a work "based on" the earlier
    work.
-   
-   A   "covered     work" means   either  the  unmodified Program or a work based on the
-   Program.
-   
-   To   "propagate"  a  work     means to do anything with it  that, without permission,
-   would   make  you  directly  or  secondarily liable for infringement under applicable
-   copyright  law, except executing   it   on  a  computer or modifying  a  private copy.
+
+   A "covered work" means  either the unmodified Program or a work based on the Program.
+
+   To   "propagate" a work  means to do anything with it that, without permission, would
+	 make  you  directly  or  secondarily liable for infringement under applicable copyright
+	 law, except executing   it   on  a  computer or modifying  a  private copy.
    Propagation   includes   copying,  distribution  (with   or   without   modification),
    making  available  to  the  public,   and  in some countries other activities as well.
    To  "convey"  a work means  any  kind  of  propagation  that enables other parties to
    make or  receive   copies. Mere  interaction  with a user through a computer network,
-   with                    no               transfer       of a copy,  is not conveying.
-   
-   An     interactive  user interface displays "Appropriate Legal Notices" to the extent
-   that  it   includes    a convenient and prominently visible feature that (1) displays
-   an appropriate copyright notice, and (2) tells the user that there is no warranty 
+   with no transfer of a copy, is not conveying.
+
+   An interactive  user  interface  displays  "Appropriate  Legal Notices" to the extent
+   that  it   includes a convenient  and prominently  visible  feature that (1) displays
+   an appropriate copyright notice, and (2) tells the user that there is no warranty
    for   the    work (except to the extent that warranties are provided), that licensees
    may convey the  work under    this   License, and how to view a copy of this License.
-   If the       interface presents a list of user commands or options, such as a menu, a
-   prominent                            item       in    the list meets this  criterion.
-   
+   If the  interface  presents  a  list  of  user commands or options, such as a menu, a
+   prominent item in the list meets this  criterion.
+
 1. The copyright in miRPV 1.x is owned by MANIPAL ACADEMY OF HIGHER EDUCATION, MANIPAL.
 
-2. This is a legal agreement between you, RECIPIENT, and MANIPAL ACADEMY OF HIGHER 
-   EDUCATION, MANIPAL. miRPV 1.x depends on different open source and accademic 
-   use only softwares. 
-   
-   By accepting, receiving, and using  miRPV 1.x, you agree to be bound by all of its 
-   terms.If you do not agree to all of the terms of this Agreement, please DO NOT 
-   download the software; or, if you have already done so, please delete all of the 
-   source code, documentation and compiled programs associated with miRPV 1.x.
-  
-3. 
+2. This  is  a  legal  agreement  between  you, RECIPIENT, and MANIPAL ACADEMY OF HIGHER
+   EDUCATION, MANIPAL. miRPV 1.x depends on different open source and accademic use only
+	 tools.
+   By accepting, receiving, and  using  miRPV 1.x, you  agree  to be bound by all of its
+   terms. If you do not agree to all of  the  terms  of  this  Agreement,  please DO NOT
+	 download the software; or, if you have already done so, please delete all of the source
+	 code, documentation and compiled programs associated with miRPV 1.x.
+
+3.
 
 
 
-  
-  
-6. RECIPIENT acknowledges that as miRPV 1.x is a research tool and provided free of 
+
+
+6. RECIPIENT acknowledges that as miRPV 1.x is a research tool and provided free of
    charge, it is only provided "as is."  RENSSELAER POLYTECHNIC INSTITUTE, its faculty,
-   employees, or students, have no obligation to assist RECIPIENT in its use, 
-   correction, modification, or enhancement and are without any obligation to provide 
+   employees, or students, have no obligation to assist RECIPIENT in its use,
+   correction, modification, or enhancement and are without any obligation to provide
    any updates.
 
 

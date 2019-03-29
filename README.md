@@ -13,6 +13,7 @@ Linux Environment: Installations have been tested on Ubuntu 16.04+
 
 #Software Dependencies
 Please note All the dependencies will be installed automatically by miRPV_install.sh script
+Root permission is required to install
 If some something goes wrong please check the dependency and install manually
 
 MiRPara:
