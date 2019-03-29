@@ -9,25 +9,36 @@ set -u
 ###prints help when -h is typed with script
 if [ "$1" == "-h" ]; then
 	echo -e "Usage:\nbash `basename $0` /path/to/miRPV"
+	echo "path to miRPV is the folder where `basename $0` is present"
 	exit 0
 fi
 
 ##prints help when miRPV path is not given
 if [ "$1" == "" ]; then
 	echo -e "Usage:\nbash `basename $0` /path/to/miRPV"
+	echo "path to miRPV is the folder where `basename $0` is present"
 	exit 0
 fi
 miRPV_PATH=$1
+PDIR=$(pwd)
 [ -d "$miRPV_PATH" ] && echo "$miRPV_PATH exists" || read -r -p "`echo -e '\n Path to mirpv does not exists.\n \n create path and give permission to folder and try to run this script again. \n \n Closing installation in  50 seconds or press any key to close immediately'`" -t 50 -n 1 -s | echo "miRPara download failed" | tee -a "$miRPV_PATH"/miRPV_install.log | exit
 
+if [ "$miRPV_PATH" == "$PDIR" ]; then
+	echo ""
+else
+	cd $miRPV_PATH
+fi
 
 
-echo "This version of miRPV works best on ubuntu System. However, it can be tried in other system at your own risk"
+echo "This version of miRPV works best on ubuntu System. However, it can be tried in other linux system at your own risk"
 systemID='cat /etc/os-release | grep "^ID="|  awk -F "=" '{print $2}''
+VERSION_ID='cat /etc/os-release | grep "^VERSION_ID="|  awk -F "=" '{print $2}''
+
 
 if [ "$systemID" == "ubuntu" ]; then
 	echo ""
-else "echo The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
+else
+	echo "The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
 fi
 
 
