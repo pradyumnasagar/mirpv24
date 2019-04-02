@@ -5,14 +5,15 @@ miRPV is an Automated pipeline for miRNA identification and validation of microR
 #note
 Installer installs anaconda and creates an environment
 ## Minimum System Requirement
-CPU: x86_64 (32 bit or 64 bit), 1 GHz Processor
+CPU: AMD64 (64 bit), 1 GHz Processor
 Memory: 1 Gb RAM
 Storage: 5 Gb
 Internet access to download the files
-Linux Environment: Installations have been tested on Ubuntu 14.04+
+Linux Environment: Installations have been tested on Ubuntu 16.04+
 
 #Software Dependencies
 Please note All the dependencies will be installed automatically by miRPV_install.sh script
+Root permission is required to install
 If some something goes wrong please check the dependency and install manually
 
 MiRPara:

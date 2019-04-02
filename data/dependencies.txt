@@ -3,4 +3,4 @@ perl-threaded
 perl-mce-shared
 perl-pathtools
 perl-file-chdir
-
+libsvm
