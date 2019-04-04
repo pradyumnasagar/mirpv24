@@ -129,8 +129,9 @@ elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "18.10" ]]; then
 	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
 fi
 
-##install fasta formatter
+##install fasta formatterVERSION_ID" -eq VERSION_ID" -eq
 if command -v fasta_formatter >/dev/null; then
+
 	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 else
 	sudo apt-get install gcc g++ pkg-config wget
