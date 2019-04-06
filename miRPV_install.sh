@@ -309,3 +309,21 @@ if [ ! -f "$miRPara_PATH"/test.pmt ]; then
 else
 	echo "miRPara test Successful" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 fi
+
+
+
+
+
+#export paths
+
+
+
+#After Installations
+
+grep 'failed' "$miRPV_PATH"/results/log/miRPV_install.log > "$miRPV_PATH"/results/log/failed.long
+faillog="$miRPV_PATH"/results/log/failed.long
+if [[ -s "$faillog" ]]; then
+	echo "Installation of some dependencies failed, please reffer "$miRPV_PATH"/results/log/failed.long and install required package for optimal usage of pipeline or use Virtual Machine provided at http://slsdb.manipal.edu"
+else
+	echo "Installation finished without any errors. run miRPV [miRPV -h] for help"
+fi
