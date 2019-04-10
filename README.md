@@ -27,7 +27,7 @@ Root permission is required to install
 5) wget
 6) fastx-toolkit
 7) unafold-3.8
-8) 
+8)
 
 
 

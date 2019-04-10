@@ -312,11 +312,15 @@ fi
 
 
 
+#copy necessacary files
+cp "$miRPV_PATH"/miRPV "$miRPV_PATH"/bin/
 
 
 #export paths
 
-
+export PATH=$PATH:"$miRPV_PATH"/bin
+#export PATH=$PATH:
+#export PATH=$PATH:
 
 #After Installations
 
