@@ -26,23 +26,57 @@ Root permission is required to install
 4) pkg-config
 5) wget
 6) fastx-toolkit
-7) unafold-3.8
+7) unafold
 8)
-
+9)
+10)
+11)
+12)
 
 
 If some something goes wrong please check the dependency and install manually
 
-MiRPara:
-1) Getopt::Long (CPAN)
-2) threads (CPAN)
-3) threads::shared (CPAN)
-4) Cwd (CPAN)
-5) File::chdir (CPAN)
+#### MATLAB Compiler Runtime (MCR)
+
+#### MiniConda
+
+#### MiRPara:
+
+##### CPAN
+`conda install perl-cpan-shell`
+
+1) Getopt::Long
+`conda install perl-getopt-long`
+
+2) threads
+`conda install perl-threaded`
+
+3) threads::shared
+`conda install perl-mce-shared`
+
+4) CWD (CPAN)
+`conda install perl-pathtools`
+
+or
+
+`perl -MCPAN -e 'install CWD'`
+
+5) File::chdir
+`conda install perl-file-chdir`
+
 6) UNAFold
+
 7) gfortran
+`conda install -c anaconda gfortran_linux-64`
+
 8) libsvm
+`conda install libsvm`
+
 9) ct2out
+`gfortran ct2out.f -o ct2out`
+ or
+`g77 -o ct2out ct2out.f`
+
+`cp ct2out miRPV_PATH/bin/`
+
 10)
-perl-getopt-long
-perl-cpan-shell

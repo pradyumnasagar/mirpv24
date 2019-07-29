@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 set -u
 #set -x
 #exec 1> miRPV.log
@@ -74,64 +75,129 @@ echo "Running script as root to install missing packages" | tee -a "$miRPV_PATH"
 echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 
 
+# checking for WGET
+set +e
+WGET=`which wget`
+set -e
+if [ ! -x "$WGET" ]; then
+	echo "Unable to find wget in your PATH" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	exit 1
+fi
+
+# checking for UNZIP
+set +e
+UNZIP=`which unzip`
+set -e
+if [ ! -x "$UNZIP" ]; then
+	echo "Unable to find unzip in your PATH"  | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	exit 1
+fi
+
+
+# checking for GCC
+set +e
+CC=`which gcc`
+set -e
+if [ ! -x "$CC" ]; then
+	echo "Unable to find GCC in your PATH"  | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	exit 1
+fi
+
+set +e
+CPP=`which g++`
+set -e
+if [ ! -x "$CPP" ]; then
+	echo "Unable to find G++ in your PATH" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	exit 1
+fi
+
+# checking for make
+set +e
+MAKE=`which make`
+set -e
+if [ ! -x "$MAKE" ]; then
+	echo "Unable to find make in your PATH" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	exit 1
+fi
+
+# checking for java
+set +e
+JAVA=`which java`
+set -e
+if [ ! -x "$JAVA" ]; then
+	echo "Unable to find java in your PATH" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	exit 1
+fi
+
+
+
+
 ##installing RNAFold for TripletSVM
 cd "$miRPV_PATH" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
 systemID=$(cat /etc/os-release | grep "^ID="|  awk -F "=" '{print $2}')
-#####add if file present dont download
-if [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "14.04" ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	wget "$RNAFold_1404"
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
-elif [[  "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "16.04"  ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	wget "$RNAFold_1604"
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
-elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "16.10" ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	wget "$RNAFold_1610"
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
-elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "17.04"  ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	wget "$RNAFold_1704"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
-elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "17.10" ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	wget "$RNAFold_1710"
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
-elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" === "18.04"  ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	wget "$RNAFold_1804"
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
-elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" -eq "18.10" ]]; then
-	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
-	wget "$RNAFold_1810"
-	echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
-	sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+
+# checking for RNAfold
+set +e
+JAVA=`which RNAfold`
+set -e
+if [ ! -x "$JAVA" ]; then
+	echo "Unable to find RNAfold in your PATH" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+	echo "Installing RNAfold"
+	if [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" == "14.04" ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		wget "$RNAFold_1404_URL"
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	elif [[  "$systemID" -eq "ubuntu" && "$VERSION_ID" == "16.04"  ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		wget "$RNAFold_1604_URL"
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" == "16.10" ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		wget "$RNAFold_1610_URL"
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" == "17.04"  ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		wget "$RNAFold_1704_URL"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" == "17.10" ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		wget "$RNAFold_1710_URL"
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" == "18.04"  ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		wget "$RNAFold_1804_URL"
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	elif [[ "$systemID" -eq "ubuntu" && "$VERSION_ID" == "18.10" ]]; then
+		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		echo "Downloading RNAFold" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
+		cd ""$miRPara_PATH"/required_packages/" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
+		wget "$RNAFold_1810_URL"
+		echo "running 'sudo dpkg -i python-rna_2.4.11-1_amd64.deb'"
+		sudo dpkg -i python-rna_2.4.11-1_amd64.deb
+	fi
 fi
+
 
 ##install fasta formatterVERSION_ID" -eq VERSION_ID" -eq
 if command -v fasta_formatter >/dev/null; then
-
 	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 else
 	sudo apt-get install gcc g++ pkg-config wget
@@ -147,10 +213,10 @@ echo "checking for Anaconda/Miniconda package" | tee -a "$miRPV_PATH"/results/lo
 if command -v conda >/dev/null; then
 	#installs miRPara dependencies through conda
 	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-
 	echo "conda is installed, Installing other dependencies" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 	conda update conda -y
 	conda install -c bioconda perl-getopt-long
+	conda install -c bioconda gnuplot
 	if command -v cpan >/dev/null; then
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
@@ -163,6 +229,7 @@ if command -v conda >/dev/null; then
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "cpan is not installed, installing cpan" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		conda install -c bioconda perl-cpan-shell
+		conda install -c bioconda gnuplot
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		perl -MCPAN -e 'install threads'
@@ -175,12 +242,12 @@ else
 	#installs miniconda if not installed
 	echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 	echo "Downloading and installing anaconda" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
-	wget "$MiniConda_web"
+	wget "$MiniConda_URL"
 	bash Miniconda3-latest-Linux-x86_64.sh -b --license y -p "$miRPV_PATH"/src/tools/miniconda/
 	echo "export PATH=""$miRPV_PATH"/src/tools/miniconda/bin:'$PATH'"" >> ~/.bashrc
 	source ~/.bashrc
-
 	conda install -c bioconda perl-getopt-long
+	conda install -c bioconda gnuplot
 	if command -v cpan >/dev/null; then
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
@@ -194,6 +261,7 @@ else
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "cpan is not installed, installing cpan" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		conda install -c bioconda perl-cpan-shell
+		conda install -c bioconda gnuplot
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "cpan is installed, installing perl dependences" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		perl -MCPAN -e 'install Getopt::Long'
@@ -218,7 +286,7 @@ echo "downloadin miRPara" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 
 #wget "https://github.com/pradyumnasagar/miRPara/archive/master.zip" -O "$miRPV_PATH"/tools/miRPara/miRPara.zip || echo "failed to download miRPara" && exit #download miRPara and store in miRPara dir in miRPV exit script if fails
 
-wget "$miRPara_web" -O "$miRPara_PATH"/miRPara.zip || read -r -p "`echo -e '\n miRPara download failed. \n Closing installation in 500 seconds or press any key to close immediately \n\n'`" -t 500 -n 1 -s | echo "miRPara download failed.\n\n" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit #download miRPara and store in miRPara dir in miRPV exit script if fails
+wget "$miRPara_URL" -O "$miRPara_PATH"/miRPara.zip || read -r -p "`echo -e '\n miRPara download failed. \n Closing installation in 500 seconds or press any key to close immediately \n\n'`" -t 500 -n 1 -s | echo "miRPara download failed.\n\n" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit #download miRPara and store in miRPara dir in miRPV exit script if fails
 
 
 cd "$miRPara_PATH" || echo "$miRPV_PATH does not exist" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log | exit
@@ -252,8 +320,8 @@ else
 	make
 	echo "running 'sudo make install'"
 	sudo make install
-	echo "running 'sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /usr/bin/'"
-	sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl /usr/bin/
+#echo "running 'sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl "$miRPara_PATH"/bin/'"
+	cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl "$miRPara_PATH"/bin/
 	if command -v UNAFold.pl >/dev/null; then
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
 		echo "UNAFold is installed" | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
@@ -272,7 +340,6 @@ else
 		gfortran ct2out.f -o ct2out
 		cp ct2out "$miRPV_PATH"/bin/
 	else
-
 		conda install -c conda-forge fortran-compiler
 		gfortran ct2out.f -o ct2out
 		cp ct2out "$miRPV_PATH"/bin/
@@ -324,6 +391,10 @@ export PATH=$PATH:"$miRPV_PATH"/bin
 
 #After Installations
 
+##check packages
+
+
+##if failed
 grep 'failed' "$miRPV_PATH"/results/log/miRPV_install.log > "$miRPV_PATH"/results/log/failed.long
 faillog="$miRPV_PATH"/results/log/failed.long
 if [[ -s "$faillog" ]]; then
