@@ -320,7 +320,7 @@ else
 	make
 	echo "running 'sudo make install'"
 	sudo make install
-	#echo "running 'sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl "$miRPara_PATH"/bin/'"
+#echo "running 'sudo cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl "$miRPara_PATH"/bin/'"
 	cp "$miRPara_PATH"/required_packages/unafold-3.8/scripts/UNAFold.pl "$miRPara_PATH"/bin/
 	if command -v UNAFold.pl >/dev/null; then
 		echo $(date) | tee -a "$miRPV_PATH"/results/log/miRPV_install.log
