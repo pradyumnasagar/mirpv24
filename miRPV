@@ -12,6 +12,11 @@ function usage
 	echo "  -h  | --help			: Get help";
 }
 
+function version
+{
+echo ;	echo 'miRPV 1.0' ; echo
+}
+
 function parse_args
 {
 	# positional args
@@ -22,6 +27,7 @@ function parse_args
 			-fa | --fain )           fain="$2";         shift ;;
 			-o  | --out )            out="$2";          shift ;;
 			-t  | --threads )        threads="$2";      shift ;;
+			-V  | --version )        version;      shift ;;
 			-h  | --help )           usage;             exit ;; # quit and show usage
 			* )                      args+=("$1")               # if no match, add it to the positional args
 		esac
