@@ -6,7 +6,7 @@ set -u
 #exec 2>&1
 #AUTHOR: Pradyumna Jayaram
 #bash miRPV_install.sh </path/to/miRPV>
-
+# shellcheck source=/dev/null
 ###prints help when -h is typed with script
 if [ "$1" == "-h" ]; then
 	echo -e "Usage:\nbash `basename $0` /path/to/miRPV"
