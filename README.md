@@ -16,6 +16,7 @@ Please note All the dependencies will be installed automatically by miRPV_instal
 Root permission is required to install
 If some something goes wrong please check the dependency and install manually
 
+##Conda Environment
 MiRPara:
 1) Getopt::Long (CPAN)
 2) threads (CPAN)
