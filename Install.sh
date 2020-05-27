@@ -430,8 +430,10 @@ if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 	sudo make install
 	echo "running"
 	cd "$BUILD/unafold-3.8/scripts"
-	sudo cp -r UNAFold.pl /bin/
-	sudo cp UNAFold.pl "$PREFIX" /bin
+
+	#sudo cp -r UNAFold.pl /bin/
+	#sudo cp UNAFold.pl "$PREFIX" /bin
+
 	set +x
 fi
 
@@ -471,10 +473,12 @@ if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
 	set +x
 fi
 
+
 sudo apt-get install lolcat
 sudo apt-get install cowsay
 sudo apt-get install figlet
 sudo apt-get install enscript
+
 	
 
 #chmod ugo+x "$PREFIX/bin/"*

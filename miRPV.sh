@@ -4,7 +4,9 @@
 # Following script is to run the miRPV pipeline
 #
 #
+
 # Author: Pradyumna Jayaram and Vinayak Rao
+
 # Date: (DD/MM/2020)
 #
 #
@@ -82,6 +84,7 @@ echo "==================================================================="
 
 
 
+
 # Create Directory
 mkdir -p $DIRECTORY/Output
 mkdir -p $DIRECTORY/Output/mirpara
@@ -97,11 +100,14 @@ echo "Creating directory complete"
 #toilet HII
 cowsay Please Enter the Fatsa file name | lolcat
 
+r
 read file
 
 if [ -n "$file" ] ; then
 	
+
 	echo "1) Procesing the fasta file."
+
 	echo `date`
 	cp $file /$DIRECTORY/Script/ 
 	cd  $DIRECTORY/Script/
@@ -117,9 +123,12 @@ echo "a) Converting miRPara output into Triplet_SVM input "
 	sed -i '1~2 s/^/>/g' A4.txt
 	awk '{ if ($0 !~ />/) {print toupper($0)} else {print $0} }' A4.txt > Pri_miRNA.txt
 	RNAfold Pri_miRNA.txt > Secondary_Structure.txt
+
+	RNAeval -v Secondary_Structure.txt > Mature_Secondary_Structure.txt
 	cp Secondary_Structure.txt $DIRECTORY/Output/triplet_svm
-	cp Pri_miRNA.txt $DIRECTORY/Output/miRPV_output
-	cp Pri_miRNA.txt $DIRECTORY/Output/mirpara
+	cp Pri_miRNA.txt Mature_Secondary_Structure.txt $DIRECTORY/Output/maturebayes
+	cp Pri_miRNA.txt Mature_Secondary_Structure.txt $DIRECTORY/Output/miRPV_output
+
 
 echo "b)Converting miRPara output to get Mature_miRNA"
 
@@ -139,17 +148,21 @@ echo "2) Procced to find the Real or Psudo Pri-miRNA"
 	#svm-predict predict_format.txt trainset_hsa163_cds168_unite.txt.model predict_result.txt
 	#mv predict_format.txt predict_result.txt $DIRECTORY/Output/triplet_SVM
 	#cd $DIRECTORY/Script
+
 	mv 2.txt Real_miRNA.txt	
 	RNAeval -v Real_miRNA.txt > Mature_Secondary_Structure.txt	
 	cp Real_miRNA.txt Mature_Secondary_Structure.txt $DIRECTORY/Output/miRPV_output
 	cp Real_miRNA.txt Mature_Secondary_Structure.txt $DIRECTORY/Output/maturebayes
 	cp Real_miRNA.txt $DIRECTORY/Output/triplet_svm
 
+
 echo "3) Next Step is to find Mature miRNA using Pri-miRNA"
 
 echo `date`
 	
+
 	python matureBayes.py Real_miRNA.txt Mature_Secondary_Structure.txt Mature_miRNA.txt
+
 	cp Mature_miRNA.txt $DIRECTORY/Output/maturebayes
 	mv Mature_miRNA.txt $DIRECTORY/Output/miRPV_output
 
@@ -157,6 +170,7 @@ echo "4) Final micro-RNA target prediction"
 	miranda Mature_miRNAs.txt sequence.fasta > Target.txt
 	cp Target.txt $DIRECTORY/Output/miRPV_output
 	mv Target.txt $DIRECTORY/Output/miranda
+
 	rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt *.out *.ps *.pmt *.fa Real_miRNA.txt
 
 echo "5) Converting miRPV Output Into final Report"
@@ -202,12 +216,16 @@ sl
 
 
 figlet Pipline is completed | lolcat
+
+
 echo `date`
 
 else
 	echo "Input file is not a fasta file"
 fi
+
 echo "Pipeline is completed Please find the result in the output folder in miRPV Directory"
+
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
