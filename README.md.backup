@@ -1,0 +1,99 @@
+#Welcome to miRPV Pipeline
+
+miRPV is an Automated pipeline for miRNA identification and validation of microRNAs from user input genome/gene sequence.
+
+#INTRODUCTION
+
+----------------------------------------------------------------------------------------------
+
+MicroRNAs play a central role in post-transcriptional gene regulation, which adjusts the cellular processes. MicroRNA are ~19-24 nt non-coding, endogenous RNAs that regulate gene expression by directing their target mRNAs for degradation or translational repression, which usually occur in 3’ untranslated region (3’UTR).Accurate identification and cataloging of miRNA targets are crucial for understanding the functions of miRNA targets. To this end, numerous wet laboratory methodologies have been developed, enabling validation of predicted miRNA interactions or high-performance screening and novel miRNA targets to be identified. Computational methods play essential roles in the identification of new miRNAs due to the
+difficulty of systematically detecting miRNAs from a genome using standard experimental
+techniques.Analyzing the miRNAs from sequencing data is difficult as it requires compelling and convincing computational resources and bioinformatics expertise. The complexity of
+choosing from complex bioinformatics algorithms, there is a need for comparison and
+creation of the bioinformatics pipeline.To overcome these limitations, we need a reliable and comprehensive analysis pipeline which can process the data automatically, with the integration of multiple tools within a pipeline that's where miRPV comes into the picture. miRPV can be used to identify novel miRNA from any given sequence; also, the identified miRNAs are computationally validated and compared with existing models.
+
+The package can be downloaded from the miRPVs website:
+
+http://slsdb.manipal.edu/miRPV/
+
+#SYSTEM REQUIREMENT
+
+----------------------------------------------------------------------------------------------
+
+CPU:AMD64 (64bit), GHz Processor
+
+Memory: 1Gb RAM
+
+Storage: 5Gb
+
+Internet access to download the files
+
+Linux Environment: Installation have been tested on Ubuntu 16.04+
+
+Software Dependencies Please note All the dependencies will be installed automatically by install.sh script. Root permission is required to install If something goes wrong please check the dependency and install manually.
+
+
+
+#INSTALLATION
+
+----------------------------------------------------------------------------------------------
+
+1) INSTALL Miniconda if not installed and create a new environment with python=2.7 
+	Miniconda installing: https://docs.conda.io/en/latest/miniconda.html
+	Then activate environment before installing. 
+
+2) The rest of installatiion is very simple, in miRPV package you get a install.sh file just type:
+
+	$bash install.sh -p ~/Path/Were/miRPV Package/Present/
+
+This installation might take few minute and install all the dependency require to run the pipeline. If there is some kind of installation error, examine the output above to identify the cause. Or you can install this dependence sepreatly. 
+
+ For Conda Users:
+ 	conda install perl-cpan-shell
+ 	
+		Getopt::Long conda install perl-getopt-long
+
+		threads conda install perl-threaded
+
+		threads::shared conda install perl-mce-shared
+
+		CWD (CPAN) conda install perl-pathtools
+
+or
+
+		perl -MCPAN -e 'install CWD'
+
+		File::chdir conda install perl-file-chdir
+
+		UNAFold
+
+		gfortran conda install -c anaconda gfortran_linux-64
+
+		libsvm conda install libsvm
+
+		ct2out gfortran ct2out.f -o ct2out or g77 -o ct2out ct2out.f
+
+		cp ct2out /bin/
+	
+3) MATLAB COMPILER RUNTIME (MCR):
+	MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab code it is recommended to install this package it is provided with the miRPV package in the Software folder. Read the README file in folder and install accordingly. 
+
+#USAGE OF miRPV
+
+Once all the tools and dependence is install correctly then pipeline should be ready to use.
+
+**Just run from the miRPV folder:
+	$bash miRPV.sh (After doing this it will ask for fasta file name or the sample which you are going to use. Sample file should be present where the miRPV.sh script is there)
+		<Inpute the fasta file name> (Give the fasta file name)
+		Test.fa (Then press Enter)
+
+This will analyse the sample with different tools, it will take time according the sample size. You will get to know when your sample run is finish when a train passes by that time you get to know that the pipeline has run without any error. If any error occur examine the error and try to resolve it. 
+
+The new Directory is created Output directory in which five folder's are created with each tools output the final result of miRPV can found in the miRPV_output folder where you can see pdf file.
+
+**For Feature extration 
+	Copy the Hairplendex.txt file from output/hairplendex directory to Software/HAirplendex/file follow the command in the README file and you will get the features of Pri-miRNA
+
+If you need to know more please contact on :
+	http:// slsdb.manipal.edu
+		
