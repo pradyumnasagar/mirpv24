@@ -1,0 +1,1249 @@
+Relative Distances 5 stem::
+Hairpin_Start
+	Positive Values::
+	9	0.00164203612479
+	15	0.00164203612479
+	18	0.00656814449918
+	19	0.00492610837438
+	20	0.00821018062397
+	21	0.0328407224959
+	22	0.0623973727422
+	23	0.114942528736
+	24	0.108374384236
+	25	0.133004926108
+	26	0.139573070608
+	27	0.11658456486
+	28	0.0738916256158
+	29	0.0623973727422
+	30	0.0197044334975
+	31	0.0459770114943
+	32	0.0131362889984
+	33	0.0131362889984
+	34	0.00656814449918
+	35	0.00164203612479
+	36	0.00328407224959
+	37	0.00328407224959
+	38	0.00328407224959
+	39	0.00492610837438
+	40	0.00328407224959
+	42	0.00492610837438
+	45	0.00492610837438
+	48	0.00164203612479
+	51	0.00164203612479
+	55	0.00164203612479
+	Negative Values::
+	1	0.0261414714928
+	2	0.0274426307074
+	3	0.0256683226875
+	4	0.0260231842915
+	5	0.0223562810504
+	6	0.0235391530636
+	7	0.0257866098888
+	8	0.0244854506742
+	9	0.0264963330968
+	10	0.0249585994795
+	11	0.0230660042583
+	12	0.0275609179087
+	13	0.0275609179087
+	14	0.0241305890703
+	15	0.0250768866809
+	16	0.0228294298557
+	17	0.0254317482848
+	18	0.0255500354862
+	19	0.0256683226875
+	20	0.0250768866809
+	21	0.0244854506742
+	22	0.023302578661
+	23	0.0237757274663
+	24	0.0224745682517
+	25	0.0218831322451
+	26	0.0230660042583
+	27	0.0241305890703
+	28	0.023302578661
+	29	0.0248403122782
+	30	0.0228294298557
+	31	0.0240123018689
+	32	0.0223562810504
+	33	0.0216465578424
+	34	0.018216229004
+	35	0.0188076650106
+	36	0.0191625266146
+	37	0.0177430801987
+	38	0.0126567305418
+	39	0.014549325763
+	40	0.0139578897563
+	41	0.0104092737166
+	42	0.0108824225219
+	43	0.00839839129406
+	44	0.00804352969009
+	45	0.00638750887154
+	46	0.00567778566359
+	47	0.00544121126094
+	48	0.00366690324107
+	49	0.00437662644902
+	50	0.00295718003312
+	51	0.00354861603974
+	52	0.00165602081855
+	53	0.00106458481192
+	54	0.00130115921457
+	55	0.000946297610599
+	56	0.00118287201325
+	57	0.000473148805299
+	58	0.000354861603974
+	59	0.000473148805299
+	61	0.00023657440265
+	64	0.000354861603974
+	66	0.000118287201325
+Relative Distances 3 stem::
+Hairpin_Start
+	Positive Values::
+	0	0.00615384615385
+	1	0.00615384615385
+	2	0.0107692307692
+	3	0.133846153846
+	4	0.101538461538
+	5	0.116923076923
+	6	0.14
+	7	0.153846153846
+	8	0.0830769230769
+	9	0.0676923076923
+	10	0.0384615384615
+	11	0.04
+	12	0.0138461538462
+	13	0.00769230769231
+	14	0.00615384615385
+	15	0.00769230769231
+	16	0.00923076923077
+	17	0.00153846153846
+	18	0.0107692307692
+	19	0.00615384615385
+	20	0.00307692307692
+	21	0.00615384615385
+	24	0.00307692307692
+	25	0.00307692307692
+	26	0.00153846153846
+	27	0.00153846153846
+	28	0.00307692307692
+	29	0.00153846153846
+	30	0.00153846153846
+	36	0.00153846153846
+	37	0.00153846153846
+	48	0.00153846153846
+	56	0.00153846153846
+	61	0.00153846153846
+	64	0.00153846153846
+	65	0.00153846153846
+	-1	0.00307692307692
+	Negative Values::
+	0	0.0536750483559
+	1	0.0488394584139
+	2	0.053916827853
+	3	0.0512572533849
+	4	0.0452127659574
+	5	0.0498065764023
+	6	0.0498065764023
+	7	0.0411025145068
+	8	0.0423114119923
+	9	0.0493230174081
+	10	0.0461798839458
+	11	0.0411025145068
+	12	0.0425531914894
+	13	0.0411025145068
+	14	0.0389264990329
+	15	0.0311895551257
+	16	0.0326402321083
+	17	0.0239361702128
+	18	0.0261121856867
+	19	0.0232108317215
+	20	0.0224854932302
+	21	0.0200676982592
+	22	0.0186170212766
+	23	0.0130560928433
+	24	0.0128143133462
+	25	0.0101547388781
+	26	0.00967117988395
+	27	0.00822050290135
+	28	0.00797872340426
+	29	0.00725338491296
+	30	0.00386847195358
+	31	0.00435203094778
+	32	0.00241779497099
+	33	0.00217601547389
+	34	0.00120889748549
+	35	0.00169245647969
+	36	0.00265957446809
+	37	0.00265957446809
+	38	0.00145067698259
+	39	0.000967117988395
+	40	0.000967117988395
+	41	0.000967117988395
+	42	0.000483558994197
+	43	0.000725338491296
+	44	0.00120889748549
+	46	0.000967117988395
+	48	0.000241779497099
+	49	0.000241779497099
+	50	0.000241779497099
+	51	0.000483558994197
+	52	0.000241779497099
+	53	0.000241779497099
+	54	0.000725338491296
+	55	0.000241779497099
+	56	0.000241779497099
+	57	0.000241779497099
+	58	0.000241779497099
+	59	0.000241779497099
+	60	0.000241779497099
+	61	0.000241779497099
+	62	0.000241779497099
+	64	0.000241779497099
+	65	0.000483558994197
+	67	0.000241779497099
+	68	0.000241779497099
+	69	0.000483558994197
+	70	0.000483558994197
+	73	0.000483558994197
+	74	0.000241779497099
+	75	0.000241779497099
+	76	0.000241779497099
+	77	0.000241779497099
+	79	0.000241779497099
+	81	0.000483558994197
+Features::
+Position_8_b_seq_str
+Position_9_b_seq_str
+Position_7_b_seq_str
+Position_7_a_seq_str
+Position_16_m_seq_str
+Position_8_a_seq_str
+Position_0_m_seq_str
+Position_7_m_seq_str
+Position_9_a_seq_str
+Position_6_a_seq_str
+Position_15_m_seq_str
+Position_13_m_seq_str
+Position_17_m_seq_str
+Position_3_m_seq_str
+Position_6_b_seq_str
+Position_18_m_seq_str
+Position_6_m_seq_str
+Position_5_a_seq_str
+Position_12_m_seq_str
+Position_14_m_seq_str
+Position_4_m_seq_str
+Position_3_b_seq_str
+Position_5_m_seq_str
+Position_4_b_seq_str
+Position_2_m_seq_str
+Position_11_m_seq_str
+Position_8_m_seq_str
+Position_20_m_seq_str
+Position_4_a_seq_str
+Position_1_m_seq_str
+Position_5_b_seq_str
+Position_1_b_seq_str
+Position_1_a_seq_str
+Position_2_b_seq_str
+Position_9_m_seq_str
+Position_2_a_seq_str
+Position_21_m_seq_str
+Probabilities::
+Position_8_b_seq_str:A_match 
+	Pos	0.0619539316918
+	Neg	0.121683876092
+Position_8_b_seq_str:A_mismatch 
+	Pos	0.123113582208
+	Neg	0.0801429706116
+Position_8_b_seq_str:C_mismatch 
+	Pos	0.116759332804
+	Neg	0.0602859412232
+Position_8_b_seq_str:C_match 
+	Pos	0.108816521048
+	Neg	0.131294678316
+Position_8_b_seq_str:G_match 
+	Pos	0.106433677522
+	Neg	0.182684670373
+Position_8_b_seq_str:G_mismatch 
+	Pos	0.0730738681493
+	Neg	0.0530579825258
+Position_8_b_seq_str:U_match 
+	Pos	0.100079428118
+	Neg	0.159491660048
+Position_8_b_seq_str:U_mismatch 
+	Pos	0.200158856235
+	Neg	0.0782366957903
+Position_8_b_seq_str:noValue_noValue 
+	Pos	0.109610802224
+	Neg	0.13312152502
+Position_9_b_seq_str:A_match 
+	Pos	0.0619539316918
+	Neg	0.120413026211
+Position_9_b_seq_str:A_mismatch 
+	Pos	0.138204924543
+	Neg	0.0783161239079
+Position_9_b_seq_str:C_mismatch 
+	Pos	0.105639396346
+	Neg	0.056235107228
+Position_9_b_seq_str:C_match 
+	Pos	0.0857823669579
+	Neg	0.132247815727
+Position_9_b_seq_str:G_match 
+	Pos	0.14058776807
+	Neg	0.176886417792
+Position_9_b_seq_str:G_mismatch 
+	Pos	0.0818109610802
+	Neg	0.0557585385226
+Position_9_b_seq_str:U_match 
+	Pos	0.0802223987292
+	Neg	0.149960285941
+Position_9_b_seq_str:U_mismatch 
+	Pos	0.185861795075
+	Neg	0.0804606830818
+Position_9_b_seq_str:noValue_noValue 
+	Pos	0.119936457506
+	Neg	0.149722001589
+Position_7_b_seq_str:A_match 
+	Pos	0.0627482128674
+	Neg	0.127561556791
+Position_7_b_seq_str:A_mismatch 
+	Pos	0.165210484512
+	Neg	0.0767275615568
+Position_7_b_seq_str:C_mismatch 
+	Pos	0.0746624305004
+	Neg	0.0606036536934
+Position_7_b_seq_str:C_match 
+	Pos	0.125496425735
+	Neg	0.134392374901
+Position_7_b_seq_str:G_match 
+	Pos	0.106433677522
+	Neg	0.185623510723
+Position_7_b_seq_str:G_mismatch 
+	Pos	0.0976965845909
+	Neg	0.0547259729944
+Position_7_b_seq_str:U_match 
+	Pos	0.125496425735
+	Neg	0.162748212867
+Position_7_b_seq_str:U_mismatch 
+	Pos	0.146942017474
+	Neg	0.0812549642573
+Position_7_b_seq_str:noValue_noValue 
+	Pos	0.0953137410643
+	Neg	0.116362192216
+Position_7_a_seq_str:A_match 
+	Pos	0.0579825258141
+	Neg	0.134074662431
+Position_7_a_seq_str:A_mismatch 
+	Pos	0.135822081017
+	Neg	0.0868149324861
+Position_7_a_seq_str:C_mismatch 
+	Pos	0.0976965845909
+	Neg	0.0614773629865
+Position_7_a_seq_str:C_match 
+	Pos	0.100873709293
+	Neg	0.146862589357
+Position_7_a_seq_str:G_match 
+	Pos	0.115965051628
+	Neg	0.173232724384
+Position_7_a_seq_str:G_mismatch 
+	Pos	0.0857823669579
+	Neg	0.0541699761716
+Position_7_a_seq_str:U_match 
+	Pos	0.11914217633
+	Neg	0.161715647339
+Position_7_a_seq_str:U_mismatch 
+	Pos	0.173153296267
+	Neg	0.083637807784
+Position_7_a_seq_str:noValue_noValue 
+	Pos	0.113582208102
+	Neg	0.0980142970612
+Position_16_m_seq_str:A_match 
+	Pos	0.166004765687
+	Neg	0.147498014297
+Position_16_m_seq_str:A_mismatch 
+	Pos	0.0254169976172
+	Neg	0.088085782367
+Position_16_m_seq_str:C_mismatch 
+	Pos	0.0341540905481
+	Neg	0.0625099285147
+Position_16_m_seq_str:C_match 
+	Pos	0.231135822081
+	Neg	0.15941223193
+Position_16_m_seq_str:G_match 
+	Pos	0.218427323272
+	Neg	0.207069102462
+Position_16_m_seq_str:G_mismatch 
+	Pos	0.032565528197
+	Neg	0.0560762509929
+Position_16_m_seq_str:U_match 
+	Pos	0.262112787927
+	Neg	0.187132644956
+Position_16_m_seq_str:U_mismatch 
+	Pos	0.0301826846704
+	Neg	0.0912629070691
+Position_16_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.000953137410643
+Position_8_a_seq_str:A_match 
+	Pos	0.0897537728356
+	Neg	0.126052422558
+Position_8_a_seq_str:A_mismatch 
+	Pos	0.135027799841
+	Neg	0.0894360603654
+Position_8_a_seq_str:C_mismatch 
+	Pos	0.0921366163622
+	Neg	0.0609213661636
+Position_8_a_seq_str:C_match 
+	Pos	0.0849880857824
+	Neg	0.144638602065
+Position_8_a_seq_str:G_match 
+	Pos	0.13343923749
+	Neg	0.165289912629
+Position_8_a_seq_str:G_mismatch 
+	Pos	0.0778395552025
+	Neg	0.0521842732327
+Position_8_a_seq_str:U_match 
+	Pos	0.0849880857824
+	Neg	0.164495631454
+Position_8_a_seq_str:U_mismatch 
+	Pos	0.17791898332
+	Neg	0.0826052422558
+Position_8_a_seq_str:noValue_noValue 
+	Pos	0.123907863384
+	Neg	0.114376489277
+Position_0_m_seq_str:A_match 
+	Pos	0.210484511517
+	Neg	0.162509928515
+Position_0_m_seq_str:A_mismatch 
+	Pos	0.0786338363781
+	Neg	0.0648927720413
+Position_0_m_seq_str:C_mismatch 
+	Pos	0.0516282764098
+	Neg	0.0517077045274
+Position_0_m_seq_str:C_match 
+	Pos	0.149324861001
+	Neg	0.170929308975
+Position_0_m_seq_str:G_match 
+	Pos	0.08895949166
+	Neg	0.2298649722
+Position_0_m_seq_str:G_mismatch 
+	Pos	0.0293884034948
+	Neg	0.0486894360604
+Position_0_m_seq_str:U_match 
+	Pos	0.268467037331
+	Neg	0.206274821287
+Position_0_m_seq_str:U_mismatch 
+	Pos	0.123113582208
+	Neg	0.065131056394
+Position_0_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_7_m_seq_str:A_match 
+	Pos	0.188244638602
+	Neg	0.151469420175
+Position_7_m_seq_str:A_mismatch 
+	Pos	0.0389197776013
+	Neg	0.0778395552025
+Position_7_m_seq_str:C_mismatch 
+	Pos	0.0246227164416
+	Neg	0.0584590945195
+Position_7_m_seq_str:C_match 
+	Pos	0.23669579031
+	Neg	0.162907069102
+Position_7_m_seq_str:G_match 
+	Pos	0.220015885624
+	Neg	0.21525019857
+Position_7_m_seq_str:G_mismatch 
+	Pos	0.011914217633
+	Neg	0.0515488482923
+Position_7_m_seq_str:U_match 
+	Pos	0.241461477363
+	Neg	0.197220015886
+Position_7_m_seq_str:U_mismatch 
+	Pos	0.0381254964257
+	Neg	0.0853057982526
+Position_7_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_9_a_seq_str:A_match 
+	Pos	0.077045274027
+	Neg	0.12239872915
+Position_9_a_seq_str:A_mismatch 
+	Pos	0.137410643368
+	Neg	0.0872120730739
+Position_9_a_seq_str:C_mismatch 
+	Pos	0.0905480540111
+	Neg	0.0563939634631
+Position_9_a_seq_str:C_match 
+	Pos	0.100079428118
+	Neg	0.142970611597
+Position_9_a_seq_str:G_match 
+	Pos	0.130262112788
+	Neg	0.167752184273
+Position_9_a_seq_str:G_mismatch 
+	Pos	0.0937251787133
+	Neg	0.0552819698173
+Position_9_a_seq_str:U_match 
+	Pos	0.0865766481334
+	Neg	0.157267672756
+Position_9_a_seq_str:U_mismatch 
+	Pos	0.14773629865
+	Neg	0.0806195393169
+Position_9_a_seq_str:noValue_noValue 
+	Pos	0.136616362192
+	Neg	0.130103256553
+Position_6_a_seq_str:A_match 
+	Pos	0.0627482128674
+	Neg	0.131135822081
+Position_6_a_seq_str:A_mismatch 
+	Pos	0.130262112788
+	Neg	0.0919777601271
+Position_6_a_seq_str:C_mismatch 
+	Pos	0.0818109610802
+	Neg	0.0613979348689
+Position_6_a_seq_str:C_match 
+	Pos	0.0881652104845
+	Neg	0.14868943606
+Position_6_a_seq_str:G_match 
+	Pos	0.182684670373
+	Neg	0.172994440032
+Position_6_a_seq_str:G_mismatch 
+	Pos	0.0659253375695
+	Neg	0.0549642573471
+Position_6_a_seq_str:U_match 
+	Pos	0.119936457506
+	Neg	0.169658459095
+Position_6_a_seq_str:U_mismatch 
+	Pos	0.173153296267
+	Neg	0.0872120730739
+Position_6_a_seq_str:noValue_noValue 
+	Pos	0.0953137410643
+	Neg	0.0819698173153
+Position_15_m_seq_str:A_match 
+	Pos	0.191421763304
+	Neg	0.147974583002
+Position_15_m_seq_str:A_mismatch 
+	Pos	0.042891183479
+	Neg	0.0871326449563
+Position_15_m_seq_str:C_mismatch 
+	Pos	0.0301826846704
+	Neg	0.0602859412232
+Position_15_m_seq_str:C_match 
+	Pos	0.232724384432
+	Neg	0.156076250993
+Position_15_m_seq_str:G_match 
+	Pos	0.186656076251
+	Neg	0.207545671168
+Position_15_m_seq_str:G_mismatch 
+	Pos	0.0238284352661
+	Neg	0.057823669579
+Position_15_m_seq_str:U_match 
+	Pos	0.246227164416
+	Neg	0.192772041303
+Position_15_m_seq_str:U_mismatch 
+	Pos	0.0460683081811
+	Neg	0.0894360603654
+Position_15_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.000953137410643
+Position_13_m_seq_str:A_match 
+	Pos	0.210484511517
+	Neg	0.143129467832
+Position_13_m_seq_str:A_mismatch 
+	Pos	0.0405083399523
+	Neg	0.0883240667196
+Position_13_m_seq_str:C_mismatch 
+	Pos	0.0285941223193
+	Neg	0.0610007942812
+Position_13_m_seq_str:C_match 
+	Pos	0.172359015091
+	Neg	0.159571088165
+Position_13_m_seq_str:G_match 
+	Pos	0.228752978554
+	Neg	0.202462271644
+Position_13_m_seq_str:G_mismatch 
+	Pos	0.0373312152502
+	Neg	0.0559968228753
+Position_13_m_seq_str:U_match 
+	Pos	0.244638602065
+	Neg	0.194201747419
+Position_13_m_seq_str:U_mismatch 
+	Pos	0.0373312152502
+	Neg	0.0945988880064
+Position_13_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.000714853057983
+Position_17_m_seq_str:A_match 
+	Pos	0.193804606831
+	Neg	0.151231135822
+Position_17_m_seq_str:A_mismatch 
+	Pos	0.0349483717236
+	Neg	0.0861000794281
+Position_17_m_seq_str:C_mismatch 
+	Pos	0.0309769658459
+	Neg	0.0605242255759
+Position_17_m_seq_str:C_match 
+	Pos	0.186656076251
+	Neg	0.166799046863
+Position_17_m_seq_str:G_match 
+	Pos	0.19936457506
+	Neg	0.202382843527
+Position_17_m_seq_str:G_mismatch 
+	Pos	0.0309769658459
+	Neg	0.0536934074662
+Position_17_m_seq_str:U_match 
+	Pos	0.279586973789
+	Neg	0.190309769658
+Position_17_m_seq_str:U_mismatch 
+	Pos	0.0436854646545
+	Neg	0.0879269261319
+Position_17_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.0010325655282
+Position_3_m_seq_str:A_match 
+	Pos	0.197776012708
+	Neg	0.151469420175
+Position_3_m_seq_str:A_mismatch 
+	Pos	0.042891183479
+	Neg	0.0730738681493
+Position_3_m_seq_str:C_mismatch 
+	Pos	0.0254169976172
+	Neg	0.0569499602859
+Position_3_m_seq_str:C_match 
+	Pos	0.201747418586
+	Neg	0.16656076251
+Position_3_m_seq_str:G_match 
+	Pos	0.28117553614
+	Neg	0.217712470214
+Position_3_m_seq_str:G_mismatch 
+	Pos	0.0174741858618
+	Neg	0.050357426529
+Position_3_m_seq_str:U_match 
+	Pos	0.204130262113
+	Neg	0.205162827641
+Position_3_m_seq_str:U_mismatch 
+	Pos	0.0293884034948
+	Neg	0.0787132644956
+Position_3_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_6_b_seq_str:A_match 
+	Pos	0.107227958697
+	Neg	0.130500397141
+Position_6_b_seq_str:A_mismatch 
+	Pos	0.149324861001
+	Neg	0.0826846703733
+Position_6_b_seq_str:C_mismatch 
+	Pos	0.0810166799047
+	Neg	0.0621922160445
+Position_6_b_seq_str:C_match 
+	Pos	0.0833995234313
+	Neg	0.137887212073
+Position_6_b_seq_str:G_match 
+	Pos	0.175536139793
+	Neg	0.189038919778
+Position_6_b_seq_str:G_mismatch 
+	Pos	0.102462271644
+	Neg	0.0492454328832
+Position_6_b_seq_str:U_match 
+	Pos	0.117553613979
+	Neg	0.166957903098
+Position_6_b_seq_str:U_mismatch 
+	Pos	0.114376489277
+	Neg	0.0812549642573
+Position_6_b_seq_str:noValue_noValue 
+	Pos	0.0691024622716
+	Neg	0.100238284353
+Position_18_m_seq_str:A_match 
+	Pos	0.151707704527
+	Neg	0.150119142176
+Position_18_m_seq_str:A_mismatch 
+	Pos	0.0460683081811
+	Neg	0.0891977760127
+Position_18_m_seq_str:C_mismatch 
+	Pos	0.04447974583
+	Neg	0.059253375695
+Position_18_m_seq_str:C_match 
+	Pos	0.165210484512
+	Neg	0.1597299444
+Position_18_m_seq_str:G_match 
+	Pos	0.231135822081
+	Neg	0.198014297061
+Position_18_m_seq_str:G_mismatch 
+	Pos	0.0246227164416
+	Neg	0.0586973788721
+Position_18_m_seq_str:U_match 
+	Pos	0.293884034948
+	Neg	0.191580619539
+Position_18_m_seq_str:U_mismatch 
+	Pos	0.042891183479
+	Neg	0.0923749007149
+Position_18_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.0010325655282
+Position_6_m_seq_str:A_match 
+	Pos	0.242255758539
+	Neg	0.153057982526
+Position_6_m_seq_str:A_mismatch 
+	Pos	0.0373312152502
+	Neg	0.0736298649722
+Position_6_m_seq_str:C_mismatch 
+	Pos	0.0381254964257
+	Neg	0.0612390786338
+Position_6_m_seq_str:C_match 
+	Pos	0.201747418586
+	Neg	0.167752184273
+Position_6_m_seq_str:G_match 
+	Pos	0.223987291501
+	Neg	0.215567911041
+Position_6_m_seq_str:G_mismatch 
+	Pos	0.0254169976172
+	Neg	0.0525019857029
+Position_6_m_seq_str:U_match 
+	Pos	0.19936457506
+	Neg	0.195949166005
+Position_6_m_seq_str:U_mismatch 
+	Pos	0.0317712470214
+	Neg	0.0803018268467
+Position_6_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_5_a_seq_str:A_match 
+	Pos	0.0937251787133
+	Neg	0.128435266084
+Position_5_a_seq_str:A_mismatch 
+	Pos	0.144559173948
+	Neg	0.0877680698967
+Position_5_a_seq_str:C_mismatch 
+	Pos	0.0786338363781
+	Neg	0.06298649722
+Position_5_a_seq_str:C_match 
+	Pos	0.108816521048
+	Neg	0.154328832407
+Position_5_a_seq_str:G_match 
+	Pos	0.206513105639
+	Neg	0.182049245433
+Position_5_a_seq_str:G_mismatch 
+	Pos	0.0778395552025
+	Neg	0.0559173947577
+Position_5_a_seq_str:U_match 
+	Pos	0.08895949166
+	Neg	0.174821286736
+Position_5_a_seq_str:U_mismatch 
+	Pos	0.112787926926
+	Neg	0.0881652104845
+Position_5_a_seq_str:noValue_noValue 
+	Pos	0.0881652104845
+	Neg	0.0655281969817
+Position_12_m_seq_str:A_match 
+	Pos	0.189038919778
+	Neg	0.144320889595
+Position_12_m_seq_str:A_mismatch 
+	Pos	0.0405083399523
+	Neg	0.0868149324861
+Position_12_m_seq_str:C_mismatch 
+	Pos	0.0492454328832
+	Neg	0.0590150913423
+Position_12_m_seq_str:C_match 
+	Pos	0.162827640985
+	Neg	0.161000794281
+Position_12_m_seq_str:G_match 
+	Pos	0.216838760921
+	Neg	0.205718824464
+Position_12_m_seq_str:G_mismatch 
+	Pos	0.0142970611597
+	Neg	0.0551231135822
+Position_12_m_seq_str:U_match 
+	Pos	0.266084193805
+	Neg	0.198014297061
+Position_12_m_seq_str:U_mismatch 
+	Pos	0.0611596505163
+	Neg	0.0894360603654
+Position_12_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.000555996822875
+Position_14_m_seq_str:A_match 
+	Pos	0.174741858618
+	Neg	0.149166004766
+Position_14_m_seq_str:A_mismatch 
+	Pos	0.0492454328832
+	Neg	0.0844320889595
+Position_14_m_seq_str:C_mismatch 
+	Pos	0.0309769658459
+	Neg	0.060683081811
+Position_14_m_seq_str:C_match 
+	Pos	0.195393169182
+	Neg	0.160285941223
+Position_14_m_seq_str:G_match 
+	Pos	0.267672756156
+	Neg	0.20389197776
+Position_14_m_seq_str:G_mismatch 
+	Pos	0.0254169976172
+	Neg	0.0568705321684
+Position_14_m_seq_str:U_match 
+	Pos	0.20810166799
+	Neg	0.190389197776
+Position_14_m_seq_str:U_mismatch 
+	Pos	0.0484511517077
+	Neg	0.0934868943606
+Position_14_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.000794281175536
+Position_4_m_seq_str:A_match 
+	Pos	0.218427323272
+	Neg	0.153216838761
+Position_4_m_seq_str:A_mismatch 
+	Pos	0.0373312152502
+	Neg	0.0734710087371
+Position_4_m_seq_str:C_mismatch 
+	Pos	0.0238284352661
+	Neg	0.0579825258141
+Position_4_m_seq_str:C_match 
+	Pos	0.17791898332
+	Neg	0.167037331215
+Position_4_m_seq_str:G_match 
+	Pos	0.25258141382
+	Neg	0.21461477363
+Position_4_m_seq_str:G_mismatch 
+	Pos	0.0309769658459
+	Neg	0.053375694996
+Position_4_m_seq_str:U_match 
+	Pos	0.216838760921
+	Neg	0.198649722002
+Position_4_m_seq_str:U_mismatch 
+	Pos	0.0420969023034
+	Neg	0.0816521048451
+Position_4_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_3_b_seq_str:A_match 
+	Pos	0.165210484512
+	Neg	0.146306592534
+Position_3_b_seq_str:A_mismatch 
+	Pos	0.111199364575
+	Neg	0.0746624305004
+Position_3_b_seq_str:C_mismatch 
+	Pos	0.0698967434472
+	Neg	0.0580619539317
+Position_3_b_seq_str:C_match 
+	Pos	0.139793486894
+	Neg	0.155758538523
+Position_3_b_seq_str:G_match 
+	Pos	0.169181890389
+	Neg	0.205559968229
+Position_3_b_seq_str:G_mismatch 
+	Pos	0.0627482128674
+	Neg	0.0521842732327
+Position_3_b_seq_str:U_match 
+	Pos	0.169976171565
+	Neg	0.183796664019
+Position_3_b_seq_str:U_mismatch 
+	Pos	0.10325655282
+	Neg	0.0729944400318
+Position_3_b_seq_str:noValue_noValue 
+	Pos	0.0087370929309
+	Neg	0.0506751389992
+Position_5_m_seq_str:A_match 
+	Pos	0.17791898332
+	Neg	0.150039714059
+Position_5_m_seq_str:A_mismatch 
+	Pos	0.0365369340747
+	Neg	0.0772835583797
+Position_5_m_seq_str:C_mismatch 
+	Pos	0.0270055599682
+	Neg	0.0579030976966
+Position_5_m_seq_str:C_match 
+	Pos	0.227164416203
+	Neg	0.165131056394
+Position_5_m_seq_str:G_match 
+	Pos	0.22239872915
+	Neg	0.213899920572
+Position_5_m_seq_str:G_mismatch 
+	Pos	0.0293884034948
+	Neg	0.0506751389992
+Position_5_m_seq_str:U_match 
+	Pos	0.227958697379
+	Neg	0.199444003177
+Position_5_m_seq_str:U_mismatch 
+	Pos	0.0516282764098
+	Neg	0.0856235107228
+Position_5_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_4_b_seq_str:A_match 
+	Pos	0.138999205719
+	Neg	0.137807783956
+Position_4_b_seq_str:A_mismatch 
+	Pos	0.118347895155
+	Neg	0.0745035742653
+Position_4_b_seq_str:C_mismatch 
+	Pos	0.0571882446386
+	Neg	0.0603653693407
+Position_4_b_seq_str:C_match 
+	Pos	0.136616362192
+	Neg	0.146227164416
+Position_4_b_seq_str:G_match 
+	Pos	0.240667196187
+	Neg	0.202541699762
+Position_4_b_seq_str:G_mismatch 
+	Pos	0.0754567116759
+	Neg	0.0524225575854
+Position_4_b_seq_str:U_match 
+	Pos	0.131056393963
+	Neg	0.178951548848
+Position_4_b_seq_str:U_mismatch 
+	Pos	0.0826052422558
+	Neg	0.0808578236696
+Position_4_b_seq_str:noValue_noValue 
+	Pos	0.0190627482129
+	Neg	0.0663224781573
+Position_2_m_seq_str:A_match 
+	Pos	0.234312946783
+	Neg	0.152025416998
+Position_2_m_seq_str:A_mismatch 
+	Pos	0.0452740270056
+	Neg	0.0662430500397
+Position_2_m_seq_str:C_mismatch 
+	Pos	0.0246227164416
+	Neg	0.0537728355838
+Position_2_m_seq_str:C_match 
+	Pos	0.189833200953
+	Neg	0.167593328038
+Position_2_m_seq_str:G_match 
+	Pos	0.220015885624
+	Neg	0.229785544083
+Position_2_m_seq_str:G_mismatch 
+	Pos	0.0214455917395
+	Neg	0.0474185861795
+Position_2_m_seq_str:U_match 
+	Pos	0.221604447975
+	Neg	0.213026211279
+Position_2_m_seq_str:U_mismatch 
+	Pos	0.042891183479
+	Neg	0.0701350277998
+Position_2_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_11_m_seq_str:A_match 
+	Pos	0.187450357427
+	Neg	0.147339158062
+Position_11_m_seq_str:A_mismatch 
+	Pos	0.0555996822875
+	Neg	0.0811755361398
+Position_11_m_seq_str:C_mismatch 
+	Pos	0.0754567116759
+	Neg	0.0594122319301
+Position_11_m_seq_str:C_match 
+	Pos	0.149324861001
+	Neg	0.16362192216
+Position_11_m_seq_str:G_match 
+	Pos	0.261318506751
+	Neg	0.20683081811
+Position_11_m_seq_str:G_mismatch 
+	Pos	0.0135027799841
+	Neg	0.054805401112
+Position_11_m_seq_str:U_match 
+	Pos	0.187450357427
+	Neg	0.20063542494
+Position_11_m_seq_str:U_mismatch 
+	Pos	0.0698967434472
+	Neg	0.0857823669579
+Position_11_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	0.000397140587768
+Position_8_m_seq_str:A_match 
+	Pos	0.181096108022
+	Neg	0.151866560763
+Position_8_m_seq_str:A_mismatch 
+	Pos	0.0405083399523
+	Neg	0.0774424146148
+Position_8_m_seq_str:C_mismatch 
+	Pos	0.0349483717236
+	Neg	0.059253375695
+Position_8_m_seq_str:C_match 
+	Pos	0.181096108022
+	Neg	0.164495631454
+Position_8_m_seq_str:G_match 
+	Pos	0.19936457506
+	Neg	0.210325655282
+Position_8_m_seq_str:G_mismatch 
+	Pos	0.0214455917395
+	Neg	0.0534551231136
+Position_8_m_seq_str:U_match 
+	Pos	0.271644162033
+	Neg	0.19674344718
+Position_8_m_seq_str:U_mismatch 
+	Pos	0.0698967434472
+	Neg	0.0864177918983
+Position_8_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_20_m_seq_str:A_match 
+	Pos	0.127084988086
+	Neg	0.149404289118
+Position_20_m_seq_str:A_mismatch 
+	Pos	0.054805401112
+	Neg	0.089674344718
+Position_20_m_seq_str:C_mismatch 
+	Pos	0.0460683081811
+	Neg	0.0642573471009
+Position_20_m_seq_str:C_match 
+	Pos	0.160444797458
+	Neg	0.154011119936
+Position_20_m_seq_str:G_match 
+	Pos	0.243050039714
+	Neg	0.203812549643
+Position_20_m_seq_str:G_mismatch 
+	Pos	0.0373312152502
+	Neg	0.0572676727562
+Position_20_m_seq_str:U_match 
+	Pos	0.277998411438
+	Neg	0.1895949166
+Position_20_m_seq_str:U_mismatch 
+	Pos	0.0500397140588
+	Neg	0.0902303415409
+Position_20_m_seq_str:noValue_noValue 
+	Pos	0.00317712470214
+	Neg	0.00174741858618
+Position_4_a_seq_str:A_match 
+	Pos	0.115965051628
+	Neg	0.138760921366
+Position_4_a_seq_str:A_mismatch 
+	Pos	0.141382049245
+	Neg	0.0928514694202
+Position_4_a_seq_str:C_mismatch 
+	Pos	0.0794281175536
+	Neg	0.0621922160445
+Position_4_a_seq_str:C_match 
+	Pos	0.119936457506
+	Neg	0.154169976172
+Position_4_a_seq_str:G_match 
+	Pos	0.123113582208
+	Neg	0.18570293884
+Position_4_a_seq_str:G_mismatch 
+	Pos	0.0826052422558
+	Neg	0.0565528196982
+Position_4_a_seq_str:U_match 
+	Pos	0.146942017474
+	Neg	0.173550436855
+Position_4_a_seq_str:U_mismatch 
+	Pos	0.122319301033
+	Neg	0.0861795075457
+Position_4_a_seq_str:noValue_noValue 
+	Pos	0.0683081810961
+	Neg	0.0500397140588
+Position_1_m_seq_str:A_match 
+	Pos	0.281969817315
+	Neg	0.163860206513
+Position_1_m_seq_str:A_mismatch 
+	Pos	0.0627482128674
+	Neg	0.0604447974583
+Position_1_m_seq_str:C_mismatch 
+	Pos	0.0381254964257
+	Neg	0.0509928514694
+Position_1_m_seq_str:C_match 
+	Pos	0.131850675139
+	Neg	0.17370929309
+Position_1_m_seq_str:G_match 
+	Pos	0.221604447975
+	Neg	0.227799841144
+Position_1_m_seq_str:G_mismatch 
+	Pos	0.032565528197
+	Neg	0.042176330421
+Position_1_m_seq_str:U_match 
+	Pos	0.1850675139
+	Neg	0.211755361398
+Position_1_m_seq_str:U_mismatch 
+	Pos	0.0460683081811
+	Neg	0.0692613185068
+Position_1_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	1e-06
+Position_5_b_seq_str:A_match 
+	Pos	0.125496425735
+	Neg	0.133598093725
+Position_5_b_seq_str:A_mismatch 
+	Pos	0.122319301033
+	Neg	0.0787132644956
+Position_5_b_seq_str:C_mismatch 
+	Pos	0.0563939634631
+	Neg	0.060683081811
+Position_5_b_seq_str:C_match 
+	Pos	0.137410643368
+	Neg	0.142096902303
+Position_5_b_seq_str:G_match 
+	Pos	0.19936457506
+	Neg	0.196346306593
+Position_5_b_seq_str:G_mismatch 
+	Pos	0.0762509928515
+	Neg	0.0517077045274
+Position_5_b_seq_str:U_match 
+	Pos	0.164416203336
+	Neg	0.1701350278
+Position_5_b_seq_str:U_mismatch 
+	Pos	0.0881652104845
+	Neg	0.082922954726
+Position_5_b_seq_str:noValue_noValue 
+	Pos	0.0301826846704
+	Neg	0.0837966640191
+Position_1_b_seq_str:A_match 
+	Pos	0.173153296267
+	Neg	0.157585385226
+Position_1_b_seq_str:A_mismatch 
+	Pos	0.0413026211279
+	Neg	0.0714058776807
+Position_1_b_seq_str:C_mismatch 
+	Pos	0.0730738681493
+	Neg	0.0559173947577
+Position_1_b_seq_str:C_match 
+	Pos	0.204130262113
+	Neg	0.166004765687
+Position_1_b_seq_str:G_match 
+	Pos	0.265289912629
+	Neg	0.213899920572
+Position_1_b_seq_str:G_mismatch 
+	Pos	0.032565528197
+	Neg	0.0478951548848
+Position_1_b_seq_str:U_match 
+	Pos	0.153296266878
+	Neg	0.197617156473
+Position_1_b_seq_str:U_mismatch 
+	Pos	0.0508339952343
+	Neg	0.0727561556791
+Position_1_b_seq_str:noValue_noValue 
+	Pos	0.00635424940429
+	Neg	0.0169181890389
+Position_1_a_seq_str:A_match 
+	Pos	0.127084988086
+	Neg	0.143129467832
+Position_1_a_seq_str:A_mismatch 
+	Pos	0.0730738681493
+	Neg	0.0965051628276
+Position_1_a_seq_str:C_mismatch 
+	Pos	0.0476568705322
+	Neg	0.0664813343924
+Position_1_a_seq_str:C_match 
+	Pos	0.15488482923
+	Neg	0.161239078634
+Position_1_a_seq_str:G_match 
+	Pos	0.150119142176
+	Neg	0.19936457506
+Position_1_a_seq_str:G_mismatch 
+	Pos	0.0659253375695
+	Neg	0.0551231135822
+Position_1_a_seq_str:U_match 
+	Pos	0.26687847498
+	Neg	0.183876092137
+Position_1_a_seq_str:U_mismatch 
+	Pos	0.10325655282
+	Neg	0.0905480540111
+Position_1_a_seq_str:noValue_noValue 
+	Pos	0.0111199364575
+	Neg	0.00373312152502
+Position_2_b_seq_str:A_match 
+	Pos	0.173947577442
+	Neg	0.149086576648
+Position_2_b_seq_str:A_mismatch 
+	Pos	0.0524225575854
+	Neg	0.0692613185068
+Position_2_b_seq_str:C_mismatch 
+	Pos	0.0683081810961
+	Neg	0.0597299444003
+Position_2_b_seq_str:C_match 
+	Pos	0.173153296267
+	Neg	0.162907069102
+Position_2_b_seq_str:G_match 
+	Pos	0.230341540905
+	Neg	0.208578236696
+Position_2_b_seq_str:G_mismatch 
+	Pos	0.0389197776013
+	Neg	0.0508339952343
+Position_2_b_seq_str:U_match 
+	Pos	0.206513105639
+	Neg	0.191580619539
+Position_2_b_seq_str:U_mismatch 
+	Pos	0.0476568705322
+	Neg	0.0734710087371
+Position_2_b_seq_str:noValue_noValue 
+	Pos	0.0087370929309
+	Neg	0.0345512311358
+Position_9_m_seq_str:A_match 
+	Pos	0.158856235107
+	Neg	0.152343129468
+Position_9_m_seq_str:A_mismatch 
+	Pos	0.0571882446386
+	Neg	0.0796664019063
+Position_9_m_seq_str:C_mismatch 
+	Pos	0.0484511517077
+	Neg	0.0576648133439
+Position_9_m_seq_str:C_match 
+	Pos	0.233518665608
+	Neg	0.161000794281
+Position_9_m_seq_str:G_match 
+	Pos	0.223193010326
+	Neg	0.206671961875
+Position_9_m_seq_str:G_mismatch 
+	Pos	0.0309769658459
+	Neg	0.0555996822875
+Position_9_m_seq_str:U_match 
+	Pos	0.189038919778
+	Neg	0.202859412232
+Position_9_m_seq_str:U_mismatch 
+	Pos	0.0587768069897
+	Neg	0.0841143764893
+Position_9_m_seq_str:noValue_noValue 
+	Pos	1e-06
+	Neg	7.94281175536e-05
+Position_2_a_seq_str:A_match 
+	Pos	0.115965051628
+	Neg	0.142652899126
+Position_2_a_seq_str:A_mismatch 
+	Pos	0.0746624305004
+	Neg	0.0933280381255
+Position_2_a_seq_str:C_mismatch 
+	Pos	0.0436854646545
+	Neg	0.0658459094519
+Position_2_a_seq_str:C_match 
+	Pos	0.11914217633
+	Neg	0.15877680699
+Position_2_a_seq_str:G_match 
+	Pos	0.197776012708
+	Neg	0.193645750596
+Position_2_a_seq_str:G_mismatch 
+	Pos	0.0826052422558
+	Neg	0.0583796664019
+Position_2_a_seq_str:U_match 
+	Pos	0.22239872915
+	Neg	0.181890389198
+Position_2_a_seq_str:U_mismatch 
+	Pos	0.122319301033
+	Neg	0.087370929309
+Position_2_a_seq_str:noValue_noValue 
+	Pos	0.0214455917395
+	Neg	0.0181096108022
+Position_21_m_seq_str:A_match 
+	Pos	0.139793486894
+	Neg	0.149880857824
+Position_21_m_seq_str:A_mismatch 
+	Pos	0.0683081810961
+	Neg	0.09253375695
+Position_21_m_seq_str:C_mismatch 
+	Pos	0.0516282764098
+	Neg	0.0664813343924
+Position_21_m_seq_str:C_match 
+	Pos	0.15488482923
+	Neg	0.164336775218
+Position_21_m_seq_str:G_match 
+	Pos	0.231930103257
+	Neg	0.194837172359
+Position_21_m_seq_str:G_mismatch 
+	Pos	0.054805401112
+	Neg	0.0575853852264
+Position_21_m_seq_str:U_match 
+	Pos	0.242255758539
+	Neg	0.183637807784
+Position_21_m_seq_str:U_mismatch 
+	Pos	0.0508339952343
+	Neg	0.0875297855441
+Position_21_m_seq_str:noValue_noValue 
+	Pos	0.00555996822875
+	Neg	0.00317712470214
