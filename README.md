@@ -1,8 +1,8 @@
-#Welcome to miRPV Pipeline
+# Welcome to miRPV Pipeline
 
 miRPV is an Automated pipeline for miRNA identification and validation of microRNAs from the user input genome/gene sequence.
 
-#INTRODUCTION
+# INTRODUCTION
 
 ----------------------------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ The package can be downloaded from the miRPVs website:
 
 http://slsdb.manipal.edu/miRPV/
 
-#SYSTEM REQUIREMENT
+# SYSTEM REQUIREMENT
 
 ----------------------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ Linux Environment: Installation has been tested on Ubuntu 16.04+
 Software Dependencies Please note All the dependencies will be installed automatically by install.sh script. Root permission is required to install. If something goes wrong, please check the dependency and install it manually.
 
 
-#INSTALLATION
+# INSTALLATION
 
 ----------------------------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@ If you want to predict the target of mature miRNA, then download the reference s
 
 Once all the tools and dependence are install correctly, then Pipeline should be ready to use.
 
-#####Conda environment should be activated(Python=2.7) before using the pipeline######
+##### Conda environment should be activated(Python=2.7) before using the pipeline######
 
 **Just run from the miRPV folder:
 $bash miRPV.sh 
@@ -102,4 +102,4 @@ The new Directory is created Output directory in which five folders are created 
 
 If you need to know more, please contact on :
 http:// slsdb.manipal.edu
-
+mlsc@manipal.edu
