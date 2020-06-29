@@ -520,8 +520,8 @@ fi
 
 
 mkdir -p $PREFIX/Script
-#cd $PREFIX/miRPara6.3
-#cp miRPara.pl $PREFIC/Script
+cd $PREFIX//build/miRPara
+cp miRPara.pl $PREFIC/Script
 
 cd $PREFIX/
 #chmod ugo+x "$PREFIX/bin/"*
