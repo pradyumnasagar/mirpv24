@@ -2,7 +2,7 @@
 
 miRPV is an Automated pipeline for miRNA identification and validation of microRNAs from the user input genome/gene sequence.
 
-# INTRODUCTION
+## INTRODUCTION
 
 ----------------------------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ The package can be downloaded from the miRPVs website:
 
 http://slsdb.manipal.edu/miRPV/
 
-# SYSTEM REQUIREMENT
+## SYSTEM REQUIREMENT
 
 ----------------------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ Linux Environment: Installation has been tested on Ubuntu 16.04+
 Software Dependencies Please note All the dependencies will be installed automatically by install.sh script. Root permission is required to install. If something goes wrong, please check the dependency and install it manually.
 
 
-# INSTALLATION
+## INSTALLATION
 
 ----------------------------------------------------------------------------------------------
 
