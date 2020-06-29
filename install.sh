@@ -62,7 +62,7 @@ THREADS_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/threads-2
 THREADS_ARCHIVE=`basename "$THREADS_URL"`
 THREADS_BUILD_DIR=`basename "$THREADS_ARCHIVE" .tar.gz`
 
-HAIRPLENDEX_URL="https://sourceforge.net/projects/hairpin/files/HAirpindex.tar.xz"
+HAIRPLENDEX_URL="https://sourceforge.net/projects/hairpin/files/HAirpin.tar.xz/download"
 HAIRPLENDEX_ARCHIVE=`basename "$HAIRPLENDEX_URL"`
 HAIRPLENDEX_BUILD_DIR=`basename "$HAIRPLENDEX_ARCHIVE" .tar.xz`
 
@@ -201,6 +201,8 @@ sudo apt -y install make
 sudo apt -y install build-essential
 sudo apt-get -y install g++
 sudo apt-get -y install manpages-dev
+	
+
 
 if [ ! -e "$TOOLS/$MIRPARA_ARCHIVE" ] ; then 
 	echo -n "Downloading miRPra - "
@@ -269,7 +271,7 @@ fi
 
 if [ ! -e "$TOOLS/$HAIRPLENDEX_ARCHIVE" ] ; then
 	echo -n "Downloading Hairplendex - "
-	$WGET --directory-prefix="$TOOLS" -nc "$HAIRPLENDEX_URL"
+	$WGET --directory-prefix="$TOOLS" -c "$HAIRPLENDEX_URL" -O "$TOOLS"/HAirpindex.tar.xz
 fi
 
 
@@ -478,7 +480,7 @@ if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 	echo "running"
 	cd "$BUILD/unafold-3.8/scripts"
 	sudo cp -r UNAFold.pl /bin/
-	sudo cp UNAFold.pl "$PREFIX" /bin
+	sudo cp -r UNAFold.pl "$PREFIX" /bin
 	set +x
 fi
 
@@ -518,8 +520,8 @@ fi
 
 
 mkdir -p $PREFIX/Script
-cd $PREFIX/miRPara6.3
-cp miRPara.pl $PREFIC/Script
+#cd $PREFIX/miRPara6.3
+#cp miRPara.pl $PREFIC/Script
 
 cd $PREFIX/
 #chmod ugo+x "$PREFIX/bin/"*
@@ -538,4 +540,3 @@ duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
 echo "Pipelline Execution Time: $execution_time"
-
