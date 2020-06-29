@@ -62,6 +62,10 @@ THREADS_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/threads-2
 THREADS_ARCHIVE=`basename "$THREADS_URL"`
 THREADS_BUILD_DIR=`basename "$THREADS_ARCHIVE" .tar.gz`
 
+HAIRPLENDEX_URL="https://sourceforge.net/projects/hairpin/files/HAirpindex.tar.xz"
+HAIRPLENDEX_ARCHIVE=`basename "$HAIRPLENDEX_URL"`
+HAIRPLENDEX_BUILD_DIR=`basename "$HAIRPLENDEX_ARCHIVE" .tar.xz`
+
 # Exit Trapping
 
 completeCheck() { 
@@ -193,21 +197,7 @@ sudo apt-get install enscript
 sudo apt-get install dialog
 sudo apt-get install pv
 	
-chmod 755 *.sh
 
-cd $PREFIX/Software
-echo "================================================================================================================================================================================================="
-echo "1) Type ./Hairpindex_installer.install when the terminal goes to root directory wait till it loads" | lolcat
-echo "2) Just click NEXT option for path /usr/local/MATLAB/MATLAB_Runtime/v98" | lolcat
-echo "3) Write exit in the terminal" | lolcat
-echo "4) Click exit if it dosen't processd after installing" | lolcat
-echo "5) If it ask again for installation cancel the installation it will proccesed for next installation" | lolcat
-echo "=================================================================================================================================================================================================="
-tar -xf HAirpindex.tar.xz
-cd $PREFIX/Software/file/
-sudo su
-sudo ./Hairpindex_installer.install
-# Download Software
 
 if [ ! -e "$TOOLS/$MIRPARA_ARCHIVE" ] ; then 
 	echo -n "Downloading miRPra - "
@@ -274,8 +264,14 @@ if [ ! -e "$TOOLS/$GETOPT_LONG_ARCHIVE" ] ; then
 	$WGET --directory-prefix="$TOOLS" -nc "$GETOPT_LONG_URL"
 fi
 
+if [ ! -e "$TOOLS/$HAIRPLENDEX_ARCHIVE" ] ; then
+	echo -n "Downloading Hairplendex - "
+	$WGET --directory-prefix="$TOOLS" -nc "$HAIRPLENDEX_URL"
+fi
+
 
 # Unpack Archives
+
 
 if  [  ! -d "$BUILD/$GETOPT_LONG_BUILD_DIR" ] ; then
 	set -x
@@ -358,8 +354,38 @@ if [ ! -d "$BUILD/$UNAFOLD_BUILD_DIR" ] ; then
 fi
 
 
+# Making of Script Directory
+
+mkdir -p $PREFIX/Script
+cd $PREFIX/build/miRPara
+cp miRPara.pl $PREFIX/Script
+
+cd $PREFIX/build/triplet-svm-classifier060304
+cp 1_check_query_content.pl 2_get_stemloop.pl 2_get_stemloop.pl 2_get_stemloop.pl 3_step_triplet_coding_for_queries.pl 4_libsvm_format.pl triplet_svm_classifier.pl $PREFIX/Script
+
+cd $PREFIX/build/MatureBayesCode/src
+cp bayesianClassifier.txt matureBayes.py $PREFIX/Script
 
 #INSTALL SOFTWARE
+
+#Hairplendex
+
+echo "Installing Hairplendex"
+echo "================================================================================================================================================================================================="
+echo "1) Type ./Hairpindex_installer.install when the terminal goes to root directory wait till it loads" | lolcat
+echo "2) Just click NEXT option for path /usr/local/MATLAB/MATLAB_Runtime/v98" | lolcat
+echo "3) Write exit in the terminal" | lolcat
+echo "4) Click exit if it dosen't processd after installing" | lolcat
+echo "5) If it ask again for installation cancel the installation it will proccesed for next installation" | lolcat
+echo "=================================================================================================================================="
+
+
+cd $PREFIX/tools
+tar -xf HAirpindex.tar.xz
+mv file $PREFIX/build
+cd $PREFIX/build/file
+sudo su
+sudo ./Hairpindex_installer.install
 
 #Getopt
 echo "Installing Getopt"
@@ -454,8 +480,6 @@ if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 fi
 
 
-	
-
 #LIBSVM 
 
 if [ ! -e "BUILD/$LIBSVM_BUILD_DIR/makefile" ] ; then
@@ -490,7 +514,11 @@ if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
 fi
 
 
+mkdir -p $PREFIX/Script
+cd $PREFIX/miRPara6.3
+cp miRPara.pl $PREFIC/Script
 
+cd $PREFIX/
 #chmod ugo+x "$PREFIX/bin/"*
 
 

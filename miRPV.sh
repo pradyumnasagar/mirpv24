@@ -141,7 +141,7 @@ echo "	c)Converting real-miRNA output to HAIRPLENDEX input"  | tee -a $DIRECTORY
 	awk '{printf "%s%s",$0,(NR%3?FS:RS)}' A5.txt > Hairplendex.txt
 	#awk '$2 = toupper($2)' A6.txt > Hairplendex.txt
 	cp Hairplendex.txt  $DIRECTORY/Output/$text/hairplendex
-	mv Hairplendex.txt  $DIRECTORY/Software/file
+	mv Hairplendex.txt  $DIRECTORY/build/file
 	#rm -f A5.txt
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
@@ -160,7 +160,7 @@ echo "--------------------------------------------------------------------------
 echo `date`
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo "3) Feature Extraction of Pri-miRNAs" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
-	cd $DIRECTORY/Software/file
+	cd $DIRECTORY/build/file
 	 ./run_Fold_generator.sh /usr/local/MATLAB/MATLAB_Runtime/v98 Hairplendex
 	 ./run_Hairpindex_miRNA_analyzer.sh /usr/local/MATLAB/MATLAB_Runtime/v98 Hairplendex
 	rm -f Hairplendex.mat Hairplendex.txt
@@ -299,15 +299,5 @@ duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
 echo "Pipelline Execution Time: $execution_time"
-
-
-
-
-
-
-
-
-
-
 	
 
