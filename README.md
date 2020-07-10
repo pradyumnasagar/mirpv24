@@ -102,6 +102,6 @@ The new Directory is created Output directory in which five folders are created 
 
 ### If you need to know more, please contact on :
 
-http:// slsdb.manipal.edu
+http://slsdb.manipal.edu
 
 mlsc@manipal.edu
