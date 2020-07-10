@@ -76,13 +76,13 @@ MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab
 4) Target Predication of Mature miRNA (OPTIONAL):
 If you want to predict the target of mature miRNA, then download the reference sequence and keep ready in the Script folder in fasta format.
 
-#USAGE OF miRPV
+# USAGE OF miRPV
 
 Once all the tools and dependence are install correctly, then Pipeline should be ready to use.
 
 ##### Conda environment should be activated(Python=2.7) before using the pipeline######
 
-**Just run from the miRPV folder:
+** Just run from the miRPV folder:
 $bash miRPV.sh 
 	Enter the project name
 	
@@ -100,6 +100,8 @@ You will get to know when your sample run finishes when a train passes by that t
 
 The new Directory is created Output directory in which five folders are created with each tool output. The final result of miRPV can found in the miRPV_output folder where you can see pdf file.
 
-If you need to know more, please contact on :
+### If you need to know more, please contact on :
+
 http:// slsdb.manipal.edu
+
 mlsc@manipal.edu
