@@ -4,8 +4,7 @@
 # Following script is to run the miRPV pipeline
 #
 #
-# Author: Pradyumna Jayaram and Vinayak Rao
-# Date: (DD/MM/2020)
+# Author: Pradyumna Jayaram,  Vinayak Rao and Kapaettu Satyamoorthy
 #
 #
 # Parameteres :
@@ -23,7 +22,7 @@ start=$(date +%s.%N)
 usage(){
 cat << EOF
 usage: $0 
-	inpute the fasta file name:
+	Type the fasta file name:
 Required:
 	-i | --infile 	Input fasta file
 Options:
