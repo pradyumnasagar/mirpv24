@@ -203,13 +203,13 @@ sudo apt -y install build-essential
 sudo apt-get -y install g++
 sudo apt-get -y install manpages-dev
 
-dpkg -s python &> /dev/null
-if [ $? -eq 0 ]; then
-echo "Python is installed"
-else
-    sudo apt -y install python
-fi
-
+#dpkg -s python &> /dev/null
+#if [ $? -eq 0 ]; then
+#echo "Python is installed"
+#else
+ #   sudo apt -y install python
+#fi
+##caused error in ubuntu 20.04
 
 	
 
