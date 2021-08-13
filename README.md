@@ -80,15 +80,16 @@ If you want to predict the target of mature miRNA, then download the reference s
 
 Once all the tools and dependence are install correctly, then Pipeline should be ready to use.
 
-##### Conda environment should be activated(Python=2.7) before using the pipeline######
+#### Conda environment should be activated(Python=2.7) before using the pipeline ######
 
 ** Just run from the miRPV folder:
-$bash miRPV.sh 
-	Enter the project name
+
+$`bash miRPV.sh`
+	`Enter the project name`
 	
-	Inpute the file name (After entering project name it will ask for a fasta file name or the sample which you are going to use. Sample file should be present where the miRPV.sh script is there)
-	<Inpute the fasta file name> (Give the fasta file name)
-	Test.fa (Then press Enter)
+Provide the file name (After entering project name it will ask for a fasta file name or the sample which you are going to use. Sample file should be present where the miRPV.sh script is there)
+	`<Type the fasta file name>` (Give the fasta file name)
+	Eg. Test.fa (Then press Enter)
 
 This will analyze the sample with different tools; it will take time according to the sample size.
 
