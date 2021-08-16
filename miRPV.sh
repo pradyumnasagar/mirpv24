@@ -30,7 +30,7 @@ Options:
 	
 File 
 *.fasta, --Only fasta format sequences are allowed
-By Pradyumna Jayraman and Vinayak Rao Copyright (C) 2020
+#By Pradyumna Jayraman and Vinayak Rao Copyright (C) 2020
 Manipal Scchool of Life Science Manipal.MAHE, 576104, India
 Department of Cell and Molecular Biology, MSOLS, MAHE,
 Departement of Bioinformatics, MSOLS, MAHE.
@@ -221,7 +221,7 @@ echo "6) Converting miRPV Output Into final Report"
 	cat Pri.txt Real.txt Mat.txt Tar.txt > Sum.txt 
 	touch Intro.txt
 	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
-	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
+#	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
 	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
 	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
 	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
@@ -261,7 +261,7 @@ else
 	cat Pri.txt Real.txt Mat.txt > Sum.txt 
 	touch Intro.txt
 	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
-	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
+#	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
 	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
 	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
 	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
