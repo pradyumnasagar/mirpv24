@@ -44,36 +44,55 @@ $bash install.sh -p ~/Path/Were/miRPV Package/Present/
 This installation might take a few minutes and install all the dependency require to run the Pipeline. If there is some installation error, examine the output above to identify the cause. Or you can install this dependence separately.
 
 For Conda Users:
-conda install perl-cpan-shell
 
-Getopt::Long conda install perl-getopt-long
+`conda install perl-cpan-shell`
 
-threads conda install perl-threaded
+Getopt::Long 
 
-threads::shared conda install perl-mce-shared
+`conda install perl-getopt-long`
 
-CWD (CPAN) conda install perl-pathtools
+threads 
+`conda install perl-threaded`
+
+threads::shared 
+`conda install perl-mce-shared`
+
+CWD (CPAN) 
+`conda install perl-pathtools`
 
 or
 
+
 perl -MCPAN -e 'install CWD'
 
-File::chdir conda install perl-file-chdir
+File::chdir 
+`conda install perl-file-chdir`
 
 UNAFold
 
-gfortran conda install -c anaconda gfortran_linux-64
+gfortran 
 
-libsvm conda install libsvm
+`conda install -c anaconda gfortran_linux-64`
 
-ct2out gfortran ct2out.f -o ct2out or g77 -o ct2out ct2out.f
+libsvm 
 
-cp ct2out /bin/
+`conda install libsvm`
+
+ct2out 
+
+`gfortran ct2out.f -o ct2out` 
+or 
+`g77 -o ct2out ct2out.f`
+
+`cp ct2out /bin/`
 
 3) MATLAB COMPILER RUNTIME (MCR):
+ 
 MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab code. If it doesn't install via install.sh script install it separately from the Software directory.
 
+
 4) Target Predication of Mature miRNA (OPTIONAL):
+
 If you want to predict the target of mature miRNA, then download the reference sequence and keep ready in the Script folder in fasta format.
 
 # USAGE OF miRPV
@@ -85,6 +104,7 @@ Once all the tools and dependence are install correctly, then Pipeline should be
 ** Just run from the miRPV folder:
 
 $`bash miRPV.sh`
+
 	`Enter the project name`
 	
 Provide the file name (After entering project name it will ask for a fasta file name or the sample which you are going to use. Sample file should be present where the miRPV.sh script is there)
