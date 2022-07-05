@@ -1,23 +1,23 @@
-# miRPV: in silico miRNA Prediction and Validation Pipeline
+# miRPV: An automated pipeline for miRNA Prediction and Validation in silico
 
 miRPV is an Automated tool that allows users to predict and validate microRNA from genome/gene sequence.
  
 ## miRPV Features:
-predict novel pre-miRNA from any given sequence
-predict secondary structure stability
-Predict authentic pre-miRNA 
-predict novel mature miRNA
-Predict the novel miRNA target
+* predict novel pre-miRNA from any given sequence
+* predict secondary structure stability
+* Predict authentic pre-miRNA 
+* predict novel mature miRNA
+* Predict the novel miRNA target
 
 ## Getting Started with miRPV
 
 The installation has been tested on Ubuntu 18.04. If it has to be installed on another platform, please use the virtual machine image preinstalled with miRPV.
  
 ### System Requirement
-CPU: AMD64 (64bit)
-Memory: 2Gb RAM
-Storage: 5Gb
-Ubuntu 18.04
+* CPU: AMD64 (64bit)
+* Memory: 2Gb RAM
+* Storage: 5Gb
+* Ubuntu 18.04
 
 ## INSTALLATION
 1) Clone this repository
@@ -44,11 +44,76 @@ MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab
 
 
 ### Usage
-Once all the tools and dependence are installed correctly, run from the miRPV folder
+Once all the tools and dependence are installed correctly, run from the miRPV folder.
 ````
 bash miRPV.sh
 ````
 
-Target Predication of Mature miRNA (optional):
-To predict the target of mature miRNA, download the reference sequence and keep it ready in the Script folder in fasta format.
+Provide the project name. 
+* Give the input query fasta input (keep the fine in the miRPV directory).
+* When asked to select the target prediction, select "Yes" or "NO."
+* miRPV will ask to provide a reference sequence if the target prediction is selected. Keep the reference sequence in the miRPV folder and enter the name of the reference sequence in the terminal.
+* After successful analysis, the results are saved in the output directory with the project name.
 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Troubleshoot installation:
+If there is any issue in installation, please check the failed package log, install the dependencies, and run again.
+
+
+
+````
+conda install Perl-cpan-shell
+````
+Getopt::Long 
+````
+conda install Perl-getopt-long
+````
+threads 
+````
+conda install Perl-threaded
+````
+threads::shared 
+````
+conda install Perl-mce-shared
+````
+CWD (CPAN) 
+````
+conda install Perl-pathtools
+````
+or
+
+````
+perl -MCPAN -e 'install CWD'
+````
+File::chdir 
+````
+conda install Perl-file-chdir
+````
+UNAFold
+
+gfortran 
+````
+conda install -c anaconda gfortran_linux-64
+````
+libsvm 
+````
+conda install libsvm
+````
+ct2out 
+````
+gfortran ct2out.f -o ct2out 
+````
+or 
+````
+g77 -o ct2out ct2out.f
+````
+````
+cp ct2out /bin/
+````
+### If you need to know more, please contact on :
+
+http://slsdb.manipal.edu
+
+mlsc@manipal.edu
