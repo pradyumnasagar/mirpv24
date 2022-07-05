@@ -92,6 +92,9 @@ File::chdir
 conda install Perl-file-chdir
 ````
 UNAFold
+````
+conda install -c bioconda oligoarrayaux
+````
 
 gfortran 
 ````
