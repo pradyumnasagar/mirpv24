@@ -1,4 +1,4 @@
-# miRPV: An automated pipeline for miRNA Prediction and Validation in silico
+# miRPV: in silico miRNA Prediction and Validation Pipeline
 
 miRPV is an Automated tool that allows users to predict and validate microRNA from genome/gene sequence.
  
