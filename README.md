@@ -16,15 +16,15 @@ http://slsdb.manipal.edu/miRPV/
 
 ----------------------------------------------------------------------------------------------
 
-CPU: AMD64 (64bit), GHz Processor
+CPU: AMD64 (64bit)
 
-Memory: 1Gb RAM
+Memory: 2Gb RAM
 
 Storage: 5Gb
 
 Internet access to download the files
 
-Linux Environment: Installation has been tested on Ubuntu 16.04+
+Linux Environment: Installation has been tested on Ubuntu 18.04+
 
 Software Dependencies Please note All the dependencies will be installed automatically by install.sh script. Root permission is required to install. If something goes wrong, please check the dependency and install it manually.
 
@@ -38,54 +38,62 @@ Miniconda installing: https://docs.conda.io/en/latest/miniconda.html
 Activate the environment before installing it.
 
 2) The rest of the installation is straightforward, in miRPV package, you get a install.sh file just type:
-
-$bash install.sh -p ~/Path/Were/miRPV Package/Present/
+````
+bash install.sh -p ~/Path/Were/miRPV Package/Present/
+````
 
 This installation might take a few minutes and install all the dependency require to run the Pipeline. If there is some installation error, examine the output above to identify the cause. Or you can install this dependence separately.
 
 For Conda Users:
-
-`conda install perl-cpan-shell`
-
+````
+conda install perl-cpan-shell
+````
 Getopt::Long 
-
-`conda install perl-getopt-long`
-
+````
+conda install perl-getopt-long
+````
 threads 
-`conda install perl-threaded`
-
+````
+conda install perl-threaded
+````
 threads::shared 
-`conda install perl-mce-shared`
-
+````
+conda install perl-mce-shared
+````
 CWD (CPAN) 
-`conda install perl-pathtools`
-
+````
+conda install perl-pathtools
+````
 or
 
-
+````
 perl -MCPAN -e 'install CWD'
-
+````
 File::chdir 
-`conda install perl-file-chdir`
-
+````
+conda install perl-file-chdir
+````
 UNAFold
 
 gfortran 
-
-`conda install -c anaconda gfortran_linux-64`
-
+````
+conda install -c anaconda gfortran_linux-64
+````
 libsvm 
-
-`conda install libsvm`
-
+````
+conda install libsvm
+````
 ct2out 
-
-`gfortran ct2out.f -o ct2out` 
+````
+gfortran ct2out.f -o ct2out 
+````
 or 
-`g77 -o ct2out ct2out.f`
-
-`cp ct2out /bin/`
-
+````
+g77 -o ct2out ct2out.f
+````
+````
+cp ct2out /bin/
+````
 3) MATLAB COMPILER RUNTIME (MCR):
  
 MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab code. If it doesn't install via install.sh script install it separately from the Software directory.
@@ -103,9 +111,10 @@ Once all the tools and dependence are install correctly, then Pipeline should be
 
 ** Just run from the miRPV folder:
 
-$`bash miRPV.sh`
-
-	`Enter the project name`
+````
+bash miRPV.sh
+````
+`Enter the project name`
 	
 Provide the file name (After entering project name it will ask for a fasta file name or the sample which you are going to use. Sample file should be present where the miRPV.sh script is there)
 	`<Type the fasta file name>` (Give the fasta file name)
