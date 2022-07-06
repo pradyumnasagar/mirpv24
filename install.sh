@@ -211,7 +211,7 @@ if [ ! -d "$CONDA_DIR/envs/$ENV" ]; then
   echo "#"
   echo "# Creating the bioinfo environment"
 	echo "#"
-	${CONDA_DIR}/condabin/conda create -q -n $ENV -y python=2
+	${CONDA_DIR}/condabin/conda create -q -n $ENV -y python=2.7
 fi
 
 set +ue
@@ -221,6 +221,14 @@ set -e
 
 cd $PREFIX
 cat requirements.txt | xargs mamba install -q -y
+mamba install -q -y -c auto lolcat
+mamba install -q -y -c tsnyder figlet
+mamba install -q -y -c conda-forge pv 
+mamba install -q -y -c conda-forge gcc 
+mamba install -q -y -c anaconda make 
+mamba install -q -y -c conda-forge gfortran
+mamba install -q -y -c conda-forge sl 
+
 
 # checking for WGET
 set +e
