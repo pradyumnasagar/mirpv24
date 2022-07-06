@@ -28,7 +28,12 @@ git clone https://github.com/pradyumnasagar/miRPV.git
 cd miRPV
 ````
 
-2) Install and create a conda environment (optional but recommended)
+2) Install dependencies and create a conda environment (optional but recommended)
+
+````
+sudo apt install lolcat cowsay figlet enscript dailog pv sl gfortan make build-essential g++ manpages-dev
+````
+
 ````
 conda create -n miRPV python=2
 ````
@@ -40,9 +45,7 @@ The installer will ask root permission to install the following packages please 
 
 HairpIndex, lolcat, cowsay, figlet, enscript, dailog, pv, sl, gfortan, make, build-essential, g++, manpages-dev
 
-````
-sudo apt install lolcat cowsay figlet enscript dailog pv sl gfortan make build-essential g++ manpages-dev
-````
+
 
 ````
 bash install.sh -p  <path of miRPV folder>
