@@ -267,18 +267,18 @@ fi
 
 
 # Installing some of the tools
-sudo apt-get -y install lolcat
-sudo apt-get -y install cowsay
-sudo apt-get -y install figlet
-sudo apt-get -y install enscript
-sudo apt-get -y install dialog
-sudo apt-get -y install pv
-sudo apt -y install sl
-sudo apt -y install gfortran
-sudo apt -y install make
-sudo apt -y install build-essential
-sudo apt-get -y install g++
-sudo apt-get -y install manpages-dev
+#sudo apt-get -y install lolcat
+#sudo apt-get -y install cowsay
+#sudo apt-get -y install figlet
+#sudo apt-get -y install enscript
+#sudo apt-get -y install dialog
+#sudo apt-get -y install pv
+#sudo apt -y install sl
+#sudo apt -y install gfortran
+#sudo apt -y install make
+#sudo apt -y install build-essential
+#sudo apt-get -y install g++
+#sudo apt-get -y install manpages-dev
 
 #dpkg -s python &> /dev/null
 #if [ $? -eq 0 ]; then
