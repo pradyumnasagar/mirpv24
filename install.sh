@@ -531,6 +531,7 @@ fi
 echo "Installing Threads"
 if [ ! -e "$BUILD/$THREADS_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate ${ENV}
 	cd "$BUILD/threads-2.21"
 	perl Makefile.PL
 	sudo make 
@@ -544,6 +545,7 @@ fi
 echo "Installing ViennaRNA"
 if [ ! -e "$BUILD/$VIENNA_RNA_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate ${ENV}
 	cd "$BUILD/ViennaRNA-2.4.14"
 	./configure
 	make
@@ -559,6 +561,7 @@ mkdir -p "$PREFIX"/bin
  echo "Installing UNAfold "
 if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate ${ENV}
 	cd "$BUILD/unafold-3.8"
 	./configure
 	make
@@ -576,6 +579,7 @@ fi
 
 if [ ! -e "BUILD/$LIBSVM_BUILD_DIR/makefile" ] ; then
 	set -x 
+	conda activate ${ENV}
 	cd "$BUILD/libsvm-3.14"
 	make
 	sudo cp -r svm-predict /bin/
@@ -598,6 +602,7 @@ fi
 
 if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
 	set -x
+	conda activate ${ENV}
 	cd "$BUILD/ct2out"
 	gfortran ct2out.f -o ct2out
 	sudo cp -r ct2out /bin/
