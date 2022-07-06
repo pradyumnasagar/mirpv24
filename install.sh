@@ -4,6 +4,7 @@
 set -e
 #unset PS1
 
+
 start=$(date +%s.%N)
 INSTALL_SCRIPT=$(readlink -f $0)
 INSTALL_DIRECTORY=`dirname "$INSTALL_SCRIPT"`
@@ -66,6 +67,9 @@ HAIRPLENDEX_URL="https://sourceforge.net/projects/hairpin/files/HAirpin.tar.xz/d
 HAIRPLENDEX_ARCHIVE=`basename "$HAIRPLENDEX_URL"`
 HAIRPLENDEX_BUILD_DIR=`basename "$HAIRPLENDEX_ARCHIVE" .tar.xz`
 
+CONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+
 # Exit Trapping
 
 completeCheck() { 
@@ -123,6 +127,7 @@ if [ -z "$PREFIX" ] ; then
 fi
 set -e 
 
+
 echo "This version of miRPV works best on ubuntu System. However, it can be tried in other linux system at your own risk"
 systemID=sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'
 
@@ -137,6 +142,8 @@ fi
 # Create the install directory
 
 # create install path
+
+
 
 if [ ! -d $PREFIX ] ; then 
 	set -x
@@ -161,6 +168,59 @@ if [ ! -d "$BUILD" ] ; then
 fi
 
 # Check base dependencies
+
+CONDA_DIR=~/miniconda3
+ENV=miRPV
+
+
+# Install conda if necessary.
+if [ ! -d "$CONDA_DIR" ]; then
+	# Download the miniconda installer.
+	echo "#"
+	echo "# Downloading: ${CONDA_URL}"
+	echo "#"
+	curl -s -L ${CONDA_URL} > miniconda-installer.sh
+
+	# Install miniconda.
+	echo "#"
+	echo "# Running: miniconda-installer.sh"
+	echo "#"
+	bash miniconda-installer.sh -b
+	
+	# Initialize bash.
+	${CONDA_DIR}/condabin/conda init bash
+
+	# Update conda.
+	echo "#"
+  echo "# Updating conda"
+	echo "#"
+	${CONDA_DIR}/condabin/conda update -q -y -n base conda
+
+	# Activate conda bioconda channels.
+	${CONDA_DIR}/condabin/conda config -q --add channels bioconda
+	${CONDA_DIR}/condabin/conda config -q --add channels conda-forge
+
+	# Install mamba
+  echo "#"
+  echo "# Installing mamba"
+	echo "#"
+	${CONDA_DIR}/condabin/conda install mamba -q -n base -c conda-forge -y
+fi
+
+if [ ! -d "$CONDA_DIR/envs/$ENV" ]; then
+  echo "#"
+  echo "# Creating the bioinfo environment"
+	echo "#"
+	${CONDA_DIR}/condabin/conda create -q -n $ENV -y python=2
+fi
+
+set +ue
+source ${CONDA_DIR}/etc/profile.d/conda.sh
+conda activate ${ENV}
+set -e
+
+cd $PREFIX
+cat requirements.txt | xargs mamba install -q -y
 
 # checking for WGET
 set +e
@@ -188,6 +248,15 @@ if [ ! -x "$MAKE" ]; then
 	echo "Unable to find make in your PATH"
 	exit 1
 fi
+
+set +e
+lolcata=`which lolcat`
+set -e
+if [ ! -x "$lolcata" ]; then
+	echo "Unable to find lolcat in your PATH, installing lolcat with conda(mamba)"
+	mamba install -y -c auto lolcat
+fi
+
 
 # Installing some of the tools
 sudo apt-get -y install lolcat
@@ -550,3 +619,6 @@ duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
 echo "Pipelline Execution Time: $execution_time"
+
+set +ue
+echo 'will cite' | parallel --citation 1> /dev/null  2> /dev/null
