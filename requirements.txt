@@ -1,12 +1,7 @@
-lolcat
+
 cowsay
-figlet
 enscript
 dialog
-pv
-sl
-gfortran
-make
 build-essential
 g++
 manpages-dev
