@@ -31,7 +31,7 @@ cd miRPV
 2) Install dependencies and create a conda environment (optional but recommended)
 
 ````
-sudo apt install  cowsay enscript dailog build-essential manpages-dev
+sudo apt install  cowsay enscript dialog build-essential manpages-dev
 ````
 
 ````
