@@ -31,7 +31,7 @@ cd miRPV
 2) Install dependencies and create a conda environment (optional but recommended)
 
 ````
-sudo apt install lolcat cowsay figlet enscript dailog pv sl gfortan make build-essential g++ manpages-dev
+sudo apt install  cowsay enscript dailog build-essential manpages-dev
 ````
 
 ````
@@ -43,7 +43,7 @@ conda activate miRPV
 3) Run the installation script
 The installer will ask root permission to install the following packages please provide it when asked.
 
-HairpIndex, lolcat, cowsay, figlet, enscript, dailog, pv, sl, gfortan, make, build-essential, g++, manpages-dev
+HairpIndex, cowsay, enscript, dailog, build-essential, manpages-dev
 
 
 
