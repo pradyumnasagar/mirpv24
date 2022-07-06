@@ -284,7 +284,7 @@ fi
 
 sl
 
-figlet Pipline is completed | pv -qL 120 | lolcat 
+figlet Pipline Complete | pv -qL 120 | lolcat 
 echo `date`
 
 else
