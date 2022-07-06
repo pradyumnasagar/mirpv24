@@ -598,7 +598,7 @@ if [ ! -e "$BUILD/$MIRANDA_BUILD_DIR/makefile" ] ; then
 	set +x
 fi
 
-#ct2out
+#ct2out 
 
 if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
 	set -x
