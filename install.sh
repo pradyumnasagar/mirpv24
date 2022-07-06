@@ -220,7 +220,7 @@ conda activate ${ENV}
 set -e
 
 cd $PREFIX
-cat requirements.txt | xargs mamba install -q -y
+#cat requirements.txt | xargs mamba install -q -y
 mamba install -q -y -c auto lolcat
 mamba install -q -y -c tsnyder figlet
 mamba install -q -y -c conda-forge pv 
