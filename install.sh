@@ -492,7 +492,7 @@ if [ ! -e "$BUILD/$ALGORITHM_SVM_BUILD_DIR/makefile" ] ; then
 	cd "$BUILD/Algorithm-SVM-0.13"
 	
 	/usr/bin/perl Makefile.PL
-	sed -i[bak] "s/memcpy*/wmemcpy/g" bindings.cpp
+	 sed -i[bak] -e "s/#include <errno.h>/#include <errno.h>\n#include <cstring>/g" bindings.cpp
 	sudo make 
 	sudo make test
 	sudo make install
