@@ -95,7 +95,7 @@ if [ -n "$inpute" ] ; then
 
 	
 echo "	a) Converting miRPara output into Triplet_SVM input " | tee -a $DIRECTORY/log/$text.log
-				 echo `date` 
+date
 
 	sed '/^[[:blank:]]*#/d;s/#.*//' *.out > A1.txt
 	awk '{print $1,$2}' A1.txt > A2.txt 
@@ -110,7 +110,7 @@ echo "	a) Converting miRPara output into Triplet_SVM input " | tee -a $DIRECTORY
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 echo "	b)Converting miRPara output to get Mature_miRNA"  | tee -a $DIRECTORY/log/$text.log
-				 echo `date` 
+date 
 
 	sed '/^[[:blank:]]*#/d;s/#.*//' *.out > B1.txt
 	awk '{print $3,$4}' B1.txt > B2.txt 
@@ -156,7 +156,7 @@ echo "--------------------------------------------------------------------------
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 		
-echo `date`
+date
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo "3) Feature Extraction of Pri-miRNAs" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
 	cd $DIRECTORY/build/file
@@ -165,12 +165,12 @@ echo "3) Feature Extraction of Pri-miRNAs" | pv -qL 20  | tee -a $DIRECTORY/log/
 	rm -f Hairplendex.mat Hairplendex.txt
 	mv Hairplendex_v_1_1.txt $DIRECTORY/Output/$text/miRPV_output
 
-echo `date`
+date
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo "4) Procced to find Mature miRNA using Pri-miRNA" | pv -qL 20 | tee -a $DIRECTORY/log/$text.log
 
-echo `date`
+date
 	cd $DIRECTORY/Script/
 	python matureBayes.py Real_miRNA.txt Mature_Secondary_Structure.txt Mature_miRNA.txt
 	cp Mature_miRNA.txt $DIRECTORY/Output/$text/maturebayes
