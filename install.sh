@@ -27,9 +27,9 @@ MIRANDA_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/miRanda.t
 MIRANDA_ARCHIVE=`basename "$MIRANDA_URL"`
 MIRANDA_BUILD_DIR=`basename "$MIRANDA_ARCHIVE" .tar.gz`
 
-VIENNA_RNA_URL="https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
-VIENNA_RNA_ARCHIVE=`basename "$VIENNA_RNA_URL"`
-VIENNA_RNA_BUILD_DIR=`basename "$VIENNA_RNA_ARCHIVE" .tar.gz`
+#VIENNA_RNA_URL="https://github.com/ViennaRNA/ViennaRNA/releases/download/v2.5.1/ViennaRNA-2.5.1.tar.gz"
+#VIENNA_RNA_ARCHIVE=`basename "$VIENNA_RNA_URL"`
+#VIENNA_RNA_BUILD_DIR=`basename "$VIENNA_RNA_ARCHIVE" .tar.gz`
 
 LIBSVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/libsvm-3.14.tar.gz"
 LIBSVM_ARCHIVE=`basename "$LIBSVM_URL"`
@@ -228,7 +228,7 @@ mamba install -q -y -c conda-forge gcc
 mamba install -q -y -c anaconda make 
 mamba install -q -y -c conda-forge gfortran
 mamba install -q -y -c conda-forge sl 
-
+mamba install -q -y -c bioconda viennarna
 
 # checking for WGET
 set +e
@@ -311,10 +311,10 @@ if [ ! -e "$TOOLS/$MIRANDA_ARCHIVE" ] ; then
 	$WGET --directory-prefix="$TOOLS" -nc "$MIRANDA_URL"
 fi
 
-if [ ! -e "$TOOLS/$VIENNA_RNA_ARCHIVE" ] ; then 
-	echo -n "Downloading Vienna_RNA- "
-	$WGET --directory-prefix="$TOOLS" -nc "$VIENNA_RNA_URL"
-fi
+#if [ ! -e "$TOOLS/$VIENNA_RNA_ARCHIVE" ] ; then 
+#	echo -n "Downloading Vienna_RNA- "
+#	$WGET --directory-prefix="$TOOLS" -nc "$VIENNA_RNA_URL"
+#fi
 
 if [ ! -e "$TOOLS/$LIBSVM_ARCHIVE" ] ; then
 	echo -n "Downloading Libsvm"
