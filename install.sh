@@ -588,6 +588,7 @@ fi
 
 if [ ! -e "$BUILD/$MIRANDA_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate base
 	cd "$BUILD/miRanda-3.3a"
 	./configure 
 	sudo make install
