@@ -47,7 +47,7 @@ GETOPT_LONG_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Getop
 GETOPT_LONG_ARCHIVE=`basename "$GETOPT_LONG_URL"`
 GETOPT_LONG_BUILD_DIR=`basename "$GETOPT_LONG_ARCHIVE" .tar.gz`
 
-ALGORITHM_SVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Algorithm-SVM-0.13.zip"
+ALGORITHM_SVM_URL="http://www.cpan.org/authors/id/L/LA/LAIRDM/Algorithm-SVM-0.13.tar.gz"
 ALGORITHM_SVM_ARCHIVE=`basename "$ALGORITHM_SVM_URL"`
 ALGORITHM_SVM_BUILD_DIR=`basename "$ALGORITHM_SVM_ARCHIVE" .zip`
 
@@ -373,7 +373,7 @@ fi
 
 if  [  ! -d "$BUILD/$ALGORITHM_SVM_BUILD_DIR" ] ; then
 	set -x
-	"$UNZIP" -d "$BUILD"  "$TOOLS/$ALGORITHM_SVM_ARCHIVE"
+	tar xz --directory "$BUILD" -f "$TOOLS/$ALGORITHM_SVM_ARCHIVE"
 	set +x
 fi
 
