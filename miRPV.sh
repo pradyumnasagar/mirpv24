@@ -91,13 +91,13 @@ if [ -n "$inpute" ] ; then
 	cp -R models $DIRECTORY/Script
 	cd  $DIRECTORY/Script/
 	perl miRPara.pl -t 12 $inpute 
-	cp *.out $DIRECTORY/Output/$text/mirpara
+	cp ./*.out $DIRECTORY/Output/$text/mirpara
 
 	
 echo "	a) Converting miRPara output into Triplet_SVM input " | tee -a $DIRECTORY/log/$text.log
 date
 
-	sed '/^[[:blank:]]*#/d;s/#.*//' *.out > A1.txt
+	sed '/^[[:blank:]]*#/d;s/#.*//' ./*.out > A1.txt
 	awk '{print $1,$2}' A1.txt > A2.txt 
 	awk '{for(i=1;i<=NF;i++) printf "%s\n",$i}' A2.txt > A3.txt
 	sed 's/[A-Z]//g' A3.txt > A4.txt 
@@ -246,7 +246,7 @@ echo "6) Converting miRPV Output Into final Report"
 
 else
 	
-	rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt *.out *.ps *.pmt *.fa Real_miRNA.txt	
+	rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt ./*.out ./*.ps ./*.pmt ./*.fa Real_miRNA.txt	
 	echo "Converting miRPV Output Into final Report Without Target"  
 	cd $DIRECTORY/Output/$text/miRPV_output
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n1)"Pri-miRNAs obtain from the fasta file"\n\n/' Pri_miRNA.txt
