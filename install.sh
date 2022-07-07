@@ -557,7 +557,7 @@ mkdir -p "$PREFIX"/bin
  echo "Installing UNAfold "
 if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 	set -x
-	conda activate ${ENV}
+	conda activate base
 	cd "$BUILD/unafold-3.8"
 	./configure
 	make
