@@ -257,13 +257,7 @@ if [ ! -x "$MAKE" ]; then
 	exit 1
 fi
 
-set +e
-lolcata=`which lolcat`
-set -e
-if [ ! -x "$lolcata" ]; then
-	echo "Unable to find lolcat in your PATH, installing lolcat with conda(mamba)"
-	mamba install -y -c auto lolcat
-fi
+
 
 
 # Installing some of the tools
