@@ -538,17 +538,17 @@ fi
 
 
 #ViennaRNA
-echo "Installing ViennaRNA"
-if [ ! -e "$BUILD/$VIENNA_RNA_BUILD_DIR/makefile" ] ; then
-	set -x
-	conda activate ${ENV}
-	cd "$BUILD/ViennaRNA-2.4.14"
-	./configure
-	make
-	make check
-	sudo make install
-	set +x
-fi
+#echo "Installing ViennaRNA"
+#if [ ! -e "$BUILD/$VIENNA_RNA_BUILD_DIR/makefile" ] ; then
+#	set -x
+#	conda activate ${ENV}
+#	cd "$BUILD/ViennaRNA-2.4.14"
+#	./configure
+#	make
+#	make check
+#	sudo make install
+#	set +x
+#fi
 
 #UNAfol
 
