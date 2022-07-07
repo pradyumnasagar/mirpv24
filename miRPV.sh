@@ -220,17 +220,20 @@ echo "6) Converting miRPV Output Into final Report"
 	
 	cat Pri.txt Real.txt Mat.txt Tar.txt > Sum.txt 
 	touch Intro.txt
-	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
-#	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
-	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
-	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
-	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
-	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
-	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
-	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
+	{
+	echo "miRNAs prediction by miRPV Pipeline " 
+	#echo "#By Pradyumna Jayaram and Vinayak Rao" 
+	echo "Report bugs to mlsc@manipal.edu" 
+	echo "Departement of Cell and Molecular Biology" 
+	echo "Manipal School of Life Sciences Maniapl" 
+	echo "Manipal Academy of Higher Education, Manipal, INDIA" 
+	
+	
+	echo "Homepage: http://slsdb.manipal.edu" 
+	} >> Intro.txt
 	
 
-	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n /' Sum.txt
+	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n/' Sum.txt
 
 	cat Intro.txt Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt Target.txt > miRPV_Output
 
