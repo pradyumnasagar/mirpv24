@@ -490,9 +490,9 @@ echo "Installing Algorithm_SVM"
 if [ ! -e "$BUILD/$ALGORITHM_SVM_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Algorithm-SVM-0.13"
-	sed -i[bak] "s/'memcpy'/'wmemcpy'/g" bindings.cpp
-
+	
 	/usr/bin/perl Makefile.PL
+	sed -i[bak] "s/'memcpy'/'wmemcpy'/g" bindings.cpp
 	sudo make 
 	sudo make test
 	sudo make install
