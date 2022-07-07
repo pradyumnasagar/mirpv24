@@ -484,7 +484,7 @@ echo "Installing Getopt"
 if [ ! -e "$BUILD/$GETOPT_LONG_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Getopt-Long-2.51"
-	perl Makefile.PL
+	/usr/bin/perl Makefile.PL
 	sudo make 
 	sudo make test
 	sudo make install
@@ -520,7 +520,7 @@ echo "Installing Path_Link"
 if [ ! -e "$BUILD/$PATH_LINK_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/PathTools-3.75"
-	perl Makefile.PL
+	/usr/bin/perl Makefile.PL
 	sudo make 
 	sudo make test
 	sudo make install
@@ -533,7 +533,7 @@ if [ ! -e "$BUILD/$THREADS_BUILD_DIR/makefile" ] ; then
 	set -x
 	conda activate ${ENV}
 	cd "$BUILD/threads-2.21"
-	perl Makefile.PL
+	/usr/bin/perl Makefile.PL
 	sudo make 
 	sudo make test
 	sudo make install
