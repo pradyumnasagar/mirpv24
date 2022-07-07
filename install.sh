@@ -626,7 +626,7 @@ echo " "
 
 echo " "
 
-echo " Usage bash miRPV.sh \n Then give the fasta file name: "
+printf 'Usage bash miRPV.sh \n Then give the fasta file name: '
 
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`

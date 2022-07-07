@@ -63,20 +63,21 @@ echo "==========================================================================
 echo "Please give the project name" | lolcat
 read text
 # Create Directory
-mkdir -p $DIRECTORY/Output/
-mkdir -p $DIRECTORY/log
-mkdir -p $DIRECTORY/Output/$text/mirpara
-mkdir -p $DIRECTORY/Output/$text/triplet_svm
-mkdir -p $DIRECTORY/Output/$text//maturebayes
-mkdir -p $DIRECTORY/Output/$text/miranda
-mkdir -p $DIRECTORY/Output/$text/miRPV_output
-mkdir -p $DIRECTORY/Output/$text/hairplendex
+mkdir -p "$DIRECTORY"/Output/
+mkdir -p "$DIRECTORY"/log
+mkdir -p "$DIRECTORY"/Output/"$text"/mirpara
+mkdir -p "$DIRECTORY"/Output/"$text"/triplet_svm
+mkdir -p "$DIRECTORY"/Output/"$text"/maturebayes
+mkdir -p "$DIRECTORY"/Output/"$text"/miranda
+mkdir -p "$DIRECTORY"/Output/"$text"/miRPV_output
+mkdir -p "$DIRECTORY"/Output/"$text"/hairplendex
 
 echo "Creating directory complete" 
 #echo "##########################################"
 #echo "PLEASE ENTER THE FASTA FILE NAME"
 #echo "##########################################"
-#toilet HII | pv -qL 120 | lolcat
+
+
 cowsay Lets find some miRNAs!!! | lolcat 
 echo "Please enter the fasta file name here" | pv -qL 20 
 
@@ -84,32 +85,32 @@ read inpute
 
 if [ -n "$inpute" ] ; then
 	
-	echo "1) Processing to find Pri-miRNA" | pv -qL 20 | tee -a $DIRECTORY/log/$text.log
+	echo "1) Processing to find Pri-miRNA" | pv -qL 20 | tee -a "$DIRECTORY"/log/"$text".log
 	
-	cp $inpute /$DIRECTORY/Script/ 
-	cd $DIRECTORY/build/miRPara/
-	cp -R models $DIRECTORY/Script
-	cd  $DIRECTORY/Script/
-	perl miRPara.pl -t 12 $inpute 
-	cp *.out $DIRECTORY/Output/$text/mirpara
+	cp $inpute /"$DIRECTORY"/Script/ 
+	cd "$DIRECTORY"/build/miRPara/
+	cp -R models "$DIRECTORY"/Script
+	cd  "$DIRECTORY"/Script/
+	perl miRPara.pl -t 12 "$inpute" 
+	cp ./*.out "$DIRECTORY"/Output/"$text"/mirpara
 
 	
-echo "	a) Converting miRPara output into Triplet_SVM input " | tee -a $DIRECTORY/log/$text.log
+echo "	a) Converting miRPara output into Triplet_SVM input " | tee -a "$DIRECTORY"/log/"$text".log
 date
 
-	sed '/^[[:blank:]]*#/d;s/#.*//' *.out > A1.txt
+	sed '/^[[:blank:]]*#/d;s/#.*//' ./*.out > A1.txt
 	awk '{print $1,$2}' A1.txt > A2.txt 
 	awk '{for(i=1;i<=NF;i++) printf "%s\n",$i}' A2.txt > A3.txt
 	sed 's/[A-Z]//g' A3.txt > A4.txt 
 	sed -i '1~2 s/^/>/g' A4.txt
 	awk '{ if ($0 !~ />/) {print toupper($0)} else {print $0} }' A4.txt > Pri_miRNA.txt
 	RNAfold Pri_miRNA.txt > Secondary_Structure.txt
-	cp Secondary_Structure.txt $DIRECTORY/Output/$text/triplet_svm
-	cp Pri_miRNA.txt $DIRECTORY/Output/$text/miRPV_output
-	cp Pri_miRNA.txt $DIRECTORY/Output/$text/mirpara
+	cp Secondary_Structure.txt "$DIRECTORY"/Output/"$text"/triplet_svm
+	cp Pri_miRNA.txt "$DIRECTORY"/Output/"$text"/miRPV_output
+	cp Pri_miRNA.txt "$DIRECTORY"/Output/"$text"/mirpara
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
-echo "	b)Converting miRPara output to get Mature_miRNA"  | tee -a $DIRECTORY/log/$text.log
+echo "	b)Converting miRPara output to get Mature_miRNA"  | tee -a "$DIRECTORY"/log/"$text".log
 date 
 
 	sed '/^[[:blank:]]*#/d;s/#.*//' *.out > B1.txt
@@ -117,11 +118,11 @@ date
 	awk '{for(i=1;i<=NF;i++) printf "%s\n",$i}' B2.txt > B3.txt
 	sed -i '1~2 s/^/>/g' B3.txt
 	awk '{ if ($0 !~ />/) {print toupper($0)} else {print $0} }' B3.txt > Mature_miRNAs.txt
-	cp Mature_miRNAs.txt $DIRECTORY/Output/$text/miranda
+	cp Mature_miRNAs.txt "$DIRECTORY"/Output/"$text"/miranda
 	
 	rm -f A1.txt A2.txt A3.txt A4.txt B1.txt B2.txt B3.txt A6.txt
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-echo "2) Procced to find the Real or Psudo Pri-miRNA" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
+echo "2) Procced to find the Real or Psudo Pri-miRNA" | pv -qL 20  | tee -a "$DIRECTORY"/log/"$text".log
 	
 	perl triplet_svm_classifier.pl Secondary_Structure.txt predict_format.txt 22
 	
@@ -134,47 +135,47 @@ echo "2) Procced to find the Real or Psudo Pri-miRNA" | pv -qL 20  | tee -a $DIR
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 
-echo "	c)Converting real-miRNA output to HAIRPLENDEX input"  | tee -a $DIRECTORY/log/$text.log
+echo "	c)Converting real-miRNA output to HAIRPLENDEX input"  | tee -a "$DIRECTORY"/log/"$text".log
 date 
 	RNAfold Real_miRNA.txt > A5.txt
 	awk '{printf "%s%s",$0,(NR%3?FS:RS)}' A5.txt > Hairplendex.txt
 	#awk '$2 = toupper($2)' A6.txt > Hairplendex.txt
-	cp Hairplendex.txt  $DIRECTORY/Output/$text/hairplendex
-	mv Hairplendex.txt  $DIRECTORY/build/file
+	cp Hairplendex.txt  "$DIRECTORY"/Output/"$text"/hairplendex
+	mv Hairplendex.txt  "$DIRECTORY"/build/file
 	#rm -f A5.txt
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 	sed -i -e 's/^/-1 /' predict_format.txt
-	mv predict_format.txt $DIRECTORY/build/libsvm-3.14
-	cd $DIRECTORY/build/triplet-svm-classifier060304/models
-	cp trainset_hsa163_cds168_unite.txt.model $DIRECTORY/build/libsvm-3.14
-	cd $DIRECTORY/build/libsvm-3.14
+	mv predict_format.txt "$DIRECTORY"/build/libsvm-3.14
+	cd "$DIRECTORY"/build/triplet-svm-classifier060304/models
+	cp trainset_hsa163_cds168_unite.txt.model "$DIRECTORY"/build/libsvm-3.14
+	cd "$DIRECTORY"/build/libsvm-3.14
 	svm-predict predict_format.txt trainset_hsa163_cds168_unite.txt.model predict_result.txt
-	mv predict_format.txt predict_result.txt $DIRECTORY/Output/$text/triplet_svm
+	mv predict_format.txt predict_result.txt "$DIRECTORY"/Output/"$text"/triplet_svm
 
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 		
 date
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-echo "3) Feature Extraction of Pri-miRNAs" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
-	cd $DIRECTORY/build/file
+echo "3) Feature Extraction of Pri-miRNAs" | pv -qL 20  | tee -a "$DIRECTORY"/log/"$text".log
+	cd "$DIRECTORY"/build/file
 	 ./run_Fold_generator.sh /usr/local/MATLAB/MATLAB_Runtime/v98 Hairplendex
 	 ./run_Hairpindex_miRNA_analyzer.sh /usr/local/MATLAB/MATLAB_Runtime/v98 Hairplendex
 	rm -f Hairplendex.mat Hairplendex.txt
-	mv Hairplendex_v_1_1.txt $DIRECTORY/Output/$text/miRPV_output
+	mv Hairplendex_v_1_1.txt "$DIRECTORY"/Output/"$text"/miRPV_output
 
 date
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-echo "4) Procced to find Mature miRNA using Pri-miRNA" | pv -qL 20 | tee -a $DIRECTORY/log/$text.log
+echo "4) Procced to find Mature miRNA using Pri-miRNA" | pv -qL 20 | tee -a "$DIRECTORY"/log/"$text".log
 
 date
-	cd $DIRECTORY/Script/
+	cd "$DIRECTORY"/Script/
 	python matureBayes.py Real_miRNA.txt Mature_Secondary_Structure.txt Mature_miRNA.txt
-	cp Mature_miRNA.txt $DIRECTORY/Output/$text/maturebayes
-	mv Mature_miRNA.txt $DIRECTORY/Output/$text/miRPV_output
+	cp Mature_miRNA.txt "$DIRECTORY"/Output/"$text"/maturebayes
+	mv Mature_miRNA.txt "$DIRECTORY"/Output/"$text"/miRPV_output
 	
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
@@ -188,14 +189,14 @@ then
 	echo "======================================================="
 	read reference
 		if [ -n "$reference" ] ; then
-			echo "5) Final micro-RNA target prediction" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
+			echo "5) Final micro-RNA target prediction" | pv -qL 20  | tee -a $DIRECTORY/log/"$text".log
 			date
-			cp $reference /$DIRECTORY/Script/
-			cd $DIRECTORY/Script/	
-			miranda Mature_miRNAs.txt $reference -trim T > Target.txt
-			cp Target.txt $DIRECTORY/Output/$text/miRPV_output
-			mv Target.txt $DIRECTORY/Output/$text/miranda
-			rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt *.out *.ps *.pmt *.fa Real_miRNA.txt *.fasta
+			cp "$reference" /"$DIRECTORY"/Script/
+			cd "$DIRECTORY/"Script/	
+			miranda Mature_miRNAs.txt "$reference" -trim T > Target.txt
+			cp Target.txt $"DIRECTORY"/Output/"$text"/miRPV_output
+			mv Target.txt "$DIRECTORY"/Output/"$text"/miranda
+			rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt ./*.out ./*.ps ./*.pmt ./*.fa Real_miRNA.txt ./*.fasta
 		else
 			echo "The Reference file not found. Please keep the file in miRPV folder "
 		fi
@@ -246,7 +247,7 @@ echo "6) Converting miRPV Output Into final Report"
 
 else
 	
-	rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt *.out *.ps *.pmt *.fa Real_miRNA.txt	
+	rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt ./*.out ./*.ps ./*.pmt ./*.fa Real_miRNA.txt	
 	echo "Converting miRPV Output Into final Report Without Target"  
 	cd $DIRECTORY/Output/$text/miRPV_output
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n1)"Pri-miRNAs obtain from the fasta file"\n\n/' Pri_miRNA.txt
