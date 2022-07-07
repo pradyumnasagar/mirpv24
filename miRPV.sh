@@ -135,7 +135,7 @@ echo "--------------------------------------------------------------------------
 
 
 echo "	c)Converting real-miRNA output to HAIRPLENDEX input"  | tee -a $DIRECTORY/log/$text.log
-				 echo `date` 
+date 
 	RNAfold Real_miRNA.txt > A5.txt
 	awk '{printf "%s%s",$0,(NR%3?FS:RS)}' A5.txt > Hairplendex.txt
 	#awk '$2 = toupper($2)' A6.txt > Hairplendex.txt
@@ -189,7 +189,7 @@ then
 	read reference
 		if [ -n "$reference" ] ; then
 			echo "5) Final micro-RNA target prediction" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
-			echo `date`
+			date
 			cp $reference /$DIRECTORY/Script/
 			cd $DIRECTORY/Script/	
 			miranda Mature_miRNAs.txt $reference -trim T > Target.txt
@@ -220,17 +220,20 @@ echo "6) Converting miRPV Output Into final Report"
 	
 	cat Pri.txt Real.txt Mat.txt Tar.txt > Sum.txt 
 	touch Intro.txt
-	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
-#	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
-	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
-	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
-	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
-	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
-	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
-	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
+	{
+	echo "miRNAs prediction by miRPV Pipeline " 
+	#echo "#By Pradyumna Jayaram and Vinayak Rao" 
+	echo "Report bugs to mlsc@manipal.edu" 
+	echo "Departement of Cell and Molecular Biology" 
+	echo "Manipal School of Life Sciences Maniapl" 
+	echo "Manipal Academy of Higher Education, Manipal, INDIA" 
+	
+	
+	echo "Homepage: http://slsdb.manipal.edu" 
+	} >> Intro.txt
 	
 
-	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n /' Sum.txt
+	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n/' Sum.txt
 
 	cat Intro.txt Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt Target.txt > miRPV_Output
 
@@ -260,16 +263,19 @@ else
 
 	cat Pri.txt Real.txt Mat.txt > Sum.txt 
 	touch Intro.txt
-	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
-#	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
-	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
-	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
-	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
-	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
-	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
-	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
+	{
+	echo "miRNAs prediction by miRPV Pipeline " 
+#	echo "#By Pradyumna Jayaram and Vinayak Rao" 
+	echo "Report bugs to mlsc@manipal.edu" 
+	echo "Departement of Cell and Molecular Biology" 
+	echo "Manipal School of Life Sciences Maniapl" 
+	echo "Manipal Academy of Higher Education, Manipal, INDIA" 
+	
+	
+	echo "Homepage: http://slsdb.manipal.edu" 
+	} >> Intro.txt
 
-	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n /' Sum.txt
+	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE:\n\n/' Sum.txt
 	cat Intro.txt Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt  > miRPV_Output
 
 	enscript miRPV_Output -o - | ps2pdf - miRPV_Out.pdf
@@ -284,13 +290,13 @@ fi
 
 sl
 
-figlet Pipline Complete | pv -qL 120 | lolcat 
-echo `date`
+figlet Prediction Complete | pv -qL 120 | lolcat 
+date
 
 else
 	echo "Input file is not a fasta file"
 fi
-echo "THANK YOU FOR USING miRPV" | pv -qL 20 
+echo "Thank You for using miRPV" | pv -qL 20 
 echo ""
 echo "Please find the reults in Output directory"
 echo ""

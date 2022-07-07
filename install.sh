@@ -4,6 +4,7 @@
 set -e
 #unset PS1
 
+
 start=$(date +%s.%N)
 INSTALL_SCRIPT=$(readlink -f $0)
 INSTALL_DIRECTORY=`dirname "$INSTALL_SCRIPT"`
@@ -26,9 +27,9 @@ MIRANDA_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/miRanda.t
 MIRANDA_ARCHIVE=`basename "$MIRANDA_URL"`
 MIRANDA_BUILD_DIR=`basename "$MIRANDA_ARCHIVE" .tar.gz`
 
-VIENNA_RNA_URL="https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
-VIENNA_RNA_ARCHIVE=`basename "$VIENNA_RNA_URL"`
-VIENNA_RNA_BUILD_DIR=`basename "$VIENNA_RNA_ARCHIVE" .tar.gz`
+#VIENNA_RNA_URL="https://github.com/ViennaRNA/ViennaRNA/releases/download/v2.5.1/ViennaRNA-2.5.1.tar.gz"
+#VIENNA_RNA_ARCHIVE=`basename "$VIENNA_RNA_URL"`
+#VIENNA_RNA_BUILD_DIR=`basename "$VIENNA_RNA_ARCHIVE" .tar.gz`
 
 LIBSVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/libsvm-3.14.tar.gz"
 LIBSVM_ARCHIVE=`basename "$LIBSVM_URL"`
@@ -46,7 +47,7 @@ GETOPT_LONG_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Getop
 GETOPT_LONG_ARCHIVE=`basename "$GETOPT_LONG_URL"`
 GETOPT_LONG_BUILD_DIR=`basename "$GETOPT_LONG_ARCHIVE" .tar.gz`
 
-ALGORITHM_SVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Algorithm-SVM-0.13.zip"
+ALGORITHM_SVM_URL="http://www.cpan.org/authors/id/L/LA/LAIRDM/Algorithm-SVM-0.13.tar.gz"
 ALGORITHM_SVM_ARCHIVE=`basename "$ALGORITHM_SVM_URL"`
 ALGORITHM_SVM_BUILD_DIR=`basename "$ALGORITHM_SVM_ARCHIVE" .zip`
 
@@ -65,6 +66,9 @@ THREADS_BUILD_DIR=`basename "$THREADS_ARCHIVE" .tar.gz`
 HAIRPLENDEX_URL="https://sourceforge.net/projects/hairpin/files/HAirpin.tar.xz/download"
 HAIRPLENDEX_ARCHIVE=`basename "$HAIRPLENDEX_URL"`
 HAIRPLENDEX_BUILD_DIR=`basename "$HAIRPLENDEX_ARCHIVE" .tar.xz`
+
+CONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
 
 # Exit Trapping
 
@@ -123,11 +127,12 @@ if [ -z "$PREFIX" ] ; then
 fi
 set -e 
 
+
 echo "This version of miRPV works best on ubuntu System. However, it can be tried in other linux system at your own risk"
-systemID=sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'
+systemID=`sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'`
 
 if [[ "$systemID" -eq "ubuntu" ]]; then
-	echo "Current System is ubuntu continue to installing dependencies"
+	echo "we detected that you are using $systemID Operating Syatem"
 else
 	echo "The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
 fi
@@ -137,6 +142,8 @@ fi
 # Create the install directory
 
 # create install path
+
+
 
 if [ ! -d $PREFIX ] ; then 
 	set -x
@@ -161,6 +168,67 @@ if [ ! -d "$BUILD" ] ; then
 fi
 
 # Check base dependencies
+
+CONDA_DIR=~/miniconda3
+ENV=miRPV
+
+
+# Install conda if necessary.
+if [ ! -d "$CONDA_DIR" ]; then
+	# Download the miniconda installer.
+	echo "#"
+	echo "# Downloading: ${CONDA_URL}"
+	echo "#"
+	curl -s -L ${CONDA_URL} > miniconda-installer.sh
+
+	# Install miniconda.
+	echo "#"
+	echo "# Running: miniconda-installer.sh"
+	echo "#"
+	bash miniconda-installer.sh -b
+	
+	# Initialize bash.
+	${CONDA_DIR}/condabin/conda init bash
+
+	# Update conda.
+	echo "#"
+  echo "# Updating conda"
+	echo "#"
+	${CONDA_DIR}/condabin/conda update -q -y -n base conda
+
+	# Activate conda bioconda channels.
+	${CONDA_DIR}/condabin/conda config -q --add channels bioconda
+	${CONDA_DIR}/condabin/conda config -q --add channels conda-forge
+
+	# Install mamba
+  echo "#"
+  echo "# Installing mamba"
+	echo "#"
+	${CONDA_DIR}/condabin/conda install mamba -q -n base -c conda-forge -y
+fi
+
+if [ ! -d "$CONDA_DIR/envs/$ENV" ]; then
+  echo "#"
+  echo "# Creating the bioinfo environment"
+	echo "#"
+	${CONDA_DIR}/condabin/conda create -q -n $ENV -y python=2.7
+fi
+
+set +ue
+source ${CONDA_DIR}/etc/profile.d/conda.sh
+conda activate ${ENV}
+set -e
+
+cd "$PREFIX"
+#cat requirements.txt | xargs mamba install -q -y
+mamba install -q -y -c auto lolcat
+mamba install -q -y -c tsnyder figlet
+mamba install -q -y -c conda-forge pv 
+mamba install -q -y -c conda-forge gcc 
+mamba install -q -y -c anaconda make 
+mamba install -q -y -c conda-forge gfortran
+mamba install -q -y -c conda-forge sl 
+mamba install -q -y -c bioconda viennarna
 
 # checking for WGET
 set +e
@@ -189,19 +257,22 @@ if [ ! -x "$MAKE" ]; then
 	exit 1
 fi
 
+
+
+
 # Installing some of the tools
-sudo apt-get -y install lolcat
-sudo apt-get -y install cowsay
-sudo apt-get -y install figlet
-sudo apt-get -y install enscript
-sudo apt-get -y install dialog
-sudo apt-get -y install pv
-sudo apt -y install sl
-sudo apt -y install gfortran
-sudo apt -y install make
-sudo apt -y install build-essential
-sudo apt-get -y install g++
-sudo apt-get -y install manpages-dev
+#sudo apt-get -y install lolcat
+#sudo apt-get -y install cowsay
+#sudo apt-get -y install figlet
+#sudo apt-get -y install enscript
+#sudo apt-get -y install dialog
+#sudo apt-get -y install pv
+#sudo apt -y install sl
+#sudo apt -y install gfortran
+#sudo apt -y install make
+#sudo apt -y install build-essential
+#sudo apt-get -y install g++
+#sudo apt-get -y install manpages-dev
 
 #dpkg -s python &> /dev/null
 #if [ $? -eq 0 ]; then
@@ -216,72 +287,72 @@ sudo apt-get -y install manpages-dev
 
 if [ ! -e "$TOOLS/$MIRPARA_ARCHIVE" ] ; then 
 	echo -n "Downloading miRPra - "
-	$WGET --directory-prefix="$TOOLS" -nc "$MIRPARA_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$MIRPARA_URL"
 fi
 
 if [ ! -e "$TOOLS/$TRIPLET_SVM_ARCHIVE" ] ; then 
 	echo -n "Downloading Triplet_SVM - "
-	$WGET --directory-prefix="$TOOLS" -nc "$TRIPLET_SVM_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$TRIPLET_SVM_URL"
 fi
 
 if [ ! -e "$TOOLS/$MATURE_BAYES_ARCHIVE" ] ; then 
 	echo -n "Downloading MatureBayes - "
-	$WGET --directory-prefix="$TOOLS" -nc "$MATURE_BAYES_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$MATURE_BAYES_URL"
 fi
 
 if [ ! -e "$TOOLS/$MIRANDA_ARCHIVE" ] ; then 
 	echo -n "Downloading Miranda - "
-	$WGET --directory-prefix="$TOOLS" -nc "$MIRANDA_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$MIRANDA_URL"
 fi
 
-if [ ! -e "$TOOLS/$VIENNA_RNA_ARCHIVE" ] ; then 
-	echo -n "Downloading Vienna_RNA- "
-	$WGET --directory-prefix="$TOOLS" -nc "$VIENNA_RNA_URL"
-fi
+#if [ ! -e "$TOOLS/$VIENNA_RNA_ARCHIVE" ] ; then 
+#	echo -n "Downloading Vienna_RNA- "
+#	$WGET -q --directory-prefix="$TOOLS" -nc "$VIENNA_RNA_URL"
+#fi
 
 if [ ! -e "$TOOLS/$LIBSVM_ARCHIVE" ] ; then
 	echo -n "Downloading Libsvm"
-	$WGET --directory-prefix="$TOOLS" -nc "$LIBSVM_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$LIBSVM_URL"
 fi
 
 if [ ! -e "$TOOLS/$CT2OUT_ARCHIVE" ] ; then
 	echo -n "Downloading ct2out"
-	$WGET --directory-prefix="$TOOLS" -nc "$CT2OUT_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$CT2OUT_URL"
 fi
 
 if [ ! -e "$TOOLS/$UNAFOLD_ARCHIVE" ] ; then
 	echo -n "Downloading UNAfold"
-	$WGET --directory-prefix="$TOOLS" -nc "$UNAFOLD_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$UNAFOLD_URL"
 fi
 
 if [ ! -e "$TOOLS/$THREADS_ARCHIVE" ] ; then
 	echo -n "Downloading THREADS"
-	$WGET --directory-prefix="$TOOLS" -nc "$THREADS_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$THREADS_URL"
 fi
 
 if [ ! -e "$TOOLS/$PATH_LINK_ARCHIVE" ] ; then
 	echo -n "Downloading Path_Link"
-	$WGET --directory-prefix="$TOOLS" -nc "$PATH_LINK_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$PATH_LINK_URL"
 fi
 
 if [ ! -e "$TOOLS/$FILE_CHIDER_ARCHIVE" ] ; then
 	echo -n "Downloading File_Chider"
-	$WGET --directory-prefix="$TOOLS" -nc "$FILE_CHIDER_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$FILE_CHIDER_URL"
 fi
 
 if [ ! -e "$TOOLS/$ALGORITHM_SVM_ARCHIVE" ] ; then
 	echo -n "Downloading Algorithm_SVM"
-	$WGET --directory-prefix="$TOOLS" -nc "$ALGORITHM_SVM_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$ALGORITHM_SVM_URL"
 fi
 
 if [ ! -e "$TOOLS/$GETOPT_LONG_ARCHIVE" ] ; then
 	echo -n "Downloading Getopt_Long"
-	$WGET --directory-prefix="$TOOLS" -nc "$GETOPT_LONG_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$GETOPT_LONG_URL"
 fi
 
 if [ ! -e "$TOOLS/$HAIRPLENDEX_ARCHIVE" ] ; then
 	echo -n "Downloading Hairplendex - "
-	$WGET --directory-prefix="$TOOLS" -c "$HAIRPLENDEX_URL" -O "$TOOLS"/HAirpindex.tar.xz
+	$WGET -q --directory-prefix="$TOOLS" -c "$HAIRPLENDEX_URL" -O "$TOOLS"/HAirpindex.tar.xz
 fi
 
 
@@ -296,7 +367,7 @@ fi
 
 if  [  ! -d "$BUILD/$ALGORITHM_SVM_BUILD_DIR" ] ; then
 	set -x
-	"$UNZIP" -d "$BUILD"  "$TOOLS/$ALGORITHM_SVM_ARCHIVE"
+	tar xz --directory "$BUILD" -f "$TOOLS/$ALGORITHM_SVM_ARCHIVE"
 	set +x
 fi
 
@@ -407,7 +478,7 @@ echo "Installing Getopt"
 if [ ! -e "$BUILD/$GETOPT_LONG_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Getopt-Long-2.51"
-	perl Makefile.PL
+	/usr/bin/perl Makefile.PL
 	sudo make 
 	sudo make test
 	sudo make install
@@ -419,7 +490,9 @@ echo "Installing Algorithm_SVM"
 if [ ! -e "$BUILD/$ALGORITHM_SVM_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Algorithm-SVM-0.13"
-	perl Makefile.PL
+	
+	/usr/bin/perl Makefile.PL
+	 sed -i[bak] -e "s/#include <errno.h>/#include <errno.h>\n#include <cstring>/g" bindings.cpp
 	sudo make 
 	sudo make test
 	sudo make install
@@ -443,7 +516,7 @@ echo "Installing Path_Link"
 if [ ! -e "$BUILD/$PATH_LINK_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/PathTools-3.75"
-	perl Makefile.PL
+	/usr/bin/perl Makefile.PL
 	sudo make 
 	sudo make test
 	sudo make install
@@ -454,8 +527,9 @@ fi
 echo "Installing Threads"
 if [ ! -e "$BUILD/$THREADS_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate ${ENV}
 	cd "$BUILD/threads-2.21"
-	perl Makefile.PL
+	/usr/bin/perl Makefile.PL
 	sudo make 
 	sudo make test
 	sudo make install
@@ -464,16 +538,17 @@ fi
 
 
 #ViennaRNA
-echo "Installing ViennaRNA"
-if [ ! -e "$BUILD/$VIENNA_RNA_BUILD_DIR/makefile" ] ; then
-	set -x
-	cd "$BUILD/ViennaRNA-2.4.14"
-	./configure
-	make
-	make check
-	sudo make install
-	set +x
-fi
+#echo "Installing ViennaRNA"
+#if [ ! -e "$BUILD/$VIENNA_RNA_BUILD_DIR/makefile" ] ; then
+#	set -x
+#	conda activate ${ENV}
+#	cd "$BUILD/ViennaRNA-2.4.14"
+#	./configure
+#	make
+#	make check
+#	sudo make install
+#	set +x
+#fi
 
 #UNAfol
 
@@ -482,6 +557,7 @@ mkdir -p "$PREFIX"/bin
  echo "Installing UNAfold "
 if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate base
 	cd "$BUILD/unafold-3.8"
 	./configure
 	make
@@ -499,6 +575,7 @@ fi
 
 if [ ! -e "BUILD/$LIBSVM_BUILD_DIR/makefile" ] ; then
 	set -x 
+	conda activate base
 	cd "$BUILD/libsvm-3.14"
 	make
 	sudo cp -r svm-predict /bin/
@@ -511,16 +588,18 @@ fi
 
 if [ ! -e "$BUILD/$MIRANDA_BUILD_DIR/makefile" ] ; then
 	set -x
+	conda activate base
 	cd "$BUILD/miRanda-3.3a"
 	./configure 
 	sudo make install
 	set +x
 fi
 
-#ct2out
+#ct2out 
 
-if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
+if [ ! -e "$BUILD/ct2out/ct2out" ] ; then
 	set -x
+	conda activate base
 	cd "$BUILD/ct2out"
 	gfortran ct2out.f -o ct2out
 	sudo cp -r ct2out /bin/
@@ -530,8 +609,11 @@ fi
 
 
 mkdir -p $PREFIX/Script
+
 cd $PREFIX/build/miRPara
+sed -i[bak] -e 's,ftp://mirbase.org/pub/mirbase/CURRENT,https://www.mirbase.org/ftp/CURRENT,g' miRPara.pl
 cp miRPara.pl $PREFIX/Script
+
 
 cd $PREFIX/
 #chmod ugo+x "$PREFIX/bin/"*
@@ -550,3 +632,6 @@ duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
 echo "Pipelline Execution Time: $execution_time"
+
+set +ue
+echo 'will cite' | parallel --citation 1> /dev/null  2> /dev/null

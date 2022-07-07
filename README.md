@@ -28,19 +28,19 @@ git clone https://github.com/pradyumnasagar/miRPV.git
 cd miRPV
 ````
 
-2) Install dependencies and create a conda environment (optional but recommended)
+2) Install dependencies 
 
 ````
-sudo apt install -y cowsay enscript dialog build-essential manpages-dev curl
+sudo apt install -y cowsay enscript dialog build-essential manpages-dev curl gfortran
 ````
-
+3) create a conda environment
 ````
 conda create -n miRPV python=2
 ````
 ````
 conda activate miRPV
 ````
-3) Run the installation script
+4) Run the installation script
 The installer will ask root permission to install the following packages please provide it when asked.
 
 HairpIndex, cowsay, enscript, dailog, build-essential, manpages-dev
@@ -50,7 +50,7 @@ HairpIndex, cowsay, enscript, dailog, build-essential, manpages-dev
 ````
 bash install.sh -p  <path of miRPV folder>
 ````
-4) Follow the on-screen guide
+5) Follow the on-screen guide
 MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab code. Suppose it does not install via install.sh script install it separately from the Software directory.
 
 
