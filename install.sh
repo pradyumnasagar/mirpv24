@@ -287,72 +287,72 @@ fi
 
 if [ ! -e "$TOOLS/$MIRPARA_ARCHIVE" ] ; then 
 	echo -n "Downloading miRPra - "
-	$WGET --directory-prefix="$TOOLS" -nc "$MIRPARA_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$MIRPARA_URL"
 fi
 
 if [ ! -e "$TOOLS/$TRIPLET_SVM_ARCHIVE" ] ; then 
 	echo -n "Downloading Triplet_SVM - "
-	$WGET --directory-prefix="$TOOLS" -nc "$TRIPLET_SVM_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$TRIPLET_SVM_URL"
 fi
 
 if [ ! -e "$TOOLS/$MATURE_BAYES_ARCHIVE" ] ; then 
 	echo -n "Downloading MatureBayes - "
-	$WGET --directory-prefix="$TOOLS" -nc "$MATURE_BAYES_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$MATURE_BAYES_URL"
 fi
 
 if [ ! -e "$TOOLS/$MIRANDA_ARCHIVE" ] ; then 
 	echo -n "Downloading Miranda - "
-	$WGET --directory-prefix="$TOOLS" -nc "$MIRANDA_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$MIRANDA_URL"
 fi
 
 #if [ ! -e "$TOOLS/$VIENNA_RNA_ARCHIVE" ] ; then 
 #	echo -n "Downloading Vienna_RNA- "
-#	$WGET --directory-prefix="$TOOLS" -nc "$VIENNA_RNA_URL"
+#	$WGET -q --directory-prefix="$TOOLS" -nc "$VIENNA_RNA_URL"
 #fi
 
 if [ ! -e "$TOOLS/$LIBSVM_ARCHIVE" ] ; then
 	echo -n "Downloading Libsvm"
-	$WGET --directory-prefix="$TOOLS" -nc "$LIBSVM_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$LIBSVM_URL"
 fi
 
 if [ ! -e "$TOOLS/$CT2OUT_ARCHIVE" ] ; then
 	echo -n "Downloading ct2out"
-	$WGET --directory-prefix="$TOOLS" -nc "$CT2OUT_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$CT2OUT_URL"
 fi
 
 if [ ! -e "$TOOLS/$UNAFOLD_ARCHIVE" ] ; then
 	echo -n "Downloading UNAfold"
-	$WGET --directory-prefix="$TOOLS" -nc "$UNAFOLD_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$UNAFOLD_URL"
 fi
 
 if [ ! -e "$TOOLS/$THREADS_ARCHIVE" ] ; then
 	echo -n "Downloading THREADS"
-	$WGET --directory-prefix="$TOOLS" -nc "$THREADS_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$THREADS_URL"
 fi
 
 if [ ! -e "$TOOLS/$PATH_LINK_ARCHIVE" ] ; then
 	echo -n "Downloading Path_Link"
-	$WGET --directory-prefix="$TOOLS" -nc "$PATH_LINK_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$PATH_LINK_URL"
 fi
 
 if [ ! -e "$TOOLS/$FILE_CHIDER_ARCHIVE" ] ; then
 	echo -n "Downloading File_Chider"
-	$WGET --directory-prefix="$TOOLS" -nc "$FILE_CHIDER_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$FILE_CHIDER_URL"
 fi
 
 if [ ! -e "$TOOLS/$ALGORITHM_SVM_ARCHIVE" ] ; then
 	echo -n "Downloading Algorithm_SVM"
-	$WGET --directory-prefix="$TOOLS" -nc "$ALGORITHM_SVM_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$ALGORITHM_SVM_URL"
 fi
 
 if [ ! -e "$TOOLS/$GETOPT_LONG_ARCHIVE" ] ; then
 	echo -n "Downloading Getopt_Long"
-	$WGET --directory-prefix="$TOOLS" -nc "$GETOPT_LONG_URL"
+	$WGET -q --directory-prefix="$TOOLS" -nc "$GETOPT_LONG_URL"
 fi
 
 if [ ! -e "$TOOLS/$HAIRPLENDEX_ARCHIVE" ] ; then
 	echo -n "Downloading Hairplendex - "
-	$WGET --directory-prefix="$TOOLS" -c "$HAIRPLENDEX_URL" -O "$TOOLS"/HAirpindex.tar.xz
+	$WGET -q --directory-prefix="$TOOLS" -c "$HAIRPLENDEX_URL" -O "$TOOLS"/HAirpindex.tar.xz
 fi
 
 
