@@ -28,7 +28,12 @@ git clone https://github.com/pradyumnasagar/miRPV.git
 cd miRPV
 ````
 
-2) Install and create a conda environment (optional but recommended)
+2) Install dependencies and create a conda environment (optional but recommended)
+
+````
+sudo apt install -y cowsay enscript dialog build-essential manpages-dev curl
+````
+
 ````
 conda create -n miRPV python=2
 ````
@@ -36,6 +41,12 @@ conda create -n miRPV python=2
 conda activate miRPV
 ````
 3) Run the installation script
+The installer will ask root permission to install the following packages please provide it when asked.
+
+HairpIndex, cowsay, enscript, dailog, build-essential, manpages-dev
+
+
+
 ````
 bash install.sh -p  <path of miRPV folder>
 ````
