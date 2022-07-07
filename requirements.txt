@@ -1,8 +1,0 @@
-
-cowsay
-enscript
-dialog
-build-essential
-g++
-manpages-dev
-
