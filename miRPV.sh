@@ -135,7 +135,7 @@ echo "--------------------------------------------------------------------------
 
 
 echo "	c)Converting real-miRNA output to HAIRPLENDEX input"  | tee -a $DIRECTORY/log/$text.log
-				 echo `date` 
+date 
 	RNAfold Real_miRNA.txt > A5.txt
 	awk '{printf "%s%s",$0,(NR%3?FS:RS)}' A5.txt > Hairplendex.txt
 	#awk '$2 = toupper($2)' A6.txt > Hairplendex.txt
@@ -189,7 +189,7 @@ then
 	read reference
 		if [ -n "$reference" ] ; then
 			echo "5) Final micro-RNA target prediction" | pv -qL 20  | tee -a $DIRECTORY/log/$text.log
-			echo `date`
+			date
 			cp $reference /$DIRECTORY/Script/
 			cd $DIRECTORY/Script/	
 			miranda Mature_miRNAs.txt $reference -trim T > Target.txt
@@ -287,13 +287,13 @@ fi
 
 sl
 
-figlet Pipline Complete | pv -qL 120 | lolcat 
-echo `date`
+figlet Prediction Complete | pv -qL 120 | lolcat 
+date
 
 else
 	echo "Input file is not a fasta file"
 fi
-echo "THANK YOU FOR USING miRPV" | pv -qL 20 
+echo "Thank You for using miRPV" | pv -qL 20 
 echo ""
 echo "Please find the reults in Output directory"
 echo ""
