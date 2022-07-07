@@ -575,7 +575,7 @@ fi
 
 if [ ! -e "BUILD/$LIBSVM_BUILD_DIR/makefile" ] ; then
 	set -x 
-	conda activate ${ENV}
+	conda activate base
 	cd "$BUILD/libsvm-3.14"
 	make
 	sudo cp -r svm-predict /bin/
