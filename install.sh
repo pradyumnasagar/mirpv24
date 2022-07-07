@@ -597,7 +597,7 @@ fi
 
 #ct2out 
 
-if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
+if [ ! -e "$BUILD/ct2out/ct2out" ] ; then
 	set -x
 	conda activate base
 	cd "$BUILD/ct2out"
