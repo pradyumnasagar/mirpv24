@@ -261,18 +261,18 @@ else
 	cat Pri.txt Real.txt Mat.txt > Sum.txt 
 	touch Intro.txt
 	{
-	echo "#miRNAs prediction by miRPV Pipeline " 
+	echo "miRNAs prediction by miRPV Pipeline " 
 #	echo "#By Pradyumna Jayaram and Vinayak Rao" 
-	echo "#Report bugs to mlsc@manipal.edu" 
-	echo "#Departement of Cell and Molecular Biology" 
-	echo "#Manipal School of Life Sciences Maniapl" 
-	echo "#Manipal Academy of Higher Education Manipal,Manipal, INDIA" 
+	echo "Report bugs to mlsc@manipal.edu" 
+	echo "Departement of Cell and Molecular Biology" 
+	echo "Manipal School of Life Sciences Maniapl" 
+	echo "Manipal Academy of Higher Education, Manipal, INDIA" 
 	
 	
-	echo "#Homepage:http://slsdb.manipal.edu" 
+	echo "Homepage: http://slsdb.manipal.edu" 
 	} >> Intro.txt
 
-	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n /' Sum.txt
+	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE:\n\n/' Sum.txt
 	cat Intro.txt Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt  > miRPV_Output
 
 	enscript miRPV_Output -o - | ps2pdf - miRPV_Out.pdf
