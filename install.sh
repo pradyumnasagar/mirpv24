@@ -219,7 +219,7 @@ source ${CONDA_DIR}/etc/profile.d/conda.sh
 conda activate ${ENV}
 set -e
 
-cd $PREFIX
+cd "$PREFIX"
 #cat requirements.txt | xargs mamba install -q -y
 mamba install -q -y -c auto lolcat
 mamba install -q -y -c tsnyder figlet
