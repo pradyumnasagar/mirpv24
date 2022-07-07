@@ -129,7 +129,7 @@ set -e
 
 
 echo "This version of miRPV works best on ubuntu System. However, it can be tried in other linux system at your own risk"
-systemID=sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'
+systemID=`sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'`
 
 if [[ "$systemID" -eq "ubuntu" ]]; then
 	echo "Current System is ubuntu continue to installing dependencies"
