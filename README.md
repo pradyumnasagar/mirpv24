@@ -55,7 +55,12 @@ MATLAB Compiler Runtime (MCR) is used to Extract miRNA features, as it is Matlab
 
 
 ### Usage
-Once all the tools and dependence are installed correctly, run from the miRPV folder.
+Once all the tools and dependence are installed correctly, Activate Conda environment and run from the miRPV folder.
+
+````
+conda activate miRPV
+````
+
 ````
 bash miRPV.sh
 ````
