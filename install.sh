@@ -132,7 +132,7 @@ echo "This version of miRPV works best on ubuntu System. However, it can be trie
 systemID=`sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'`
 
 if [[ "$systemID" -eq "ubuntu" ]]; then
-	echo "Current System is ubuntu continue to installing dependencies"
+	echo "we detected that you are using $systemID Operating Syatem"
 else
 	echo "The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
 fi
