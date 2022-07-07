@@ -609,8 +609,11 @@ fi
 
 
 mkdir -p $PREFIX/Script
+
 cd $PREFIX/build/miRPara
+sed -i[bak] -e 's,ftp://mirbase.org/pub/mirbase/CURRENT,https://www.mirbase.org/ftp/CURRENT,g' miRPara.pl
 cp miRPara.pl $PREFIX/Script
+
 
 cd $PREFIX/
 #chmod ugo+x "$PREFIX/bin/"*
