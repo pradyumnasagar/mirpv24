@@ -598,7 +598,7 @@ fi
 
 if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
 	set -x
-	conda activate ${ENV}
+	conda activate base
 	cd "$BUILD/ct2out"
 	gfortran ct2out.f -o ct2out
 	sudo cp -r ct2out /bin/
