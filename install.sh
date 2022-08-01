@@ -363,7 +363,7 @@ fi
 
 if [ ! -e "$TOOLS/$MULTIMITAR_ARCHIVE" ] ; then
 	echo -n "Downloading Hairplendex - "
-	$WGET -q --directory-prefix="$TOOLS" -c "$MULTIMITAR_URL" -O "$TOOLS"/MultiMiTar.zip
+	$WGET -q --no-check-certificate --directory-prefix="$TOOLS" -c "$MULTIMITAR_URL" -O "$TOOLS"/MultiMiTar.zip
 fi
 
 
