@@ -21,6 +21,11 @@ The installation has been tested on Ubuntu 18.04. If it has to be installed on a
 
 ## INSTALLATION
 1) Clone this repository
+install git if not installed
+````
+sudo apt install git
+````
+Clone repo
 ````
 git clone https://github.com/pradyumnasagar/miRPV.git
 ````
