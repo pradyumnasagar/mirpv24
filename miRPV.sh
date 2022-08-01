@@ -113,7 +113,7 @@ echo "--------------------------------------------------------------------------
 echo "	b)Converting miRPara output to get Mature_miRNA"  | tee -a "$DIRECTORY"/log/"$text".log
 date 
 
-	sed '/^[[:blank:]]*#/d;s/#.*//' *.out > B1.txt
+	sed '/^[[:blank:]]*#/d;s/#.*//' ./*.out > B1.txt
 	awk '{print $3,$4}' B1.txt > B2.txt 
 	awk '{for(i=1;i<=NF;i++) printf "%s\n",$i}' B2.txt > B3.txt
 	sed -i '1~2 s/^/>/g' B3.txt
