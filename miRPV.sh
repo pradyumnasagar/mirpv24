@@ -87,7 +87,7 @@ if [ -n "$inpute" ] ; then
 	
 	echo "1) Processing to find Pri-miRNA" | pv -qL 20 | tee -a "$DIRECTORY"/log/"$text".log
 	
-	cp $inpute /"$DIRECTORY"/Script/ 
+	cp "$inpute" /"$DIRECTORY"/Script/ 
 	cd "$DIRECTORY"/build/miRPara/
 	cp -R models "$DIRECTORY"/Script
 	cd  "$DIRECTORY"/Script/
@@ -129,9 +129,9 @@ echo "2) Procced to find the Real or Psudo Pri-miRNA" | pv -qL 20  | tee -a "$DI
 	#cd $DIRECTORY/Script
 	mv 2.txt Real_miRNA.txt	
 	RNAeval -v Real_miRNA.txt > Mature_Secondary_Structure.txt	
-	cp Real_miRNA.txt Mature_Secondary_Structure.txt $DIRECTORY/Output/$text/miRPV_output
-	cp Real_miRNA.txt Mature_Secondary_Structure.txt $DIRECTORY/Output/$text/maturebayes
-	cp Real_miRNA.txt $DIRECTORY/Output/$text/triplet_svm 
+	cp Real_miRNA.txt Mature_Secondary_Structure.txt "$DIRECTORY"/Output/"$text"/miRPV_output
+	cp Real_miRNA.txt Mature_Secondary_Structure.txt "$DIRECTORY"/Output/"$text"/maturebayes
+	cp Real_miRNA.txt "$DIRECTORY"/Output/"$text"/triplet_svm 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 
@@ -183,18 +183,18 @@ if (dialog --title "Message" --defaultno --yesno  "Want to predict Target of Mat
 # message box will have the size  60x7 characters
 
 then 
-	cd $DIRECTORY/
+	cd "$DIRECTORY"/
 	echo "======================================================="
 	echo "Please enter the Reference Sequence name"
 	echo "======================================================="
 	read reference
 		if [ -n "$reference" ] ; then
-			echo "5) Final micro-RNA target prediction" | pv -qL 20  | tee -a $DIRECTORY/log/"$text".log
+			echo "5) Final micro-RNA target prediction" | pv -qL 20  | tee -a "$DIRECTORY"/log/"$text".log
 			date
 			cp "$reference" /"$DIRECTORY"/Script/
 			cd "$DIRECTORY/"Script/	
 			miranda Mature_miRNAs.txt "$reference" -trim T > Target.txt
-			cp Target.txt $"DIRECTORY"/Output/"$text"/miRPV_output
+			cp Target.txt " $DIRECTORY"/Output/"$text"/miRPV_output
 			mv Target.txt "$DIRECTORY"/Output/"$text"/miranda
 			rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt ./*.out ./*.ps ./*.pmt ./*.fa Real_miRNA.txt ./*.fasta
 		else
@@ -203,7 +203,7 @@ then
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo "6) Converting miRPV Output Into final Report" 
-	cd $DIRECTORY/Output/$text/miRPV_output
+	cd "$DIRECTORY"/Output/"$text"/miRPV_output
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n1)"Pri-miRNAs obtain from the fasta file"\n\n/' Pri_miRNA.txt
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n2)"Real mi-RNAs and there Secondary Structure"\n\n/' Real_miRNA.txt
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n3)"Mature miRNAs"\n\n/' Mature_miRNA.txt
@@ -241,7 +241,7 @@ echo "6) Converting miRPV Output Into final Report"
 	enscript miRPV_Output -o - | ps2pdf - miRPV_Out.pdf
 	#unoconv -f pdf miRPV_Output 
 	mv Hairplendex_v_1_1.txt Pri-miRNA_Features.xls
-	cp Pri-miRNA_Features.xls $DIRECTORY/Output/$text/hairplendex
+	cp Pri-miRNA_Features.xls "$DIRECTORY"/Output/"$text"/hairplendex
 	rm -f Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt Target.txt Pri.txt Real.txt Mat.txt Tar.txt Mature_Secondary_Structure.txt Intro.txt miRPV_Output 
 		
 
@@ -249,7 +249,7 @@ else
 	
 	rm -f 1.txt Mature_miRNAs.txt Mature_Secondary_Structure.txt Secondary_Structure.txt Pri_miRNA.txt ./*.out ./*.ps ./*.pmt ./*.fa Real_miRNA.txt	
 	echo "Converting miRPV Output Into final Report Without Target"  
-	cd $DIRECTORY/Output/$text/miRPV_output
+	cd "$DIRECTORY"/Output/"$text"/miRPV_output
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n1)"Pri-miRNAs obtain from the fasta file"\n\n/' Pri_miRNA.txt
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n2)"Real mi-RNAs and there Secondary Structure"\n\n/' Real_miRNA.txt
 	sed -i '1s/^/\n\n\n=========================================================================================\n\n3)"Mature miRNAs"\n\n/' Mature_miRNA.txt
@@ -282,7 +282,7 @@ else
 	enscript miRPV_Output -o - | ps2pdf - miRPV_Out.pdf
 	#unoconv -f pdf miRPV_Output 
 	mv Hairplendex_v_1_1.txt Pri-miRNA_Features.xls
-	cp Pri-miRNA_Features.xls $DIRECTORY/Output/$text/hairplendex
+	cp Pri-miRNA_Features.xls "$DIRECTORY"/Output/"$text"/hairplendex
 	rm -f Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt Pri.txt Real.txt Mat.txt Mature_Secondary_Structure.txt Intro.txt miRPV_Output	
 	
 
@@ -302,7 +302,7 @@ echo ""
 echo "Please find the reults in Output directory"
 echo ""
 duration=$(echo "$(date +%s.%N) - $start" | bc)
-execution_time=`printf "%.2f seconds" $duration`
+execution_time=`printf "%.2f seconds" "$duration"`
 
 echo "Pipelline Execution Time: $execution_time"
 	
