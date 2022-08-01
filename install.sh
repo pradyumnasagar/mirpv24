@@ -15,6 +15,10 @@ MIRPARA_URL="https://github.com/weasteam/miRPara/raw/master/miRPara/mirpara6.3.t
 MIRPARA_ARCHIVE=`basename "$MIRPARA_URL"`
 MIRPARA_BUILD_DIR=`basename "$MIRPARA_ARCHIVE" .tar.gz`
 
+MULTIMITAR_URL="http://www.isical.ac.in/~bioinfo_miu/MultiMiTar-executable.zip"
+MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URl"`
+MIRPARA_BUILD_DIR=`basename "$MULTIMITAR_ARCHIVE" .ZIP`
+
 TRIPLET_SVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/triplet-svm-classifier.tar.gz"
 TRIPLET_SVM_ARCHIVE=`basename "$TRIPLET_SVM_URL"`
 TRIPLET_SVM_BUILD_DIR=`basename "$TRIPLET_SVM_ARCHIVE" .tar.gz`
@@ -356,8 +360,29 @@ if [ ! -e "$TOOLS/$HAIRPLENDEX_ARCHIVE" ] ; then
 fi
 
 
+
+if [ ! -e "$TOOLS/$MULTIMITAR_ARCHIVE" ] ; then
+	echo -n "Downloading Hairplendex - "
+	$WGET -q --directory-prefix="$TOOLS" -c "$MULTIMITAR_URL" -O "$TOOLS"/MultiMiTar.zip
+fi
+
+
+MULTIMITAR_URL="http://www.isical.ac.in/~bioinfo_miu/MultiMiTar-executable.zip"
+MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URl"`
+MULTIMITAR_BUILD_DIR=`basename "$MULTIMITAR_ARCHIVE" .zip`
+
+
+
+
+
 # Unpack Archives
 
+
+if [ ! -d "$BUILD/$MULTIMITAR_BUILD_DIR" ] ; then 
+	set -x
+	"$UNZIP" -d "$BUILD"  "$TOOLS/$MULTIMITAR_BUILD_DIR"
+	set +x
+fi
 
 if  [  ! -d "$BUILD/$GETOPT_LONG_BUILD_DIR" ] ; then
 	set -x
@@ -498,6 +523,25 @@ if [ ! -e "$BUILD/$ALGORITHM_SVM_BUILD_DIR/makefile" ] ; then
 	sudo make install
 	set +x
 fi
+
+
+#MULTIMITAR
+echo "Installing Algorithm_SVM"
+if [ ! -e "$BUILD/$MULTIMITAR_BUILD_DIR/libsvm-2.88/config" ] ; then
+	set -x
+	cd "$BUILD/MultiMiTar/libsvm-2.88/"
+	make
+	sudo make 
+	sudo make test
+	sudo make install
+	cd "$BUILD/MultiMiTar/"
+	chmod +x MultiMiTar
+	set +x
+fi
+
+
+
+
 
 #File_Chidel
 echo "Installing File_Chider "
