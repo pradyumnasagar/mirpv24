@@ -16,7 +16,7 @@ MIRPARA_ARCHIVE=`basename "$MIRPARA_URL"`
 MIRPARA_BUILD_DIR=`basename "$MIRPARA_ARCHIVE" .tar.gz`
 
 MULTIMITAR_URL="http://www.isical.ac.in/~bioinfo_miu/MultiMiTar-executable.zip"
-MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URl"`
+MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URL"`
 MIRPARA_BUILD_DIR=`basename "$MULTIMITAR_ARCHIVE" .ZIP`
 
 TRIPLET_SVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/triplet-svm-classifier.tar.gz"
