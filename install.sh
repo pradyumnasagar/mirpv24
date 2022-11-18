@@ -368,7 +368,7 @@ fi
 
 
 MULTIMITAR_URL="http://www.isical.ac.in/~bioinfo_miu/MultiMiTar-executable.zip"
-MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URl"`
+MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URL"`
 MULTIMITAR_BUILD_DIR=`basename "$MULTIMITAR_ARCHIVE" .zip`
 
 
