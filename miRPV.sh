@@ -15,6 +15,8 @@ set -e
 set -u
 start=$(date +%s.%N)
 
+echo $start
+
 #source ~/.bashrc
 #eval "$(conda shell.bash hook)"
 #conda activate py2
