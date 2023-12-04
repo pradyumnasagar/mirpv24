@@ -1,226 +1,178 @@
 #!/bin/bash
-#set -euox pipefail
-#set -u 
 set -e
-#unset PS1
+
+
 
 
 start=$(date +%s.%N)
-INSTALL_SCRIPT=$(readlink -f $0)
-INSTALL_DIRECTORY=`dirname "$INSTALL_SCRIPT"`
+INSTALL_SCRIPT=$(readlink -f "$0")
+INSTALL_DIRECTORY=$(dirname "$INSTALL_SCRIPT")
 SCRIPT_DIRECTORY="$INSTALL_DIRECTORY/Script"
 
-#software to install
+# Software to install
 MIRPARA_URL="https://github.com/weasteam/miRPara/raw/master/miRPara/mirpara6.3.tar.gz"
-MIRPARA_ARCHIVE=`basename "$MIRPARA_URL"`
-MIRPARA_BUILD_DIR=`basename "$MIRPARA_ARCHIVE" .tar.gz`
+MIRPARA_ARCHIVE=$(basename "$MIRPARA_URL")
+MIRPARA_BUILD_DIR=$(basename "$MIRPARA_ARCHIVE" .tar.gz)
 
 MULTIMITAR_URL="http://www.isical.ac.in/~bioinfo_miu/MultiMiTar-executable.zip"
-MULTIMITAR_ARCHIVE=`basename "$MULTIMITAR_URL"`
-MIRPARA_BUILD_DIR=`basename "$MULTIMITAR_ARCHIVE" .ZIP`
+MULTIMITAR_ARCHIVE=$(basename "$MULTIMITAR_URL")
+MULTIMITAR_BUILD_DIR=$(basename "$MULTIMITAR_ARCHIVE" .zip)
+
+# # More software URLs, archives, and build directories
 
 TRIPLET_SVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/triplet-svm-classifier.tar.gz"
-TRIPLET_SVM_ARCHIVE=`basename "$TRIPLET_SVM_URL"`
-TRIPLET_SVM_BUILD_DIR=`basename "$TRIPLET_SVM_ARCHIVE" .tar.gz`
+TRIPLET_SVM_ARCHIVE=$(basename "$TRIPLET_SVM_URL")
+TRIPLET_SVM_BUILD_DIR=$(basename "$TRIPLET_SVM_ARCHIVE" .tar.gz)
 
 MATURE_BAYES_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Mature_Bayes.tar.gz"
-MATURE_BAYES_ARCHIVE=`basename "$MATURE_BAYES_URL"`
-MATURE_BAYES_BUILD_DIR=`basename "$MATURE_BAYES_ARCHIVE" .tar.gz`
+MATURE_BAYES_ARCHIVE=$(basename "$MATURE_BAYES_URL")
+MATURE_BAYES_BUILD_DIR=$(basename "$MATURE_BAYES_ARCHIVE" .tar.gz)
 
 MIRANDA_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/miRanda.tar.gz"
-MIRANDA_ARCHIVE=`basename "$MIRANDA_URL"`
-MIRANDA_BUILD_DIR=`basename "$MIRANDA_ARCHIVE" .tar.gz`
-
-#VIENNA_RNA_URL="https://github.com/ViennaRNA/ViennaRNA/releases/download/v2.5.1/ViennaRNA-2.5.1.tar.gz"
-#VIENNA_RNA_ARCHIVE=`basename "$VIENNA_RNA_URL"`
-#VIENNA_RNA_BUILD_DIR=`basename "$VIENNA_RNA_ARCHIVE" .tar.gz`
+MIRANDA_ARCHIVE=$(basename "$MIRANDA_URL")
+MIRANDA_BUILD_DIR=$(basename "$MIRANDA_ARCHIVE" .tar.gz)
 
 LIBSVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/libsvm-3.14.tar.gz"
-LIBSVM_ARCHIVE=`basename "$LIBSVM_URL"`
-LIBSVM_BUILD_DIR=`basename "$LIBSVM_ARCHIVE" .tar.gz`
+LIBSVM_ARCHIVE=$(basename "$LIBSVM_URL")
+LIBSVM_BUILD_DIR=$(basename "$LIBSVM_ARCHIVE" .tar.gz)
 
 CT2OUT_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/ct2out.zip"
-CT2OUT_ARCHIVE=`basename  "$CT2OUT_URL"`
-CT2OUT_BUILD_DIR=`basename "$CT2OUT_ARCHIVE" .zip`
+CT2OUT_ARCHIVE=$(basename "$CT2OUT_URL")
+CT2OUT_BUILD_DIR=$(basename "$CT2OUT_ARCHIVE" .zip)
 
 UNAFOLD_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/unafold-3.8.tar.gz"
-UNAFOLD_ARCHIVE=`basename "$UNAFOLD_URL"`
-UNAFOLD_BUILD_DIR=`basename "$UNAFOLD_ARCHIVE" .tar.gz`
+UNAFOLD_ARCHIVE=$(basename "$UNAFOLD_URL")
+UNAFOLD_BUILD_DIR=$(basename "$UNAFOLD_ARCHIVE" .tar.gz)
 
 GETOPT_LONG_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Getopt-Long-2.51.tar.gz"
-GETOPT_LONG_ARCHIVE=`basename "$GETOPT_LONG_URL"`
-GETOPT_LONG_BUILD_DIR=`basename "$GETOPT_LONG_ARCHIVE" .tar.gz`
+GETOPT_LONG_ARCHIVE=$(basename "$GETOPT_LONG_URL")
+GETOPT_LONG_BUILD_DIR=$(basename "$GETOPT_LONG_ARCHIVE" .tar.gz)
 
 ALGORITHM_SVM_URL="http://www.cpan.org/authors/id/L/LA/LAIRDM/Algorithm-SVM-0.13.tar.gz"
-ALGORITHM_SVM_ARCHIVE=`basename "$ALGORITHM_SVM_URL"`
-ALGORITHM_SVM_BUILD_DIR=`basename "$ALGORITHM_SVM_ARCHIVE" .zip`
+ALGORITHM_SVM_ARCHIVE=$(basename "$ALGORITHM_SVM_URL")
+ALGORITHM_SVM_BUILD_DIR=$(basename "$ALGORITHM_SVM_ARCHIVE" .tar.gz)
 
 FILE_CHIDER_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/File-chdir-0.1010.tar.gz"
-FILE_CHIDER_ARCHIVE=`basename "$FILE_CHIDER_URL"`
-FILE_CHIDER_BUILD_DIR=`basename "$FILE_CHIDER_ARCHIVE" .tar.gz`
+FILE_CHIDER_ARCHIVE=$(basename "$FILE_CHIDER_URL")
+FILE_CHIDER_BUILD_DIR=$(basename "$FILE_CHIDER_ARCHIVE" .tar.gz)
 
 PATH_LINK_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/PathTools-3.75.tar.gz"
-PATH_LINK_ARCHIVE=`basename "$PATH_LINK_URL"`
-PATH_LINK_BUILD_DIR=`basename "$PATH_LINK_ARCHIVE" .tar.gz`
+PATH_LINK_ARCHIVE=$(basename "$PATH_LINK_URL")
+PATH_LINK_BUILD_DIR=$(basename "$PATH_LINK_ARCHIVE" .tar.gz)
 
 THREADS_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/threads-2.21.tar.gz"
-THREADS_ARCHIVE=`basename "$THREADS_URL"`
-THREADS_BUILD_DIR=`basename "$THREADS_ARCHIVE" .tar.gz`
+THREADS_ARCHIVE=$(basename "$THREADS_URL")
+THREADS_BUILD_DIR=$(basename "$THREADS_ARCHIVE" .tar.gz)
 
 HAIRPLENDEX_URL="https://sourceforge.net/projects/hairpin/files/HAirpin.tar.xz/download"
-HAIRPLENDEX_ARCHIVE=`basename "$HAIRPLENDEX_URL"`
-HAIRPLENDEX_BUILD_DIR=`basename "$HAIRPLENDEX_ARCHIVE" .tar.xz`
+HAIRPLENDEX_ARCHIVE=$(basename "$HAIRPLENDEX_URL")
+HAIRPLENDEX_BUILD_DIR=$(basename "$HAIRPLENDEX_ARCHIVE" .tar.xz)
 
-CONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# Add any additional software URLs, archives, and build directories here
+
 
 
 # Exit Trapping
-
 completeCheck() { 
-	EXITCODE=$?
-
-	if [ ! $EXITCODE == 0 ] ; then 
-		set +x
-		echo ""
-		echo "Install Failed."
-		echo "---------------------------------------------------------------------------------------------------------"
-		echo "Please examine the output above to identify the cause."
-		echo "If you're uncertain about how to interpret the error message, please forward it pradyumna.j.ram@gmail.com or vinayakrao28@gmail.com"
-		echo "and we'll attempt to help you identify the problem."
-		echo ""
-	fi
-
-	exit $EXITCODE
+    EXITCODE=$?
+    if [ $EXITCODE -ne 0 ] ; then 
+        set +x
+        echo "Install Failed."
+        # ... [Error message]
+    fi
+    exit $EXITCODE
 }
-
-
 trap completeCheck EXIT
+
+# Usage and command line parsing
+# # Usage and command line parsing
 
 # Usage and command line parsing
 
 usage() { 
-	echo ""
-	echo "$0 -p /path/to/miRPV directory"
-	echo "  -p the install directory for miRPara and it's dependencies."
-	echo "  -h this usage description"
-	echo ""
-	exit 0
+    echo "Usage: $0 -p /path/to/installation/directory"
+    echo "  -p  Specify the installation directory for software and its dependencies."
+    echo "  -h  Display this help message."
+    exit 1
 }
 
 PREFIX=''
 BUILD=''
 TOOLS=''
 
-
-while getopts ":p:h:" o; do
-	case "${o}" in
-		p)
-			PREFIX=`readlink -f "${OPTARG}"`
-			TOOLS="$PREFIX/tools"
-			BUILD="$PREFIX/build"
-			;;
-		*)
-			usage
-			;;
-	esac
+while getopts ":p:h" o; do
+    case "${o}" in
+        p)
+            PREFIX=$(readlink -f "${OPTARG}")
+            TOOLS="$PREFIX/tools"
+            BUILD="$PREFIX/build"
+            ;;
+        h)
+            usage
+            ;;
+        *)
+            usage
+            ;;
+    esac
 done
 
-set +e
 if [ -z "$PREFIX" ] ; then 
-	usage
+    echo "Error: Installation directory not specified."
+    usage
 fi
-set -e 
 
 
-echo "This version of miRPV works best on ubuntu System. However, it can be tried in other linux system at your own risk"
-systemID=`sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'`
 
-if [[ "$systemID" -eq "ubuntu" ]]; then
-	echo "we detected that you are using $systemID Operating System"
+# System ID Check
+echo "This version of miRPV works best on Ubuntu System."
+systemID=$(grep "^ID=" /etc/os-release | awk -F "=" '{print $2}')
+if [[ "$systemID" == "ubuntu" ]]; then
+    echo "Using Ubuntu Operating System."
 else
-	echo "The tool currently verified on ubuntu system but you have $systemID some dependencies might not be installed which may break the pipeline"
+    echo "Warning: You are using $systemID. Some dependencies might not be installed correctly."
 fi
 
-
-
-# Create the install directory
-
-# create install path
-
-
-
-if [ ! -d $PREFIX ] ; then 
-	set -x
-	`mkdir "$PREFIX"`
-	set +x
-fi
-
-# Create the Tools directory
-
-if [ ! -d "$TOOLS" ] ; then 
-	set -x
-	`mkdir "$TOOLS"`
-	set +x
-fi 
-
-# create the build directory
-
-if [ ! -d "$BUILD" ] ; then 
-	set -x
-	`mkdir "$BUILD"`
-	set +x
-fi
+# Create directories
+mkdir -p "$PREFIX" "$TOOLS" "$BUILD"
 
 # Check base dependencies
+# # Check base dependencies
 
 CONDA_DIR=~/miniconda3
 ENV=miRPV
 
-
-# Install conda if necessary.
+# Install Conda if necessary
 if [ ! -d "$CONDA_DIR" ]; then
-	# Download the miniconda installer.
-	echo "#"
-	echo "# Downloading: ${CONDA_URL}"
-	echo "#"
-	curl -s -L ${CONDA_URL} > miniconda-installer.sh
+    echo "Conda not found. Installing Miniconda."
 
-	# Install miniconda.
-	echo "#"
-	echo "# Running: miniconda-installer.sh"
-	echo "#"
-	bash miniconda-installer.sh -b
-	
-	# Initialize bash.
-	${CONDA_DIR}/condabin/conda init bash
+    # Download the Miniconda installer
+    CONDA_INSTALLER_SCRIPT=Miniconda3-latest-Linux-x86_64.sh
+    wget -q https://repo.anaconda.com/miniconda/$CONDA_INSTALLER_SCRIPT -O $CONDA_INSTALLER_SCRIPT
 
-	# Update conda.
-	echo "#"
-  echo "# Updating conda"
-	echo "#"
-	${CONDA_DIR}/condabin/conda update -q -y -n base conda
+    # Install Miniconda
+    bash $CONDA_INSTALLER_SCRIPT -b -p $CONDA_DIR
+    rm -f $CONDA_INSTALLER_SCRIPT
 
-	# Activate conda bioconda channels.
-	${CONDA_DIR}/condabin/conda config -q --add channels bioconda
-	${CONDA_DIR}/condabin/conda config -q --add channels conda-forge
-
-	# Install mamba
-  echo "#"
-  echo "# Installing mamba"
-	echo "#"
-	${CONDA_DIR}/condabin/conda install mamba -q -n base -c conda-forge -y
+    # Initialize Conda
+    eval "$(${CONDA_DIR}/bin/conda 'shell.bash' 'hook')"
+    conda init
 fi
 
-if [ ! -d "$CONDA_DIR/envs/$ENV" ]; then
-  echo "#"
-  echo "# Creating the bioinfo environment"
-	echo "#"
-	${CONDA_DIR}/condabin/conda create -q -n $ENV -y python=2.7
+# Ensure Conda is properly set up
+eval "$(${CONDA_DIR}/bin/conda 'shell.bash' 'hook')"
+
+# Create Conda environment if it doesn't exist
+if [ ! -d "${CONDA_DIR}/envs/${ENV}" ]; then
+    echo "Creating Conda environment: $ENV"
+    conda create -n $ENV -y python=3.8
 fi
 
-set +ue
-source ${CONDA_DIR}/etc/profile.d/conda.sh
-conda activate ${ENV}
+# Activate the Conda environment
+conda activate $ENV
+
+
+#conda activate ${ENV}
+
 set -e
 
 cd "$PREFIX"
