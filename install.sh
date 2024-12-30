@@ -20,31 +20,31 @@ MULTIMITAR_BUILD_DIR=$(basename "$MULTIMITAR_ARCHIVE" .zip)
 
 # # More software URLs, archives, and build directories
 
-TRIPLET_SVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/triplet-svm-classifier.tar.gz"
+TRIPLET_SVM_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/triplet-svm-classifier.tar.gz"
 TRIPLET_SVM_ARCHIVE=$(basename "$TRIPLET_SVM_URL")
 TRIPLET_SVM_BUILD_DIR=$(basename "$TRIPLET_SVM_ARCHIVE" .tar.gz)
 
-MATURE_BAYES_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Mature_Bayes.tar.gz"
+MATURE_BAYES_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/Mature_Bayes.tar.gz"
 MATURE_BAYES_ARCHIVE=$(basename "$MATURE_BAYES_URL")
 MATURE_BAYES_BUILD_DIR=$(basename "$MATURE_BAYES_ARCHIVE" .tar.gz)
 
-MIRANDA_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/miRanda.tar.gz"
+MIRANDA_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/miRanda.tar.gz"
 MIRANDA_ARCHIVE=$(basename "$MIRANDA_URL")
 MIRANDA_BUILD_DIR=$(basename "$MIRANDA_ARCHIVE" .tar.gz)
 
-LIBSVM_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/libsvm-3.14.tar.gz"
+LIBSVM_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/libsvm-3.14.tar.gz"
 LIBSVM_ARCHIVE=$(basename "$LIBSVM_URL")
 LIBSVM_BUILD_DIR=$(basename "$LIBSVM_ARCHIVE" .tar.gz)
 
-CT2OUT_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/ct2out.zip"
+CT2OUT_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/ct2out.zip"
 CT2OUT_ARCHIVE=$(basename "$CT2OUT_URL")
 CT2OUT_BUILD_DIR=$(basename "$CT2OUT_ARCHIVE" .zip)
 
-UNAFOLD_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/unafold-3.8.tar.gz"
+UNAFOLD_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/unafold-3.8.tar.gz"
 UNAFOLD_ARCHIVE=$(basename "$UNAFOLD_URL")
 UNAFOLD_BUILD_DIR=$(basename "$UNAFOLD_ARCHIVE" .tar.gz)
 
-GETOPT_LONG_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/Getopt-Long-2.51.tar.gz"
+GETOPT_LONG_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/Getopt-Long-2.51.tar.gz"
 GETOPT_LONG_ARCHIVE=$(basename "$GETOPT_LONG_URL")
 GETOPT_LONG_BUILD_DIR=$(basename "$GETOPT_LONG_ARCHIVE" .tar.gz)
 
@@ -52,15 +52,15 @@ ALGORITHM_SVM_URL="http://www.cpan.org/authors/id/L/LA/LAIRDM/Algorithm-SVM-0.13
 ALGORITHM_SVM_ARCHIVE=$(basename "$ALGORITHM_SVM_URL")
 ALGORITHM_SVM_BUILD_DIR=$(basename "$ALGORITHM_SVM_ARCHIVE" .tar.gz)
 
-FILE_CHIDER_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/File-chdir-0.1010.tar.gz"
+FILE_CHIDER_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/File-chdir-0.1010.tar.gz"
 FILE_CHIDER_ARCHIVE=$(basename "$FILE_CHIDER_URL")
 FILE_CHIDER_BUILD_DIR=$(basename "$FILE_CHIDER_ARCHIVE" .tar.gz)
 
-PATH_LINK_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/PathTools-3.75.tar.gz"
+PATH_LINK_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/PathTools-3.75.tar.gz"
 PATH_LINK_ARCHIVE=$(basename "$PATH_LINK_URL")
 PATH_LINK_BUILD_DIR=$(basename "$PATH_LINK_ARCHIVE" .tar.gz)
 
-THREADS_URL="https://github.com/vinayakrao28/Bash-/raw/master/Software/threads-2.21.tar.gz"
+THREADS_URL="https://github.com/pradyumnasagar/miRPVdata/raw/master/Software/threads-2.21.tar.gz"
 THREADS_ARCHIVE=$(basename "$THREADS_URL")
 THREADS_BUILD_DIR=$(basename "$THREADS_ARCHIVE" .tar.gz)
 
