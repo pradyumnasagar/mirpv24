@@ -131,8 +131,4 @@ gfortran ct2out.f -o ct2out
 ````
 cp ct2out /bin/
 ````
-### If you require more assistance, please contact:
 
-http://slsdb.manipal.edu
-
-mlsc@manipal.edu
